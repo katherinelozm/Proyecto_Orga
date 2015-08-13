@@ -1,0 +1,31 @@
+01,São Paulo
+02,Mendoza
+03,Barranquilla
+04,Bogotá
+05,Rio de Janeiro
+06,Santiago
+07,Caracas
+08,Buenos Aires
+09,El Salvador
+10,Brasília
+11,Managua
+12,Guayaquil
+13,Quito
+14,Mendoza
+15,Medellín
+16,Guatemala
+17,La Habana
+18,Manaus
+19,Curitiba
+20,Morelos
+21,Maracaibo
+22,Guadalajara
+23,Puebla
+24,Porto Alegre
+25,Belém
+26,Córdoba
+27,Juárez
+28,Tijuana
+29,Montevideo
+30,San Jose	
+
