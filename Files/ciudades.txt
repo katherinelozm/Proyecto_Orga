@@ -1,12 +1,12 @@
-01,São Paulo
-02,Mendoza
-03,Barranquilla
-04,Bogotá
-05,Rio de Janeiro
-06,Santiago
-07,Caracas
-08,Buenos Aires
-09,El Salvador
+﻿1,São Paulo
+2,Mendoza
+3,Barranquilla
+4,Bogotá
+5,Rio de Janeiro
+6,Santiago
+7,Caracas
+8,Buenos Aires
+9,El Salvador
 10,Brasília
 11,Managua
 12,Guayaquil
