@@ -21,9 +21,21 @@ struct Clientes{
 	int idCiudad;
 };
 
+struct Lineas{
+	int numero;
+	char id[17];
+};
+
+struct Llamadas{
+	int numero;
+	long inicio;
+	long final;
+	int destino;
+};
+
 istream& operator>>(istream& input1, Ciudades& ciudades){
-	 input1 >> ciudades.idCiudad >> ciudades.nombreCiudad;
-	 return input1;
+	input1 >> ciudades.idCiudad >> ciudades.nombreCiudad;
+	return input1;
 }
 
 ostream& operator<<(ostream& output1, const Ciudades& ciudades){
@@ -32,8 +44,8 @@ ostream& operator<<(ostream& output1, const Ciudades& ciudades){
 }
 
 istream& operator>>(istream& input2, Clientes& clientes){
-	 input2 >> clientes.idCliente >> clientes.nombreCliente >> clientes.genero >> clientes.idCiudad;
-	 return input2;
+	input2 >> clientes.idCliente >> clientes.nombreCliente >> clientes.genero >> clientes.idCiudad;
+	return input2;
 }
 
 ostream& operator<<(ostream& output2, const Clientes& clientes){
@@ -41,16 +53,40 @@ ostream& operator<<(ostream& output2, const Clientes& clientes){
 	return output2;  
 }
 
+istream& operator>>(istream& input3, Lineas& lineas){
+	input3 >> lineas.numero >> lineas.id;
+	return input3;
+}
 
+ostream& operator<<(ostream& output3, const Lineas& lineas){
+	output3 << lineas.numero << setw(20) << lineas.id;
+	return output3;  
+}
+
+istream& operator>>(istream& input4, Llamadas& llamadas){
+	input4 >> llamadas.numero >> llamadas.inicio >> llamadas.final >> llamadas.destino;
+	return input4;
+}
+
+ostream& operator<<(ostream& output4, const Llamadas& llamadas){
+	output4 << llamadas.numero << setw(15) << llamadas.inicio << setw(15) << llamadas.final << setw(10) << llamadas.destino;
+	return output4;  
+}
 
 int main(int argc, char const *argv[]){
 	string lineaCiudades;
 	string lineaClientes;
+	string lineaLineas;
+	string lineaLlamadas;
 	vector<string>sv1;
 	vector<string>sv2;
+	vector<string>sv3;
+	vector<string>sv4;
 	
 	ifstream fileCiudades("Files/ciudades.txt", ifstream::in);
 	ifstream fileClientes("Files/dataClientes.txt", ifstream::in);
+	ifstream fileLineas("Files/lineasClientes.txt", ifstream::in);
+	ifstream fileLlamadas("Files/llamadas.txt", ifstream::in);
 
 	/*Lee el contenido de ambos archivos de texto y los ingresa en un vector de tipo string*/
 
@@ -73,17 +109,43 @@ int main(int argc, char const *argv[]){
 		fileClientes.close();
 	}
 
+	if (fileLineas.is_open()){
+		while (fileLineas.good()){
+			getline(fileLineas,lineaLineas);
+			if (!lineaLineas.empty())
+				sv3.push_back(lineaLineas);
+		}
+		fileLineas.close();
+	}
+
+	if (fileLlamadas.is_open()){
+		while (fileLlamadas.good()){
+			getline(fileLlamadas,lineaLlamadas);
+			if (!lineaLlamadas.empty())
+				sv4.push_back(lineaLlamadas);
+		}
+		fileLlamadas.close();
+	}
+
 	char * st1; 
 	char * st2;
+	char * st3;
+	char * st4;
 	vector<string> temp1;
 	vector<string> temp2;
-	
+	vector<string> temp3;
+	vector<string> temp4;
+
 	/*
 		Separa en tokes cada registro y los ingresa en un vector de tipo string
 		char * st1 = string tokenizer ciudades
 		char * st2 = string tokenizer clientes
+		char * st3 = string tokenizer lineas
+		char * st4 = string tokenizer llamadas
 		Vector temp1 = tokens registros ciudades
 		Vector temp2 = tokens registros clientes 
+		Vector temp3 = tokens registros lineas 
+		Vector temp4 = tokens registros llamadas 
 	*/
 
 	for (int i = 0; i < sv1.size(); ++i) {
@@ -93,8 +155,7 @@ int main(int argc, char const *argv[]){
 		while (st1 != NULL) {
 			temp1.push_back(st1);
 			st1 = strtok (NULL, ",.");
-		}
-		
+		}	
 	}
 
 	for (int i = 0; i < sv2.size(); ++i) {
@@ -105,30 +166,51 @@ int main(int argc, char const *argv[]){
 			temp2.push_back(st2);
 			st2 = strtok (NULL, ",.");
 		}
-		
 	}
 	
+	for (int i = 0; i < sv3.size(); ++i) {
+		char* c3 = const_cast<char*>(sv3[i].c_str());
+		st3 = strtok(c3,",.");
+		
+		while (st3 != NULL) {
+			temp3.push_back(st3);
+			st3 = strtok (NULL, ",.");
+		}
+	}
+
+	for (int i = 0; i < sv4.size(); ++i) {
+		char* c4 = const_cast<char*>(sv4[i].c_str());
+		st4 = strtok(c4,",.");
+		
+		while (st4 != NULL) {
+			temp4.push_back(st4);
+			st4 = strtok (NULL, ",.");
+		}
+	}
+
 	vector<Ciudades> vectorCiudades;
 	vector<Clientes> vectorClientes;
+	vector<Lineas> vectorLineas;
+	vector<Llamadas> vectorLlamadas;
 	Ciudades ciudades;
 	Clientes clientes;
+	Lineas lineas;
+	Llamadas llamadas;
 
 	/*
-		A partir de los vectores temp1 y temp2 se llenan los vectores de tipo ciudades y clientes
-		Se castean las strings en temp1 y temp2 a los respectivos tipos de variables del Struct para
-		ciudades y clientes.
+		A partir de los vectores temp1, temp2, temp3 y temp4 se llenan los vectores de tipo ciudades, clientes, lineas y llamadas
+		Se castean las strings en temp1, temp2, temp3 y temp4 a los respectivos tipos de variables del Struct para
+		ciudades, clientes, lineas y llamadas.
 		**memset libera la memoria de char[]
 	*/
 
 	for (int i = 0; i < temp1.size(); i+=2){
-
 		int tempId; 
 		tempId = atoi(temp1[i].c_str());
 		ciudades.idCiudad = tempId;
 		memcpy(ciudades.nombreCiudad,temp1[i+1].c_str(),temp1[i+1].size());
 		vectorCiudades.push_back(ciudades);
 		memset(ciudades.nombreCiudad, 0, 40);
-
 	}
 
 	for (int i = 0; i < temp2.size(); i+=4){
@@ -144,10 +226,35 @@ int main(int argc, char const *argv[]){
 		memset(clientes.nombreCliente, 0, 40);
 	}
 
+	for (int i = 0; i < temp3.size(); i+=2){
+		int tempNum; 
+		tempNum = atoi(temp3[i].c_str());
+		lineas.numero = tempNum;
+		memcpy(lineas.id,temp3[i+1].c_str(),temp3[i+1].size());
+		vectorLineas.push_back(lineas);
+		memset(lineas.id, 0, 17);
+	}
+
+	for (int i = 0; i < temp4.size(); i+=4){
+		int tempNumero, tempDestino; 
+		long tempInicio, tempFinal;
+		tempNumero = atoi(temp4[i].c_str());
+		tempInicio = atol(temp4[i+1].c_str());
+		tempFinal = atol(temp4[i+2].c_str());
+		tempDestino = atoi(temp4[i+3].c_str());
+		llamadas.numero = tempNumero;
+		llamadas.inicio = tempInicio;
+		llamadas.final = tempFinal;
+		llamadas.destino = tempDestino;
+		vectorLlamadas.push_back(llamadas);
+	}
+
 	/* Se guardan los archivos binarios */
 
 	ofstream bfCiudades("BinaryFiles/dataCiudades.bin", ofstream::binary);
 	ofstream bfClientes("BinaryFiles/dataClientes.bin", ofstream::binary);
+	ofstream bfLineas("BinaryFiles/dataLineas.bin", ofstream::binary);
+	ofstream bfLlamadas("BinaryFiles/dataLlamadas.bin", ofstream::binary);
 
 	for (int i = 0; i < vectorCiudades.size(); ++i) {
 		bfCiudades.write(reinterpret_cast<const char*> (&vectorCiudades[i]), sizeof(ciudades));
@@ -159,5 +266,14 @@ int main(int argc, char const *argv[]){
 	}
 	bfClientes.close();
 
+	for (int i = 0; i < vectorLineas.size(); ++i) {
+		bfLineas.write(reinterpret_cast<const char*> (&vectorLineas[i]), sizeof(lineas));
+	}
+	bfLineas.close();
+
+	for (int i = 0; i < vectorLlamadas.size(); ++i) {
+		bfLlamadas.write(reinterpret_cast<const char*> (&vectorLlamadas[i]), sizeof(llamadas));
+	}
+	bfLlamadas.close();
 	return 0;
 }
