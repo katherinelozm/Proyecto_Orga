@@ -1,19 +1,19 @@
-﻿1,São Paulo
+1,Sao Paulo
 2,Mendoza
 3,Barranquilla
-4,Bogotá
+4,Bogota
 5,Rio de Janeiro
 6,Santiago
 7,Caracas
-8,Buenos Aires
+8,New York
 9,El Salvador
 10,Brasília
 11,Managua
 12,Guayaquil
 13,Quito
 14,Mendoza
-15,Medellín
-16,Guatemala
+15,Medellin
+16,Santiago
 17,La Habana
 18,Manaus
 19,Curitiba
@@ -22,10 +22,9 @@
 22,Guadalajara
 23,Puebla
 24,Porto Alegre
-25,Belém
-26,Córdoba
+25,Belem
+26,Cordoba
 27,Juárez
 28,Tijuana
 29,Montevideo
 30,San Jose	
-
