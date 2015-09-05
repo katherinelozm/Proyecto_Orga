@@ -33,6 +33,27 @@ struct Llamadas{
 	int destino;
 };
 
+struct IndiceClientes{
+	char llave[13];
+	int rrn; 
+	bool operator<( const IndiceClientes& indice ) const { 
+    	int compare = strcmp(llave, indice.llave);
+    	if (compare < 0){
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }
+};
+
+struct IndiceLineas{
+	int llave;
+	int rrn; 
+	bool operator<( const IndiceLineas& indice ) const { 
+    	return llave < indice.llave;
+    }
+};
+
 istream& operator>>(istream& input1, Ciudades& ciudades){
 	input1 >> ciudades.idCiudad >> ciudades.nombreCiudad;
 	return input1;
@@ -72,6 +93,8 @@ ostream& operator<<(ostream& output4, const Llamadas& llamadas){
 	output4 << llamadas.numero << setw(15) << llamadas.inicio << setw(15) << llamadas.final << setw(10) << llamadas.destino;
 	return output4;  
 }
+
+void indexar(vector<Clientes>, vector<Lineas>);
 
 int main(int argc, char const *argv[]){
 	string lineaCiudades;
@@ -249,31 +272,99 @@ int main(int argc, char const *argv[]){
 		vectorLlamadas.push_back(llamadas);
 	}
 
-	/* Se guardan los archivos binarios */
-
-	ofstream bfCiudades("BinaryFiles/dataCiudades.bin", ofstream::binary);
-	ofstream bfClientes("BinaryFiles/dataClientes.bin", ofstream::binary);
-	ofstream bfLineas("BinaryFiles/dataLineas.bin", ofstream::binary);
-	ofstream bfLlamadas("BinaryFiles/dataLlamadas.bin", ofstream::binary);
-
-	for (int i = 0; i < vectorCiudades.size(); ++i) {
-		bfCiudades.write(reinterpret_cast<const char*> (&vectorCiudades[i]), sizeof(ciudades));
-	}
-	bfCiudades.close();
-
-	for (int i = 0; i < vectorClientes.size(); ++i) {
-		bfClientes.write(reinterpret_cast<const char*> (&vectorClientes[i]), sizeof(clientes));
-	}
-	bfClientes.close();
-
-	for (int i = 0; i < vectorLineas.size(); ++i) {
-		bfLineas.write(reinterpret_cast<const char*> (&vectorLineas[i]), sizeof(lineas));
-	}
-	bfLineas.close();
-
-	for (int i = 0; i < vectorLlamadas.size(); ++i) {
-		bfLlamadas.write(reinterpret_cast<const char*> (&vectorLlamadas[i]), sizeof(llamadas));
-	}
-	bfLlamadas.close();
+	indexar(vectorClientes ,vectorLineas);
 	return 0;
+}
+
+void indexar(vector<Clientes> vectorClientes, vector<Lineas> vectorLineas){
+	vector<IndiceClientes> indices1;
+	vector<IndiceLineas> indices2;
+
+	for (int i = 0; i < vectorClientes.size(); ++i){
+		IndiceClientes indice;
+		strcpy(indice.llave, vectorClientes[i].idCliente);
+		indice.rrn = i+1;
+		indices1.push_back(indice);
+	}
+	
+
+	for (int i = 0; i < vectorLineas.size(); ++i){
+		IndiceLineas indice;
+		indice.llave = vectorLineas[i].numero;
+		indice.rrn = i+1;
+		indices2.push_back(indice);
+	}
+
+	sort(indices1.begin(), indices1.end());
+	sort(indices2.begin(), indices2.end());
+
+	ofstream outputClientes;
+	outputClientes.open("Files/indicesClientes.txt");
+	if (outputClientes.is_open()) {
+		for (int i = 0; i < indices1.size(); ++i){
+			char index[22];
+			strcpy(index, indices1[i].llave);
+			string s = to_string(indices1[i].rrn);
+			char RRN[4];
+			strcpy(RRN, s.c_str());
+			int len = strlen(RRN);
+			if (len == 1){
+				char temp[4];
+				strcpy(temp, RRN);
+				strcpy(RRN, "000");
+				strcat(RRN, temp);
+			} else if (len == 2){
+				char temp[4];
+				strcpy(temp, RRN);
+				strcpy(RRN, "00");
+				strcat(RRN, temp);
+			} else if (len == 3){
+				char temp[4];
+				strcpy(temp, RRN);
+				strcpy(RRN, "0");
+				strcat(RRN, temp);
+			}
+			strcat(index, RRN);
+			outputClientes << index << "\n";
+		}
+    } else {
+       	cerr << "No se pueden escribir los datos" << endl;
+    }
+    outputClientes.close();
+    ofstream outputLineas;
+	outputLineas.open("Files/indicesLineas.txt");
+	if (outputLineas.is_open()) {
+		for (int i = 0; i < indices2.size(); ++i){
+			char index[22];
+			string numero = to_string(indices2[i].llave);
+			char num[8];
+			strcpy(num, numero.c_str());
+			strcpy(index, num);
+			string s = to_string(indices2[i].rrn);
+			char RRN[4];
+			strcpy(RRN, s.c_str());
+			int len = strlen(RRN);
+			if (len == 1){
+				char temp[4];
+				strcpy(temp, RRN);
+				strcpy(RRN, "000");
+				strcat(RRN, temp);
+			} else if (len == 2){
+				char temp[4];
+				strcpy(temp, RRN);
+				strcpy(RRN, "00");
+				strcat(RRN, temp);
+			} else if (len == 3){
+				char temp[4];
+				strcpy(temp, RRN);
+				strcpy(RRN, "0");
+				strcat(RRN, temp);
+			}
+			strcat(index, RRN);
+			outputLineas << index << "\n";
+		}
+    } else {
+       	cerr << "No se pueden escribir los datos" << endl;
+    }
+    outputLineas.close();
 }
