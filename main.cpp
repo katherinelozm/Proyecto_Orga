@@ -6,24 +6,25 @@
 #include <vector>
 #include <stdlib.h>
 #include <iomanip>
+#include <algorithm>
 
 using namespace std;
 
 struct Ciudades{
 	int idCiudad;
-	char nombreCiudad[40];
+	char* nombreCiudad;
 };
 
 struct Clientes{
-	char idCliente[17];
-	char nombreCliente[40];
+	char* idCliente;
+	char* nombreCliente;
 	char genero;
 	int idCiudad;
 };
 
 struct Lineas{
 	int numero;
-	char id[17];
+	char* id;
 };
 
 struct Llamadas{
@@ -95,12 +96,19 @@ ostream& operator<<(ostream& output4, const Llamadas& llamadas){
 }
 
 void indexar(vector<Clientes>, vector<Lineas>);
+void leerTodos();
 
 int main(int argc, char const *argv[]){
+	leerTodos();
+	return 0;
+}
+
+void leerTodos(){
 	string lineaCiudades;
 	string lineaClientes;
 	string lineaLineas;
 	string lineaLlamadas;
+
 	vector<string>sv1;
 	vector<string>sv2;
 	vector<string>sv3;
@@ -111,169 +119,291 @@ int main(int argc, char const *argv[]){
 	ifstream fileLineas("Files/lineasClientes.txt", ifstream::in);
 	ifstream fileLlamadas("Files/llamadas.txt", ifstream::in);
 
-	/*Lee el contenido de ambos archivos de texto y los ingresa en un vector de tipo string*/
-
+	int num = 1;
 	if (fileCiudades.is_open()){
+		fileCiudades.seekg(40, fileCiudades.beg);
+		int length = 4;
+		lineaCiudades = "";
 		while (fileCiudades.good()){
-			getline(fileCiudades,lineaCiudades);
-			if (!lineaCiudades.empty())
+			char* caracteres = new char[length];
+			fileCiudades.read(caracteres, length);
+			if (num%2 == 0){
+				lineaCiudades += caracteres;
 				sv1.push_back(lineaCiudades);
+				delete[] caracteres;
+				lineaCiudades = "";
+				length = 4;
+			} else {
+				lineaCiudades += caracteres;
+				delete[] caracteres;
+				length = 17;
 			}
+			num++;
+			if (num == 61){
+				break;
+			}
+		}
 		fileCiudades.close();
 	}
-	
 
+	num = 1;
+	bool alternado = false;
 	if (fileClientes.is_open()){
+		fileClientes.seekg(87, fileClientes.beg);
+		int length = 13;
+		lineaClientes = "";
+		char* caracteres2;
 		while (fileClientes.good()){
-			getline(fileClientes,lineaClientes);
-			if (!lineaClientes.empty())
-				sv2.push_back(lineaClientes);
+			caracteres2 = new char[length];
+			fileClientes.read(caracteres2, length);
+			if (num%2 == 0){
+				if (alternado){
+					for (int i = 0; i < 40; ++i){
+						lineaClientes += caracteres2[i];
+					}
+					delete[] caracteres2;
+					length = 1;
+					alternado = true;
+				} else {
+					lineaClientes += caracteres2;
+					sv2.push_back(lineaClientes);
+					delete[] caracteres2;
+					lineaClientes = "";
+					length = 13;
+					alternado = false;
+				}
+			} else {
+				if (alternado){
+					lineaClientes += caracteres2;
+					delete[] caracteres2;
+					length = 4;
+					alternado = false;
+				} else {
+					lineaClientes += caracteres2;
+					delete[] caracteres2;
+					length = 40;
+					alternado = true;
+				}
+			}
+			num++;
+			if (num == 2001){
+				break;
+			}
 		}
 		fileClientes.close();
 	}
 
+	num = 1;
+	alternado = false;
 	if (fileLineas.is_open()){
+		fileLineas.seekg(39, fileLineas.beg);
+		int length = 8;
+		lineaLineas = "";
 		while (fileLineas.good()){
-			getline(fileLineas,lineaLineas);
-			if (!lineaLineas.empty())
+			char* caracteres3 = new char[length];
+			fileLineas.read(caracteres3, length);
+			if (num%2 == 0){
+				lineaLineas += caracteres3;
 				sv3.push_back(lineaLineas);
+				delete[] caracteres3;
+				lineaLineas = "";
+				length = 8;
+			} else {
+				for (int i = 0; i < 8; ++i){
+					lineaLineas += caracteres3[i];
+				}
+				delete[] caracteres3;
+				length = 13;
+			}
+			num++;
+			if (num == 1501){
+				break;
+			}
+			
 		}
 		fileLineas.close();
 	}
 
+	num = 1;
+	alternado = false;
 	if (fileLlamadas.is_open()){
+		fileLlamadas.seekg(54, fileLlamadas.beg);
+		int length = 8;
+		char* caracteres4;
+		lineaLlamadas = "";
 		while (fileLlamadas.good()){
-			getline(fileLlamadas,lineaLlamadas);
-			if (!lineaLlamadas.empty())
-				sv4.push_back(lineaLlamadas);
+			caracteres4 = new char[length];
+			fileLlamadas.read(caracteres4, length);
+			if (num%2 == 0){
+				if (alternado){
+					for (int i = 0; i < 14; ++i){
+						lineaLlamadas += caracteres4[i];
+					}
+					delete[] caracteres4;
+					length = 14;
+					alternado = true;
+				} else {
+					for (int i = 0; i < 8; ++i){
+						lineaLlamadas += caracteres4[i];
+					}
+					sv4.push_back(lineaLlamadas);
+					delete[] caracteres4;
+					lineaLlamadas = "";
+					length = 8;
+					alternado = false;
+				}
+			} else {
+				if (alternado){
+					for (int i = 0; i < 14; ++i){
+						lineaLlamadas += caracteres4[i];
+					}
+					delete[] caracteres4;
+					length = 8;
+					alternado = false;
+				} else {
+					for (int i = 0; i < 8; ++i){
+						lineaLlamadas += caracteres4[i];
+					}
+					delete[] caracteres4;
+					length = 14;
+					alternado = true;
+				}
+			}
+			num++;
+			if (num == 200001){
+				break;
+			}
 		}
 		fileLlamadas.close();
 	}
 
-	char * st1; 
-	char * st2;
-	char * st3;
-	char * st4;
-	vector<string> temp1;
-	vector<string> temp2;
-	vector<string> temp3;
-	vector<string> temp4;
-
-	/*
-		Separa en tokes cada registro y los ingresa en un vector de tipo string
-		char * st1 = string tokenizer ciudades
-		char * st2 = string tokenizer clientes
-		char * st3 = string tokenizer lineas
-		char * st4 = string tokenizer llamadas
-		Vector temp1 = tokens registros ciudades
-		Vector temp2 = tokens registros clientes 
-		Vector temp3 = tokens registros lineas 
-		Vector temp4 = tokens registros llamadas 
-	*/
-
-	for (int i = 0; i < sv1.size(); ++i) {
-		char* c1 = const_cast<char*>(sv1[i].c_str());
-		st1 = strtok(c1,",.");
-		
-		while (st1 != NULL) {
-			temp1.push_back(st1);
-			st1 = strtok (NULL, ",.");
-		}	
-	}
-
-	for (int i = 0; i < sv2.size(); ++i) {
-		char* c2 = const_cast<char*>(sv2[i].c_str());
-		st2 = strtok(c2,",.");
-		
-		while (st2 != NULL) {
-			temp2.push_back(st2);
-			st2 = strtok (NULL, ",.");
-		}
-	}
-	
-	for (int i = 0; i < sv3.size(); ++i) {
-		char* c3 = const_cast<char*>(sv3[i].c_str());
-		st3 = strtok(c3,",.");
-		
-		while (st3 != NULL) {
-			temp3.push_back(st3);
-			st3 = strtok (NULL, ",.");
-		}
-	}
-
-	for (int i = 0; i < sv4.size(); ++i) {
-		char* c4 = const_cast<char*>(sv4[i].c_str());
-		st4 = strtok(c4,",.");
-		
-		while (st4 != NULL) {
-			temp4.push_back(st4);
-			st4 = strtok (NULL, ",.");
-		}
-	}
+	char* st1; 
+	char* st2;
+	char* st3;
+	char* st4;
 
 	vector<Ciudades> vectorCiudades;
 	vector<Clientes> vectorClientes;
 	vector<Lineas> vectorLineas;
 	vector<Llamadas> vectorLlamadas;
+
 	Ciudades ciudades;
 	Clientes clientes;
 	Lineas lineas;
 	Llamadas llamadas;
 
-	/*
-		A partir de los vectores temp1, temp2, temp3 y temp4 se llenan los vectores de tipo ciudades, clientes, lineas y llamadas
-		Se castean las strings en temp1, temp2, temp3 y temp4 a los respectivos tipos de variables del Struct para
-		ciudades, clientes, lineas y llamadas.
-		**memset libera la memoria de char[]
-	*/
-
-	for (int i = 0; i < temp1.size(); i+=2){
-		int tempId; 
-		tempId = atoi(temp1[i].c_str());
-		ciudades.idCiudad = tempId;
-		memcpy(ciudades.nombreCiudad,temp1[i+1].c_str(),temp1[i+1].size());
+	for (int i = 0; i < sv1.size(); ++i) {
+		st1 = new char[strlen(sv1[i].c_str())];
+		strcat(st1, sv1[i].c_str());
+		char* id = new char[2];
+		for (int i = 0; i < 2; i++){
+			id[i] = st1[i];
+		}
+		ciudades.idCiudad = atoi(id);
+		delete[] id;
+		char* nombre = new char[17];
+		for (int i = 2; i < 19; i++){
+			nombre[i-2] = st1[i];
+		}
+		ciudades.nombreCiudad = new char[17];
+		strncat(ciudades.nombreCiudad, nombre, 17);
 		vectorCiudades.push_back(ciudades);
-		memset(ciudades.nombreCiudad, 0, 40);
 	}
 
-	for (int i = 0; i < temp2.size(); i+=4){
-		memcpy(clientes.idCliente,temp2[i].c_str(),temp2[i].size());
-		memcpy(clientes.nombreCliente,temp2[i+1].c_str(),temp2[i+1].size());
-		char tempGenero = temp2[i+2].at(0);
-		clientes.genero = tempGenero;
-		int tempId; 
-		tempId = atoi(temp2[i+3].c_str());
-		clientes.idCiudad = tempId;
+	for (int i = 0; i < sv2.size(); ++i) {
+		st2 = new char[strlen(sv2[i].c_str())];
+		strcat(st2, sv2[i].c_str());
+		char* tempid = new char[13];
+		for (int i = 0; i < 13; i++){
+			tempid[i] = st2[i];
+		}
+		char* id = new char[13];
+		strncat(id, tempid, 13);
+		char* nombre = new char[41];
+		int cont = 0;
+		for (int i = 13; i < 52; i++){
+			nombre[cont] = st2[i];
+			cont++;
+		}
+		nombre[41] = '\0';
+		clientes.genero = st2[54];
+		char tempidCiudad[4];
+		cont = 0;
+		for (int i = 55; i < 59; i++){
+			tempidCiudad[cont] = st2[i];
+			cont++;
+		}
+		char* idCiudad = new char[4];
+		strncat(idCiudad, tempidCiudad, 4);
+		clientes.idCiudad = atoi(idCiudad);
+		clientes.idCliente = new char[13];
+		strncat(clientes.idCliente, id, 13);
+		clientes.nombreCliente = new char[40];
+		strncat(clientes.nombreCliente, nombre, 39);
+		strcat(clientes.nombreCliente, " ");
 		vectorClientes.push_back(clientes);
-		memset(clientes.idCliente, 0, 17);
-		memset(clientes.nombreCliente, 0, 40);
 	}
 
-	for (int i = 0; i < temp3.size(); i+=2){
-		int tempNum; 
-		tempNum = atoi(temp3[i].c_str());
-		lineas.numero = tempNum;
-		memcpy(lineas.id,temp3[i+1].c_str(),temp3[i+1].size());
+	for (int i = 0; i < sv3.size(); ++i) {
+		st3 = new char[strlen(sv3[i].c_str())];
+		strcat(st3, sv3[i].c_str());
+		char* numero = new char[8];
+		for (int i = 0; i < 8; i++){
+			numero[i] = st3[i];
+		}
+		numero[8] = '\0';
+		lineas.numero = atoi(numero);
+		char* id = new char[13];
+		int cont = 0;
+		for (int i = 8; i < 21; i++){
+			id[cont] = st3[i];
+			cont++;
+		}
+		lineas.id = new char[13];
+		strncat(lineas.id, id, 13);
+		delete[] numero;
+		delete[] id;
 		vectorLineas.push_back(lineas);
-		memset(lineas.id, 0, 17);
 	}
 
-	for (int i = 0; i < temp4.size(); i+=4){
-		int tempNumero, tempDestino; 
-		long tempInicio, tempFinal;
-		tempNumero = atoi(temp4[i].c_str());
-		tempInicio = atol(temp4[i+1].c_str());
-		tempFinal = atol(temp4[i+2].c_str());
-		tempDestino = atoi(temp4[i+3].c_str());
-		llamadas.numero = tempNumero;
-		llamadas.inicio = tempInicio;
-		llamadas.final = tempFinal;
-		llamadas.destino = tempDestino;
+	for (int i = 0; i < sv4.size(); ++i) {
+		st4 = new char[strlen(sv4[i].c_str())];
+		strcat(st4, sv4[i].c_str());
+		char* numero = new char[8];
+		for (int i = 0; i < 8; i++){
+			numero[i] = st4[i];
+		}
+		llamadas.numero = atoi(numero);
+		char* inicio = new char[13];
+		int cont = 0;
+		for (int i = 8; i < 22; i++){
+			inicio[cont] = st4[i];
+			cont++;
+		}
+		llamadas.inicio = atol(inicio);
+		char* fin = new char[13];
+		cont = 0;
+		for (int i =22; i < 36; i++){
+			fin[cont] = st4[i];
+			cont++;
+		}
+		llamadas.final = atol(fin);
+		char* destino = new char[8];
+		cont = 0;
+		for (int i = 36; i < 44; i++){
+			destino[cont] = st4[i];
+			cont++;
+		}
+		llamadas.destino = atoi(destino);
 		vectorLlamadas.push_back(llamadas);
 	}
 
-	indexar(vectorClientes ,vectorLineas);
-	return 0;
+	delete[] st1;
+	delete[] st2;
+	delete[] st3;
+	delete[] st4;
+
+	//indexar(vectorClientes ,vectorLineas);
 }
 
 void indexar(vector<Clientes> vectorClientes, vector<Lineas> vectorLineas){
@@ -283,7 +413,7 @@ void indexar(vector<Clientes> vectorClientes, vector<Lineas> vectorLineas){
 	for (int i = 0; i < vectorClientes.size(); ++i){
 		IndiceClientes indice;
 		strcpy(indice.llave, vectorClientes[i].idCliente);
-		indice.rrn = i+1;
+		indice.rrn = i;
 		indices1.push_back(indice);
 	}
 	
@@ -291,7 +421,7 @@ void indexar(vector<Clientes> vectorClientes, vector<Lineas> vectorLineas){
 	for (int i = 0; i < vectorLineas.size(); ++i){
 		IndiceLineas indice;
 		indice.llave = vectorLineas[i].numero;
-		indice.rrn = i+1;
+		indice.rrn = i;
 		indices2.push_back(indice);
 	}
 
@@ -325,7 +455,7 @@ void indexar(vector<Clientes> vectorClientes, vector<Lineas> vectorLineas){
 				strcat(RRN, temp);
 			}
 			strcat(index, RRN);
-			outputClientes << index << "\n";
+			outputClientes << index;
 		}
     } else {
        	cerr << "No se pueden escribir los datos" << endl;
@@ -361,7 +491,7 @@ void indexar(vector<Clientes> vectorClientes, vector<Lineas> vectorLineas){
 				strcat(RRN, temp);
 			}
 			strcat(index, RRN);
-			outputLineas << index << "\n";
+			outputLineas << index;
 		}
     } else {
        	cerr << "No se pueden escribir los datos" << endl;
