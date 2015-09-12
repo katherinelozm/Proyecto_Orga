@@ -97,6 +97,7 @@ ostream& operator<<(ostream& output4, const Llamadas& llamadas){
 
 void indexar(vector<Clientes>, vector<Lineas>);
 void leerTodos();
+string datosCliente();
 
 int main(int argc, char const *argv[]){
 	leerTodos();
@@ -497,4 +498,105 @@ void indexar(vector<Clientes> vectorClientes, vector<Lineas> vectorLineas){
        	cerr << "No se pueden escribir los datos" << endl;
     }
     outputLineas.close();
+}
+
+string datosCliente(){
+	Clientes clientes;
+	string temp = "", nomCliente;
+	char tempIdCiudad[5];
+	char name[40];
+	char id[14];
+	char genero;
+	bool flagId, flagName, flagGenero, flagCiudad;
+	
+	getchar();
+	cin.clear();
+	fflush(stdin);
+	
+	do {
+		flagId = true; 
+		cout << "Numero de Identidad: ";
+		cin.getline(id,14);
+
+		if ((unsigned)strlen(id) < 13) {
+			flagId = false;
+			cerr << "Valor no valido" << endl;
+		}
+
+	
+	} while(!flagId);
+
+	strcpy (clientes.idCliente, id);
+	clientes.idCliente[14] = '\0';
+
+	do {
+		flagName = true; 
+		cout << "Nombre: ";
+		cin.getline(name, 40);
+
+		if ((unsigned)strlen(name) == 0) {
+			flagName = false;
+			cerr << "Valor no valido" << endl;
+		}
+	
+	} while(!flagName);
+
+
+	strcpy (clientes.nombreCliente, name);
+		
+	do {
+		flagCiudad = true;
+		cout << "Id Ciudad [1-30]: ";
+		cin >> clientes.idCiudad;
+		if (clientes.idCiudad > 30)
+			flagCiudad = false;
+		if (clientes.idCiudad < 1)
+			flagCiudad = false;
+		if (!flagCiudad)
+			cerr << "Valor no valido" << endl;
+
+	} while (!flagCiudad);
+
+	do {
+		flagGenero = false;
+		cout << "Genero [F/M]: ";
+		cin >> genero;
+		genero = toupper(genero);
+		
+		if (genero == 'F') 
+			flagGenero = true;
+		else if (genero == 'M') 
+			flagGenero = true;
+		else
+			cerr << "Valor no valido" << endl;
+
+	} while (!flagGenero);
+
+	
+	for(int i = (unsigned)strlen(clientes.nombreCliente); i < 40; i++){
+		strcat (clientes.nombreCliente," ");
+	}
+	
+	clientes.nombreCliente[40] = '\0';
+
+	string s = to_string(clientes.idCiudad);
+	char const *schar = s.c_str();
+
+	*tempIdCiudad = 0;
+	
+	if (clientes.idCiudad < 10) {
+		strcat (tempIdCiudad,"000");
+		strcat (tempIdCiudad, schar);	
+	} else {
+		strcat (tempIdCiudad,"00");
+		strcat (tempIdCiudad, schar);
+	}
+
+	temp += clientes.idCliente;
+	temp += clientes.nombreCliente;
+	clientes.genero = genero;
+	temp += clientes.genero;
+	temp += tempIdCiudad;
+
+	return temp;
 }
