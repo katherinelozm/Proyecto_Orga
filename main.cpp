@@ -708,7 +708,7 @@ void modificarCliente(int RRN){
 	const char* buffer = new char[temp.size()];
 	buffer = temp.c_str();
 	
-	fstream is("dataClientes.txt");
+	fstream is("Files/dataClientes.txt");
 	if(is.is_open()){
 
 		int offset = 87 + RRN * 58;
