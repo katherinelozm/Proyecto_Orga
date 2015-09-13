@@ -101,6 +101,7 @@ string datosCliente();
 void eliminarCliente(int);
 void agregarCliente();
 void appendCliente (string);
+void modificarCliente(int);
 
 int main(int argc, char const *argv[]){
 	//leerTodos();
@@ -113,7 +114,7 @@ int main(int argc, char const *argv[]){
 		}else if (op == 2) {
 			cout << "Seleccione el registro a modificar: ";
 			cin >> RRN;
-			//modificarCliente(RRN-1, 84);
+			modificarCliente(RRN-1);
 		} else if (op == 3) {
 			cout << "Seleccione el registro a eliminar: ";
 			cin >> RRN;
@@ -699,4 +700,24 @@ void appendCliente (string temp) {
 	fileClientes.write(buffer, temp.size());
 	fileClientes.close();
 
+}
+
+void modificarCliente(int RRN){
+	string temp = datosCliente();
+
+	const char* buffer = new char[temp.size()];
+	buffer = temp.c_str();
+	
+	fstream is("dataClientes.txt");
+	if(is.is_open()){
+
+		int offset = 87 + RRN * 58;
+		is.seekg(offset);
+		is.seekp(offset);
+		is.write(buffer,temp.size());
+		
+		is.close();
+	}else{
+		cerr << "Could not open file" << endl ;
+	}
 }
