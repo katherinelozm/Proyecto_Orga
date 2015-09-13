@@ -99,25 +99,27 @@ void indexar(vector<Clientes>, vector<Lineas>);
 void leerTodos();
 string datosCliente();
 void eliminarCliente(int);
+void agregarCliente();
+void appendCliente (string);
 
 int main(int argc, char const *argv[]){
 	//leerTodos();
 	int op, RRN;
-	/*do {
+	do {
 		cout << "Opciones\n1. Agregar\n2. Modificar\n3. Eliminar\n4. Salir" << endl;
 		cin >> op;
 		if (op == 1){
-		 	agregarCliente(84);
+		 	agregarCliente();
 		}else if (op == 2) {
 			cout << "Seleccione el registro a modificar: ";
 			cin >> RRN;
-			modificarCliente(RRN-1, 84);
+			//modificarCliente(RRN-1, 84);
 		} else if (op == 3) {
-			*/cout << "Seleccione el registro a eliminar: ";
+			cout << "Seleccione el registro a eliminar: ";
 			cin >> RRN;
 			eliminarCliente(RRN-1);
-		//}
-	//}while (op <= 3);
+		}
+	}while (op <= 3);
 	return 0;
 }
 
@@ -518,12 +520,13 @@ void indexar(vector<Clientes> vectorClientes, vector<Lineas> vectorLineas){
 }
 
 string datosCliente(){
-	Clientes clientes;
+	
 	string temp = "", nomCliente;
 	char tempIdCiudad[5];
 	char name[40];
 	char id[14];
 	char genero;
+	int idCiudad;
 	bool flagId, flagName, flagGenero, flagCiudad;
 	
 	getchar();
@@ -543,9 +546,6 @@ string datosCliente(){
 	
 	} while(!flagId);
 
-	strcpy (clientes.idCliente, id);
-	clientes.idCliente[14] = '\0';
-
 	do {
 		flagName = true; 
 		cout << "Nombre: ";
@@ -558,16 +558,13 @@ string datosCliente(){
 	
 	} while(!flagName);
 
-
-	strcpy (clientes.nombreCliente, name);
-		
 	do {
 		flagCiudad = true;
 		cout << "Id Ciudad [1-30]: ";
-		cin >> clientes.idCiudad;
-		if (clientes.idCiudad > 30)
+		cin >> idCiudad;
+		if (idCiudad > 30)
 			flagCiudad = false;
-		if (clientes.idCiudad < 1)
+		if (idCiudad < 1)
 			flagCiudad = false;
 		if (!flagCiudad)
 			cerr << "Valor no valido" << endl;
@@ -590,18 +587,18 @@ string datosCliente(){
 	} while (!flagGenero);
 
 	
-	for(int i = (unsigned)strlen(clientes.nombreCliente); i < 40; i++){
-		strcat (clientes.nombreCliente," ");
+	for(int i = (unsigned)strlen(name); i < 40; i++){
+		strcat (name," ");
 	}
 	
-	clientes.nombreCliente[40] = '\0';
+	name[40] = '\0';
 
-	string s = to_string(clientes.idCiudad);
+	string s = to_string(idCiudad);
 	char const *schar = s.c_str();
 
 	*tempIdCiudad = 0;
 	
-	if (clientes.idCiudad < 10) {
+	if (idCiudad < 10) {
 		strcat (tempIdCiudad,"000");
 		strcat (tempIdCiudad, schar);	
 	} else {
@@ -609,12 +606,10 @@ string datosCliente(){
 		strcat (tempIdCiudad, schar);
 	}
 
-	temp += clientes.idCliente;
-	temp += clientes.nombreCliente;
-	clientes.genero = genero;
-	temp += clientes.genero;
+	temp += id;
+	temp += name;
+	temp += genero;
 	temp += tempIdCiudad;
-
 	return temp;
 }
 
@@ -646,4 +641,62 @@ void eliminarCliente(int RRN){
 	}else{
 		cerr << "Could not open file" << endl ;
 	}
+}
+
+void agregarCliente() {
+	
+	string temp = datosCliente();
+	
+	const char* buffer = new char[temp.size()];
+	buffer = temp.c_str();
+  
+  	fstream fileClientes ("Files/dataClientes.txt");
+	
+	char availList[5] = "";
+	fileClientes.read(availList, sizeof(availList)-1);
+	availList[5] = '\0';
+	
+	int RRN = stoi(availList);
+	
+	if(RRN != -1) {
+		int offset = 87 + (RRN - 1) * 58;
+		
+		fileClientes.seekg(offset);
+		
+		char * tempAvailList = new char [58];
+		
+   		fileClientes.read (tempAvailList,58);
+   		tempAvailList[58] = '\0';
+   		
+   		//Splitting into tokens
+   		char * pch;
+	  	pch = strtok (tempAvailList," ");
+	  	char * finalAvailList;
+	  	finalAvailList = strtok (pch, "*");
+
+	  	fileClientes.seekp(offset);
+		fileClientes.write(buffer,temp.size());
+		
+		string strTemp;
+		strcat (finalAvailList," ");
+		strTemp = finalAvailList;
+		fileClientes.seekp(0);
+		fileClientes.write(finalAvailList, strTemp.size());
+		fileClientes.close();
+
+	}else {
+		//******Revisar, inserta enter en el primer append.
+		appendCliente(temp);
+	}
+
+}
+//dataClientes.txt para pruebas.
+void appendCliente (string temp) {
+	ofstream fileClientes ("Files/dataClientes.txt", ios::app);
+	const char* buffer = new char[temp.size()];
+	buffer = temp.c_str();
+
+	fileClientes.write(buffer, temp.size());
+	fileClientes.close();
+
 }
