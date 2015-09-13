@@ -98,9 +98,26 @@ ostream& operator<<(ostream& output4, const Llamadas& llamadas){
 void indexar(vector<Clientes>, vector<Lineas>);
 void leerTodos();
 string datosCliente();
+void eliminarCliente(int);
 
 int main(int argc, char const *argv[]){
-	leerTodos();
+	//leerTodos();
+	int op, RRN;
+	/*do {
+		cout << "Opciones\n1. Agregar\n2. Modificar\n3. Eliminar\n4. Salir" << endl;
+		cin >> op;
+		if (op == 1){
+		 	agregarCliente(84);
+		}else if (op == 2) {
+			cout << "Seleccione el registro a modificar: ";
+			cin >> RRN;
+			modificarCliente(RRN-1, 84);
+		} else if (op == 3) {
+			*/cout << "Seleccione el registro a eliminar: ";
+			cin >> RRN;
+			eliminarCliente(RRN-1);
+		//}
+	//}while (op <= 3);
 	return 0;
 }
 
@@ -599,4 +616,34 @@ string datosCliente(){
 	temp += tempIdCiudad;
 
 	return temp;
+}
+
+void eliminarCliente(int RRN){
+	fstream is("Files/dataClientes.txt");
+	if(is.is_open()){
+		char availList[5] = "";
+
+		is.read(availList, sizeof(availList)-1);
+		availList[5] = '\0';
+		
+		int offset = 87 + RRN * 58;
+		is.seekg(offset);
+		is.seekp(offset);
+		is.write("*",1);
+		
+		is.write(availList, 4);
+		
+		RRN = RRN + 1;
+		string newAvailList = to_string(RRN);
+		for (int i = newAvailList.size(); i < 5; ++i){
+			newAvailList += " ";
+		}
+		
+		is.seekp(0);
+		is.write(newAvailList.c_str(), newAvailList.size());
+			
+		is.close();
+	}else{
+		cerr << "Could not open file" << endl ;
+	}
 }
