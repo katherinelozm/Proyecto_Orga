@@ -38,21 +38,21 @@ struct IndiceClientes{
 	char llave[13];
 	int rrn; 
 	bool operator<( const IndiceClientes& indice ) const { 
-    	int compare = strcmp(llave, indice.llave);
-    	if (compare < 0){
-    		return true;
-    	} else {
-    		return false;
-    	}
-    }
+		int compare = strcmp(llave, indice.llave);
+		if (compare < 0){
+			return true;
+		} else {
+			return false;
+		}
+	}
 };
 
 struct IndiceLineas{
 	int llave;
 	int rrn; 
 	bool operator<( const IndiceLineas& indice ) const { 
-    	return llave < indice.llave;
-    }
+		return llave < indice.llave;
+	}
 };
 
 istream& operator>>(istream& input1, Ciudades& ciudades){
@@ -102,25 +102,72 @@ void eliminarCliente(int);
 void agregarCliente();
 void appendCliente (string);
 void modificarCliente(int);
+void datosLinea(char[]);
+void agregarLinea(string);
+void appendLinea(string);
+void modificarLinea(int, string); 
+void eliminarLinea(int);
+void datosLinea(int);
 
 int main(int argc, char const *argv[]){
 	//leerTodos();
-	int op, RRN;
+	int op1, op2, op3, RRN;
+
 	do {
-		cout << "Opciones\n1. Agregar\n2. Modificar\n3. Eliminar\n4. Salir" << endl;
-		cin >> op;
-		if (op == 1){
-		 	agregarCliente();
-		}else if (op == 2) {
-			cout << "Seleccione el registro a modificar: ";
-			cin >> RRN;
-			modificarCliente(RRN-1);
-		} else if (op == 3) {
-			cout << "Seleccione el registro a eliminar: ";
-			cin >> RRN;
-			eliminarCliente(RRN-1);
+		cout << "1. Clientes \n2. Lineas\n3. Salir" << endl;
+		cin >> op1;
+		if (op1 == 1) {
+			do {
+				cout << "Opciones Clientes\n1. Agregar\n2. Modificar\n3. Eliminar\n4. Salir" << endl;
+				cin >> op2;
+				if (op2 == 1){
+					agregarCliente();
+				}else if (op2 == 2) {
+					cout << "Seleccione el registro a modificar: ";
+					cin >> RRN;
+					modificarCliente(RRN-1);
+				} else if (op2 == 3) {
+					cout << "Seleccione el registro a eliminar: ";
+					cin >> RRN;
+					eliminarCliente(RRN-1);
+				}
+			}while (op2 <= 3);
+
+
+		} else if (op1 == 2) {
+			do {
+				cout << "Opciones Lineas\n1. Agregar\n2. Modificar\n3. Eliminar\n4. Salir" << endl;
+				cin >> op3;
+				
+				if (op3 == 1){
+					char id [14];
+					bool flagId;
+					do {
+						flagId = true; 
+						cout << "Numero de Identidad: ";
+						cin.getline(id,14);
+
+						if ((unsigned)strlen(id) < 13) {
+							flagId = false;
+							cerr << "Valor no valido" << endl;
+						}
+					} while(!flagId);
+					datosLinea(id);
+				}else if (op3 == 2) {
+					cout << "Seleccione el registro a modificar: ";
+					cin >> RRN;
+					datosLinea(RRN-1);
+				} else if (op3 == 3) {
+					cout << "Seleccione el registro a eliminar: ";
+					cin >> RRN;
+					eliminarLinea(RRN-1);
+				}
+			}while (op3 <= 3);
+
 		}
-	}while (op <= 3);
+
+
+	} while (op1 <= 2);
 	return 0;
 }
 
@@ -478,11 +525,11 @@ void indexar(vector<Clientes> vectorClientes, vector<Lineas> vectorLineas){
 			strcat(index, RRN);
 			outputClientes << index;
 		}
-    } else {
-       	cerr << "No se pueden escribir los datos" << endl;
-    }
-    outputClientes.close();
-    ofstream outputLineas;
+	} else {
+		cerr << "No se pueden escribir los datos" << endl;
+	}
+	outputClientes.close();
+	ofstream outputLineas;
 	outputLineas.open("Files/indicesLineas.txt");
 	if (outputLineas.is_open()) {
 		for (int i = 0; i < indices2.size(); ++i){
@@ -514,10 +561,10 @@ void indexar(vector<Clientes> vectorClientes, vector<Lineas> vectorLineas){
 			strcat(index, RRN);
 			outputLineas << index;
 		}
-    } else {
-       	cerr << "No se pueden escribir los datos" << endl;
-    }
-    outputLineas.close();
+	} else {
+		cerr << "No se pueden escribir los datos" << endl;
+	}
+	outputLineas.close();
 }
 
 string datosCliente(){
@@ -543,8 +590,6 @@ string datosCliente(){
 			flagId = false;
 			cerr << "Valor no valido" << endl;
 		}
-
-	
 	} while(!flagId);
 
 	do {
@@ -556,7 +601,7 @@ string datosCliente(){
 			flagName = false;
 			cerr << "Valor no valido" << endl;
 		}
-	
+
 	} while(!flagName);
 
 	do {
@@ -592,8 +637,7 @@ string datosCliente(){
 		strcat (name," ");
 	}
 	
-	name[40] = '\0';
-
+	
 	string s = to_string(idCiudad);
 	char const *schar = s.c_str();
 
@@ -611,6 +655,7 @@ string datosCliente(){
 	temp += name;
 	temp += genero;
 	temp += tempIdCiudad;
+	datosLinea(id);
 	return temp;
 }
 
@@ -620,7 +665,6 @@ void eliminarCliente(int RRN){
 		char availList[5] = "";
 
 		is.read(availList, sizeof(availList)-1);
-		availList[5] = '\0';
 		
 		int offset = 87 + RRN * 58;
 		is.seekg(offset);
@@ -637,10 +681,10 @@ void eliminarCliente(int RRN){
 		
 		is.seekp(0);
 		is.write(newAvailList.c_str(), newAvailList.size());
-			
+
 		is.close();
-	}else{
-		cerr << "Could not open file" << endl ;
+	}else {
+		cerr << "No se puede abrir el archivo." << endl ;
 	}
 }
 
@@ -650,56 +694,59 @@ void agregarCliente() {
 	
 	const char* buffer = new char[temp.size()];
 	buffer = temp.c_str();
-  
-  	fstream fileClientes ("Files/dataClientes.txt");
-	
-	char availList[5] = "";
-	fileClientes.read(availList, sizeof(availList)-1);
-	availList[5] = '\0';
-	
-	int RRN = stoi(availList);
-	
-	if(RRN != -1) {
-		int offset = 87 + (RRN - 1) * 58;
-		
-		fileClientes.seekg(offset);
-		
-		char * tempAvailList = new char [58];
-		
-   		fileClientes.read (tempAvailList,58);
-   		tempAvailList[58] = '\0';
-   		
+
+	fstream fileClientes ("Files/dataClientes.txt");
+	if (fileClientes.is_open()) {
+		char availList[5] = "";
+		fileClientes.read(availList, sizeof(availList)-1);
+
+		int RRN = stoi(availList);
+
+		if(RRN != -1) {
+			int offset = 87 + (RRN - 1) * 58;
+
+			fileClientes.seekg(offset);
+
+			char * tempAvailList = new char [58];
+
+			fileClientes.read (tempAvailList,58);
+
    		//Splitting into tokens
-   		char * pch;
-	  	pch = strtok (tempAvailList," ");
-	  	char * finalAvailList;
-	  	finalAvailList = strtok (pch, "*");
+			char * pch;
+			pch = strtok (tempAvailList," ");
+			char * finalAvailList;
+			finalAvailList = strtok (pch, "*");
 
-	  	fileClientes.seekp(offset);
-		fileClientes.write(buffer,temp.size());
-		
-		string strTemp;
-		strcat (finalAvailList," ");
-		strTemp = finalAvailList;
-		fileClientes.seekp(0);
-		fileClientes.write(finalAvailList, strTemp.size());
-		fileClientes.close();
+			fileClientes.seekp(offset);
+			fileClientes.write(buffer,temp.size());
 
-	}else {
-		//******Revisar, inserta enter en el primer append.
-		appendCliente(temp);
+			string strTemp;
+			strcat (finalAvailList," ");
+			strTemp = finalAvailList;
+			fileClientes.seekp(0);
+			fileClientes.write(finalAvailList, strTemp.size());
+			fileClientes.close();
+
+		} else {
+			appendCliente(temp);
+		}
+	}else{
+		cerr << "No se puede abrir el archivo." << endl;
 	}
 
 }
-//dataClientes.txt para pruebas.
+
 void appendCliente (string temp) {
 	ofstream fileClientes ("Files/dataClientes.txt", ios::app);
-	const char* buffer = new char[temp.size()];
-	buffer = temp.c_str();
+	if(fileClientes.is_open()) {
+		const char* buffer = new char[temp.size()];
+		buffer = temp.c_str();
 
-	fileClientes.write(buffer, temp.size());
-	fileClientes.close();
-
+		fileClientes.write(buffer, temp.size());
+		fileClientes.close();
+	} else {
+		cerr << "No se puede abrir el archivo." << endl;
+	}
 }
 
 void modificarCliente(int RRN){
@@ -721,3 +768,157 @@ void modificarCliente(int RRN){
 		cerr << "Could not open file" << endl ;
 	}
 }
+
+void datosLinea(char* idCliente) {
+	char op;
+	int numero;
+	
+	do {
+		cout << "Numero de linea: ";
+		cin >> numero;
+		
+		string temp = "";	
+		temp += to_string(numero);
+		temp += idCliente;
+		
+		agregarLinea(temp);
+
+		cout << "Desea agregar otra linea? [S/N]: ";
+		cin >> op;
+		op = toupper(op); 
+	}while(op == 'S');
+}
+
+void datosLinea(int RRN) {
+	int numero;
+	bool flagId;
+	string id;
+	do {
+		flagId = true; 
+		cout << "Numero de Identidad: ";
+		//cin.getline(id,14);
+		cin >> id;
+		if (id.size() < 13) {
+			flagId = false;
+			cerr << "Valor no valido" << endl;
+		} else if (id.size() > 13) {
+			flagId = false;
+			cerr << "Valor no valido" << endl;
+		}
+	} while(!flagId);
+	
+	cout << "Numero de linea: ";
+	cin >> numero;
+
+	string temp = "";
+	temp += to_string(numero);
+	temp += id;
+
+	modificarLinea(RRN, temp);
+
+}
+
+void agregarLinea(string temp) {
+
+	const char* buffer = new char[temp.size()];
+	buffer = temp.c_str();
+
+	fstream fileLineas ("Files/lineasClientes.txt");
+	if (fileLineas.is_open()){	
+		char availList[5] = "";
+		fileLineas.read(availList, sizeof(availList)-1);
+		
+		int RRN = stoi(availList);
+
+		if(RRN != -1) {
+			int offset = 39 + (RRN - 1) * 21;
+			fileLineas.seekg(offset);
+			char * tempAvailList = new char [21];
+			fileLineas.read (tempAvailList,21);
+			
+   		//Splitting into tokens
+			char * pch;
+			pch = strtok (tempAvailList," ");
+			char * finalAvailList;
+			finalAvailList = strtok (pch, "*");
+
+			fileLineas.seekp(offset);
+			fileLineas.write(buffer,temp.size());
+
+			string strTemp;
+			strcat (finalAvailList," ");
+			strTemp = finalAvailList;
+			fileLineas.seekp(0);
+			fileLineas.write(finalAvailList, strTemp.size());
+			fileLineas.close();
+
+		}else {
+		//******Revisar, inserta enter en el primer append.
+			appendLinea(temp);
+		}
+	}else{
+		cerr << "No se puede abrir el archivo" << endl;
+	}
+
+}
+
+void appendLinea (string temp) {
+	ofstream fileLineas ("Files/lineasClientes.txt", ios::app);
+	if(fileLineas.is_open()) {
+		const char* buffer = new char[temp.size()];
+		buffer = temp.c_str();
+		fileLineas.write(buffer, temp.size());
+		fileLineas.close();
+	} else {
+		cerr << "No se puede abrir el archivo." << endl;
+	}
+}
+
+void modificarLinea(int RRN, string temp){
+	
+	const char* buffer = new char[temp.size()];
+	buffer = temp.c_str();
+	
+	fstream is("Files/lineasClientes.txt");
+	if(is.is_open()){
+
+		int offset = 39 + RRN * 21;
+		is.seekg(offset);
+		is.seekp(offset);
+		is.write(buffer,temp.size());
+		
+		is.close();
+	}else{
+		cerr << "Could not open file" << endl ;
+	}
+}
+
+void eliminarLinea(int RRN){
+	fstream is("Files/lineasClientes.txt");
+	if(is.is_open()){
+		char availList[5] = "";
+
+		is.read(availList, sizeof(availList)-1);
+		
+		int offset = 39 + RRN * 21;
+		is.seekg(offset);
+		is.seekp(offset);
+		is.write("*",1);
+		
+		is.write(availList, 4);
+		
+		RRN = RRN + 1;
+		string newAvailList = to_string(RRN);
+		for (int i = newAvailList.size(); i < 5; ++i){
+			newAvailList += " ";
+		}
+		
+		is.seekp(0);
+		is.write(newAvailList.c_str(), newAvailList.size());
+
+		is.close();
+	}else {
+		cerr << "No se puede abrir el archivo." << endl ;
+	}
+}
+
