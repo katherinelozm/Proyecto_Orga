@@ -157,6 +157,7 @@ int main(int argc, char const *argv[]){
 				}
 			}while (op2 <= 4);
 
+
 		} else if (op1 == 2) {
 			do {
 				cout << "Opciones Lineas\n1. Agregar\n2. Modificar\n3. Eliminar\n4. Buscar\n5. Salir" << endl;
@@ -195,11 +196,15 @@ int main(int argc, char const *argv[]){
 					} else {
 						cout << "Usuario no encontrado." << endl;
 					}
+
+
 				}
 			}while (op3 <= 4);
-		}
-	} while (op1 <= 2);
 
+		}
+
+
+	} while (op1 <= 2);
 	return 0;
 }
 
