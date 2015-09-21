@@ -109,6 +109,8 @@ void appendLinea(string);
 void modificarLinea(int, string); 
 void eliminarLinea(int);
 void datosLinea(int);
+int buscarLinea(int);
+void buscarLinea(char*);
 
 int main(int argc, char const *argv[]){
 	//leerTodos();
@@ -157,10 +159,11 @@ int main(int argc, char const *argv[]){
 
 		} else if (op1 == 2) {
 			do {
-				cout << "Opciones Lineas\n1. Agregar\n2. Modificar\n3. Eliminar\n4. Salir" << endl;
+				cout << "Opciones Lineas\n1. Agregar\n2. Modificar\n3. Eliminar\n4. Buscar\n5. Salir" << endl;
 				cin >> op3;
 				
 				if (op3 == 1){
+					getchar();
 					char id [14];
 					bool flagId;
 					do {
@@ -182,13 +185,21 @@ int main(int argc, char const *argv[]){
 					cout << "Seleccione el registro a eliminar: ";
 					cin >> RRN;
 					eliminarLinea(RRN-1);
+				} else if (op3 == 4) {
+					int numCliente;
+					cout << "Ingrese el numero del cliente: ";
+					cin >> numCliente;
+					int found = buscarLinea(numCliente);
+					if (found != 0) {
+						cout << "RRN usuario: " << found << endl;
+					} else {
+						cout << "Usuario no encontrado." << endl;
+					}
 				}
-			}while (op3 <= 3);
-
+			}while (op3 <= 4);
 		}
-
-
 	} while (op1 <= 2);
+
 	return 0;
 }
 
@@ -681,13 +692,19 @@ string datosCliente(){
 }
 
 void eliminarCliente(int RRN){
+	char idCliente [14];
 	fstream is("Files/dataClientes.txt");
 	if(is.is_open()){
 		char availList[5] = "";
+		
 
 		is.read(availList, sizeof(availList)-1);
 		
 		int offset = 87 + RRN * 58;
+		is.seekg(offset);
+		is.seekp(offset);
+		is.read(idCliente, 13);
+		idCliente[13] = '\0';
 		is.seekg(offset);
 		is.seekp(offset);
 		is.write("*",1);
@@ -707,6 +724,7 @@ void eliminarCliente(int RRN){
 	}else {
 		cerr << "No se puede abrir el archivo." << endl ;
 	}
+	buscarLinea(idCliente);
 }
 
 void agregarCliente() {
@@ -970,3 +988,59 @@ void eliminarLinea(int RRN){
 	}
 }
 
+int buscarLinea(int numCliente) {
+	fstream is("Files/lineasClientes.txt");
+	int RRN = 0, offset;
+	char numClienteTemp [9];
+	string s = to_string(numCliente);
+	char const *charNumCliente = s.c_str(); 
+	if(is.is_open()) {
+		while(!is.eof()) {
+			offset = 39 + RRN * 21;
+			is.seekg(offset);
+			is.seekp(offset);
+			is.read(numClienteTemp, 8);
+			numClienteTemp[8] = '\0';
+			
+			if((strcmp (charNumCliente, numClienteTemp) == 0)){
+				return RRN + 1;
+				is.close();
+				break;
+			}
+			RRN++;
+		}
+
+		is.close();
+		return 0;
+	}else {
+		cerr << "No se puede abrir el archivo." << endl;
+	}
+
+}
+
+void buscarLinea(char* idCliente) {
+	fstream is("Files/lineasClientes.txt");
+	int RRN = 0, offset;
+	char idClienteTemp [9];
+	
+	if(is.is_open()) {
+		while(!is.eof()) {
+			offset = 39 + (RRN * 21 + 8);
+			is.seekg(offset);
+			is.seekp(offset);
+			is.read(idClienteTemp, 13);
+			idClienteTemp[13] = '\0';
+			
+			if((strcmp (idCliente, idClienteTemp) == 0)){
+				eliminarLinea(RRN);		
+			}
+			RRN++;
+		}
+
+		is.close();
+	
+	}else {
+		cerr << "No se puede abrir el archivo." << endl;
+	}
+
+}
