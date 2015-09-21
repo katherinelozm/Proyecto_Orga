@@ -1023,6 +1023,8 @@ int buscarLinea(int numCliente) {
 
 }
 
+
+
 void buscarLinea(char* idCliente) {
 	fstream is("Files/lineasClientes.txt");
 	int RRN = 0, offset;
