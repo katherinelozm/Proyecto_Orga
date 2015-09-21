@@ -102,6 +102,7 @@ void eliminarCliente(int);
 void agregarCliente();
 void appendCliente (string);
 void modificarCliente(int);
+int buscarCliente(char[]);
 void datosLinea(char[]);
 void agregarLinea(string);
 void appendLinea(string);
@@ -118,7 +119,7 @@ int main(int argc, char const *argv[]){
 		cin >> op1;
 		if (op1 == 1) {
 			do {
-				cout << "Opciones Clientes\n1. Agregar\n2. Modificar\n3. Eliminar\n4. Salir" << endl;
+				cout << "Opciones Clientes\n1. Agregar\n2. Modificar\n3. Eliminar\n4. Buscar\n5. Salir" << endl;
 				cin >> op2;
 				if (op2 == 1){
 					agregarCliente();
@@ -130,9 +131,29 @@ int main(int argc, char const *argv[]){
 					cout << "Seleccione el registro a eliminar: ";
 					cin >> RRN;
 					eliminarCliente(RRN-1);
-				}
-			}while (op2 <= 3);
+				} else if (op2 == 4) {
+					getchar();
+					char id [14];
+					bool flagId;
+					do {
+						flagId = true; 
+						cout << "Numero de Identidad: ";
+						cin.getline(id,14);
 
+						if ((unsigned)strlen(id) < 13) {
+							flagId = false;
+							cerr << "Valor no valido" << endl;
+						}
+					} while(!flagId);
+					int found = buscarCliente(id);
+					if (found != 0) {
+						cout << "RRN usuario: " << found << endl;
+					} else {
+						cout << "Usuario no encontrado." << endl;
+					}
+
+				}
+			}while (op2 <= 4);
 
 		} else if (op1 == 2) {
 			do {
@@ -766,6 +787,33 @@ void modificarCliente(int RRN){
 		is.close();
 	}else{
 		cerr << "Could not open file" << endl ;
+	}
+}
+
+int buscarCliente(char* idCliente) {
+	fstream is("Files/dataClientes.txt");
+	int RRN = 0, offset;
+	char idClienteTemp [14];
+	if(is.is_open()) {
+		while(!is.eof()) {
+			offset = 87 + RRN * 58;
+			is.seekg(offset);
+			is.seekp(offset);
+			is.read(idClienteTemp, 13);
+			idClienteTemp[13] = '\0';
+			
+			if((strcmp (idCliente, idClienteTemp) == 0)){
+				return RRN + 1;
+				is.close();
+				break;
+			}
+			RRN++;
+		}
+
+		is.close();
+		return 0;
+	}else {
+		cerr << "No se puede abrir el archivo." << endl;
 	}
 }
 
