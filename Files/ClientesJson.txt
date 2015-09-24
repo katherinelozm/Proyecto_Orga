@@ -1,0 +1,3000 @@
+{
+"id_cliente":0513193944951
+"nombre_cliente":Matthew Brown                          
+"genero":M
+"id_ciudad":1
+}
+{
+"id_cliente":0329197798258
+"nombre_cliente":Keith Hudson                           
+"genero":M
+"id_ciudad":2
+}
+{
+"id_cliente":0827196068489
+"nombre_cliente":Deborah Lee                            
+"genero":F
+"id_ciudad":3
+}
+{
+"id_cliente":1616191828419
+"nombre_cliente":Ruth Hicks                             
+"genero":F
+"id_ciudad":4
+}
+{
+"id_cliente":0722198128856
+"nombre_cliente":John Howard                            
+"genero":M
+"id_ciudad":5
+}
+{
+"id_cliente":0316196211180
+"nombre_cliente":Kathy Evans                            
+"genero":F
+"id_ciudad":6
+}
+{
+"id_cliente":0318191173634
+"nombre_cliente":Harold Arnold                          
+"genero":M
+"id_ciudad":7
+}
+{
+"id_cliente":0820191418575
+"nombre_cliente":Craig Ramirez                          
+"genero":M
+"id_ciudad":8
+}
+{
+"id_cliente":0414195962711
+"nombre_cliente":Ruby Mills                             
+"genero":F
+"id_ciudad":9
+}
+{
+"id_cliente":0609196855365
+"nombre_cliente":Jack Rogers                            
+"genero":M
+"id_ciudad":10
+}
+{
+"id_cliente":1712199310110
+"nombre_cliente":Aaron Perez                            
+"genero":M
+"id_ciudad":11
+}
+{
+"id_cliente":1325191175738
+"nombre_cliente":Margaret Kelly                         
+"genero":F
+"id_ciudad":12
+}
+{
+"id_cliente":1217195745518
+"nombre_cliente":Anne Hawkins                           
+"genero":F
+"id_ciudad":13
+}
+{
+"id_cliente":1826198164998
+"nombre_cliente":Clarence George                        
+"genero":M
+"id_ciudad":14
+}
+{
+"id_cliente":1818194224307
+"nombre_cliente":Billy Weaver                           
+"genero":M
+"id_ciudad":15
+}
+{
+"id_cliente":0525194591399
+"nombre_cliente":Jesse Garrett                          
+"genero":M
+"id_ciudad":16
+}
+{
+"id_cliente":0918194635233
+"nombre_cliente":Kimberly Rose                          
+"genero":F
+"id_ciudad":17
+}
+{
+"id_cliente":0920193618889
+"nombre_cliente":Barbara Henry                          
+"genero":F
+"id_ciudad":18
+}
+{
+"id_cliente":0124193135438
+"nombre_cliente":Evelyn Watson                          
+"genero":F
+"id_ciudad":19
+}
+{
+"id_cliente":0815191858905
+"nombre_cliente":Matthew Jones                          
+"genero":M
+"id_ciudad":20
+}
+{
+"id_cliente":0429196194048
+"nombre_cliente":Lori Mills                             
+"genero":F
+"id_ciudad":21
+}
+{
+"id_cliente":0412191669486
+"nombre_cliente":Martha Bowman                          
+"genero":F
+"id_ciudad":22
+}
+{
+"id_cliente":0729193150260
+"nombre_cliente":George West                            
+"genero":M
+"id_ciudad":23
+}
+{
+"id_cliente":1111192384066
+"nombre_cliente":Jesse Rogers                           
+"genero":M
+"id_ciudad":24
+}
+{
+"id_cliente":1504195183870
+"nombre_cliente":Kathleen Reed                          
+"genero":F
+"id_ciudad":25
+}
+{
+"id_cliente":1226192293016
+"nombre_cliente":Aaron Collins                          
+"genero":M
+"id_ciudad":26
+}
+{
+"id_cliente":1713191713309
+"nombre_cliente":Samuel Banks                           
+"genero":M
+"id_ciudad":27
+}
+{
+"id_cliente":1026191128040
+"nombre_cliente":Judith Lynch                           
+"genero":F
+"id_ciudad":28
+}
+{
+"id_cliente":1206192066275
+"nombre_cliente":Albert Washington                      
+"genero":M
+"id_ciudad":29
+}
+{
+"id_cliente":1428195890005
+"nombre_cliente":Bobby Thomas                           
+"genero":M
+"id_ciudad":30
+}
+{
+"id_cliente":1625195714043
+"nombre_cliente":Rachel Moore                           
+"genero":F
+"id_ciudad":18
+}
+{
+"id_cliente":1810198081362
+"nombre_cliente":Todd Jacobs                            
+"genero":M
+"id_ciudad":9
+}
+{
+"id_cliente":1212191429586
+"nombre_cliente":Betty Robertson                        
+"genero":F
+"id_ciudad":3
+}
+{
+"id_cliente":1415193534152
+"nombre_cliente":Robin Johnston                         
+"genero":F
+"id_ciudad":27
+}
+{
+"id_cliente":1409199677545
+"nombre_cliente":Diane Hart                             
+"genero":F
+"id_ciudad":27
+}
+{
+"id_cliente":0820192912694
+"nombre_cliente":Adam Wood                              
+"genero":M
+"id_ciudad":27
+}
+{
+"id_cliente":1003191535504
+"nombre_cliente":Mary Burns                             
+"genero":F
+"id_ciudad":12
+}
+{
+"id_cliente":0312191593265
+"nombre_cliente":Anne Watkins                           
+"genero":F
+"id_ciudad":4
+}
+{
+"id_cliente":0214194248788
+"nombre_cliente":Rebecca Flores                         
+"genero":F
+"id_ciudad":22
+}
+{
+"id_cliente":1120195899921
+"nombre_cliente":Sharon Sims                            
+"genero":F
+"id_ciudad":20
+}
+{
+"id_cliente":0224195414079
+"nombre_cliente":Karen Welch                            
+"genero":F
+"id_ciudad":22
+}
+{
+"id_cliente":0406198833776
+"nombre_cliente":Peter Kelly                            
+"genero":M
+"id_ciudad":4
+}
+{
+"id_cliente":0624197292255
+"nombre_cliente":Barbara Bell                           
+"genero":F
+"id_ciudad":11
+}
+{
+"id_cliente":1428195753844
+"nombre_cliente":Carol Little                           
+"genero":F
+"id_ciudad":3
+}
+{
+"id_cliente":1516195865055
+"nombre_cliente":Denise Stevens                         
+"genero":F
+"id_ciudad":15
+}
+{
+"id_cliente":1822196787053
+"nombre_cliente":Joshua Perkins                         
+"genero":M
+"id_ciudad":10
+}
+{
+"id_cliente":1721195953846
+"nombre_cliente":Billy Brown                            
+"genero":M
+"id_ciudad":2
+}
+{
+"id_cliente":0222192117071
+"nombre_cliente":Joan Miller                            
+"genero":F
+"id_ciudad":29
+}
+{
+"id_cliente":1719192692061
+"nombre_cliente":Diana Stewart                          
+"genero":F
+"id_ciudad":18
+}
+{
+"id_cliente":1618192660760
+"nombre_cliente":Annie Stephens                         
+"genero":F
+"id_ciudad":23
+}
+{
+"id_cliente":0101193171433
+"nombre_cliente":Antonio Simpson                        
+"genero":M
+"id_ciudad":9
+}
+{
+"id_cliente":0819193770797
+"nombre_cliente":Gloria Wood                            
+"genero":F
+"id_ciudad":1
+}
+{
+"id_cliente":0425192065083
+"nombre_cliente":Angela Henry                           
+"genero":F
+"id_ciudad":29
+}
+{
+"id_cliente":0327199028692
+"nombre_cliente":Kathy Porter                           
+"genero":F
+"id_ciudad":30
+}
+{
+"id_cliente":1125194456362
+"nombre_cliente":Bruce Perkins                          
+"genero":M
+"id_ciudad":9
+}
+{
+"id_cliente":1424194592017
+"nombre_cliente":Maria Ramirez                          
+"genero":F
+"id_ciudad":26
+}
+{
+"id_cliente":1607192485863
+"nombre_cliente":Jonathan Dean                          
+"genero":M
+"id_ciudad":19
+}
+{
+"id_cliente":0112199641372
+"nombre_cliente":Bruce Turner                           
+"genero":M
+"id_ciudad":24
+}
+{
+"id_cliente":0317196651453
+"nombre_cliente":Harry Holmes                           
+"genero":M
+"id_ciudad":28
+}
+{
+"id_cliente":1205192063847
+"nombre_cliente":Kenneth Ellis                          
+"genero":M
+"id_ciudad":13
+}
+{
+"id_cliente":1618195860890
+"nombre_cliente":Peter Wheeler                          
+"genero":M
+"id_ciudad":29
+}
+{
+"id_cliente":1729199633609
+"nombre_cliente":Theresa Russell                        
+"genero":F
+"id_ciudad":21
+}
+{
+"id_cliente":1811194489444
+"nombre_cliente":Lillian Stone                          
+"genero":F
+"id_ciudad":27
+}
+{
+"id_cliente":0406193424969
+"nombre_cliente":John Pierce                            
+"genero":M
+"id_ciudad":9
+}
+{
+"id_cliente":1825195240748
+"nombre_cliente":Matthew Marshall                       
+"genero":M
+"id_ciudad":15
+}
+{
+"id_cliente":1605193561115
+"nombre_cliente":Robert Matthews                        
+"genero":M
+"id_ciudad":18
+}
+{
+"id_cliente":0812196843793
+"nombre_cliente":Keith Armstrong                        
+"genero":M
+"id_ciudad":7
+}
+{
+"id_cliente":1311191566994
+"nombre_cliente":Justin Peterson                        
+"genero":M
+"id_ciudad":12
+}
+{
+"id_cliente":1514194047509
+"nombre_cliente":Patrick Ortiz                          
+"genero":M
+"id_ciudad":30
+}
+{
+"id_cliente":1704191949215
+"nombre_cliente":Andrea Mccoy                           
+"genero":F
+"id_ciudad":6
+}
+{
+"id_cliente":0127194549526
+"nombre_cliente":Betty Edwards                          
+"genero":F
+"id_ciudad":9
+}
+{
+"id_cliente":0823199695316
+"nombre_cliente":Heather Berry                          
+"genero":F
+"id_ciudad":16
+}
+{
+"id_cliente":1202196580866
+"nombre_cliente":Janet White                            
+"genero":F
+"id_ciudad":4
+}
+{
+"id_cliente":0817191991836
+"nombre_cliente":Fred Grant                             
+"genero":M
+"id_ciudad":5
+}
+{
+"id_cliente":1804197115188
+"nombre_cliente":Angela Shaw                            
+"genero":F
+"id_ciudad":18
+}
+{
+"id_cliente":0928195535117
+"nombre_cliente":Keith Larson                           
+"genero":M
+"id_ciudad":1
+}
+{
+"id_cliente":1724198087614
+"nombre_cliente":Raymond Perkins                        
+"genero":M
+"id_ciudad":9
+}
+{
+"id_cliente":0601191933642
+"nombre_cliente":Diana Cook                             
+"genero":F
+"id_ciudad":6
+}
+{
+"id_cliente":0505192542768
+"nombre_cliente":Laura Hawkins                          
+"genero":F
+"id_ciudad":30
+}
+{
+"id_cliente":1214197019246
+"nombre_cliente":Bonnie Hicks                           
+"genero":F
+"id_ciudad":12
+}
+{
+"id_cliente":0422192239700
+"nombre_cliente":Shawn Jordan                           
+"genero":M
+"id_ciudad":26
+}
+{
+"id_cliente":1511198566625
+"nombre_cliente":Justin Bishop                          
+"genero":M
+"id_ciudad":23
+}
+{
+"id_cliente":0914196945815
+"nombre_cliente":Martin Hanson                          
+"genero":M
+"id_ciudad":12
+}
+{
+"id_cliente":0804192985508
+"nombre_cliente":Tammy Owens                            
+"genero":F
+"id_ciudad":19
+}
+{
+"id_cliente":1719196598883
+"nombre_cliente":Beverly Little                         
+"genero":F
+"id_ciudad":30
+}
+{
+"id_cliente":1501197222522
+"nombre_cliente":Henry Kelly                            
+"genero":M
+"id_ciudad":13
+}
+{
+"id_cliente":0916199231753
+"nombre_cliente":Marilyn Mcdonald                       
+"genero":F
+"id_ciudad":12
+}
+{
+"id_cliente":1012191870407
+"nombre_cliente":Gloria Bradley                         
+"genero":F
+"id_ciudad":6
+}
+{
+"id_cliente":1829197838358
+"nombre_cliente":Billy Kelley                           
+"genero":M
+"id_ciudad":9
+}
+{
+"id_cliente":0217195334311
+"nombre_cliente":Marilyn Howard                         
+"genero":F
+"id_ciudad":2
+}
+{
+"id_cliente":1408195176426
+"nombre_cliente":Catherine Gonzales                     
+"genero":F
+"id_ciudad":24
+}
+{
+"id_cliente":0606191243391
+"nombre_cliente":Melissa Bowman                         
+"genero":F
+"id_ciudad":19
+}
+{
+"id_cliente":0618191846974
+"nombre_cliente":Ryan Evans                             
+"genero":M
+"id_ciudad":25
+}
+{
+"id_cliente":1516195653619
+"nombre_cliente":Stephanie Larson                       
+"genero":F
+"id_ciudad":9
+}
+{
+"id_cliente":0403193696579
+"nombre_cliente":Larry Spencer                          
+"genero":M
+"id_ciudad":20
+}
+{
+"id_cliente":1508192080915
+"nombre_cliente":Keith Burke                            
+"genero":M
+"id_ciudad":1
+}
+{
+"id_cliente":0801191946711
+"nombre_cliente":Roy Howell                             
+"genero":M
+"id_ciudad":24
+}
+{
+"id_cliente":0912197084014
+"nombre_cliente":Jason George                           
+"genero":M
+"id_ciudad":3
+}
+{
+"id_cliente":1712195623550
+"nombre_cliente":Deborah Elliott                        
+"genero":F
+"id_ciudad":12
+}
+{
+"id_cliente":0308195195344
+"nombre_cliente":Bonnie Simpson                         
+"genero":F
+"id_ciudad":26
+}
+{
+"id_cliente":1722195122164
+"nombre_cliente":Gregory Dean                           
+"genero":M
+"id_ciudad":4
+}
+{
+"id_cliente":1208192098116
+"nombre_cliente":Jeffrey Ramirez                        
+"genero":M
+"id_ciudad":28
+}
+{
+"id_cliente":0501197488105
+"nombre_cliente":Katherine Fisher                       
+"genero":F
+"id_ciudad":22
+}
+{
+"id_cliente":0207196620880
+"nombre_cliente":Lois Price                             
+"genero":F
+"id_ciudad":19
+}
+{
+"id_cliente":0221195732570
+"nombre_cliente":Martin Carter                          
+"genero":M
+"id_ciudad":7
+}
+{
+"id_cliente":1026194682824
+"nombre_cliente":Jacqueline Kim                         
+"genero":F
+"id_ciudad":30
+}
+{
+"id_cliente":1126197991574
+"nombre_cliente":William Ellis                          
+"genero":M
+"id_ciudad":15
+}
+{
+"id_cliente":1103194637544
+"nombre_cliente":Kathleen Romero                        
+"genero":F
+"id_ciudad":13
+}
+{
+"id_cliente":1326193548334
+"nombre_cliente":Anne Reed                              
+"genero":F
+"id_ciudad":6
+}
+{
+"id_cliente":0822192574236
+"nombre_cliente":Christine Baker                         
+"genero":0
+"id_ciudad":18
+}
+{
+"id_cliente":0222192896921
+"nombre_cliente":Lisa Adams                              
+"genero":0
+"id_ciudad":3
+}
+{
+"id_cliente":0606192218508
+"nombre_cliente":Sarah Anderson                          
+"genero":0
+"id_ciudad":9
+}
+{
+"id_cliente":0322195523091
+"nombre_cliente":Catherine Butler                        
+"genero":0
+"id_ciudad":19
+}
+{
+"id_cliente":0820194565659
+"nombre_cliente":Gloria Hayes                            
+"genero":0
+"id_ciudad":2
+}
+{
+"id_cliente":1315198053054
+"nombre_cliente":Samuel Barnes                           
+"genero":0
+"id_ciudad":13
+}
+{
+"id_cliente":0420196247029
+"nombre_cliente":Virginia Fuller                         
+"genero":0
+"id_ciudad":25
+}
+{
+"id_cliente":0822191556731
+"nombre_cliente":Albert Kelley                           
+"genero":0
+"id_ciudad":24
+}
+{
+"id_cliente":0916199090665
+"nombre_cliente":Eric Peterson                           
+"genero":0
+"id_ciudad":30
+}
+{
+"id_cliente":1113197833717
+"nombre_cliente":Julie Tucker                            
+"genero":0
+"id_ciudad":11
+}
+{
+"id_cliente":0927191834567
+"nombre_cliente":Todd Rice                               
+"genero":0
+"id_ciudad":16
+}
+{
+"id_cliente":1802196493719
+"nombre_cliente":Kimberly Long                           
+"genero":0
+"id_ciudad":19
+}
+{
+"id_cliente":0117191538267
+"nombre_cliente":Russell Sanders                         
+"genero":0
+"id_ciudad":23
+}
+{
+"id_cliente":0906191040529
+"nombre_cliente":Arthur Evans                            
+"genero":0
+"id_ciudad":28
+}
+{
+"id_cliente":1428196391577
+"nombre_cliente":Eric Nguyen                             
+"genero":0
+"id_ciudad":22
+}
+{
+"id_cliente":1323197370337
+"nombre_cliente":Julie Howard                            
+"genero":0
+"id_ciudad":8
+}
+{
+"id_cliente":0912195493293
+"nombre_cliente":Andrew Elliott                          
+"genero":0
+"id_ciudad":21
+}
+{
+"id_cliente":1115198984799
+"nombre_cliente":Teresa Ross                             
+"genero":0
+"id_ciudad":23
+}
+{
+"id_cliente":0201194157525
+"nombre_cliente":Edward Reed                             
+"genero":0
+"id_ciudad":18
+}
+{
+"id_cliente":1005193777888
+"nombre_cliente":Kimberly Flores                         
+"genero":0
+"id_ciudad":14
+}
+{
+"id_cliente":1629192515824
+"nombre_cliente":Wayne Wilson                            
+"genero":0
+"id_ciudad":10
+}
+{
+"id_cliente":0311198360901
+"nombre_cliente":Pamela Burke                            
+"genero":0
+"id_ciudad":21
+}
+{
+"id_cliente":1520197680600
+"nombre_cliente":Joe Stevens                             
+"genero":0
+"id_ciudad":30
+}
+{
+"id_cliente":1009195550951
+"nombre_cliente":Theresa Wallace                         
+"genero":0
+"id_ciudad":23
+}
+{
+"id_cliente":1823197884227
+"nombre_cliente":Debra Welch                             
+"genero":0
+"id_ciudad":17
+}
+{
+"id_cliente":0118194252042
+"nombre_cliente":Angela Hayes                            
+"genero":0
+"id_ciudad":29
+}
+{
+"id_cliente":1003192892018
+"nombre_cliente":Rose Rice                               
+"genero":0
+"id_ciudad":8
+}
+{
+"id_cliente":1528194263759
+"nombre_cliente":Sharon Kelley                           
+"genero":0
+"id_ciudad":24
+}
+{
+"id_cliente":1205191668989
+"nombre_cliente":Jimmy Chapman                           
+"genero":0
+"id_ciudad":27
+}
+{
+"id_cliente":1323194889534
+"nombre_cliente":Louis Fuller                            
+"genero":0
+"id_ciudad":14
+}
+{
+"id_cliente":1817193342588
+"nombre_cliente":Dennis Bennett                          
+"genero":0
+"id_ciudad":26
+}
+{
+"id_cliente":1515194717341
+"nombre_cliente":Sandra Peterson                         
+"genero":0
+"id_ciudad":12
+}
+{
+"id_cliente":0905198135181
+"nombre_cliente":Benjamin Gray                           
+"genero":0
+"id_ciudad":4
+}
+{
+"id_cliente":0117193927995
+"nombre_cliente":Janet Green                             
+"genero":0
+"id_ciudad":29
+}
+{
+"id_cliente":1515196324281
+"nombre_cliente":Martin Morris                           
+"genero":0
+"id_ciudad":26
+}
+{
+"id_cliente":1712194965879
+"nombre_cliente":Alan Matthews                           
+"genero":0
+"id_ciudad":27
+}
+{
+"id_cliente":0526194891077
+"nombre_cliente":Jimmy Nguyen                            
+"genero":0
+"id_ciudad":22
+}
+{
+"id_cliente":0901198553086
+"nombre_cliente":Henry Edwards                           
+"genero":0
+"id_ciudad":15
+}
+{
+"id_cliente":1727195297241
+"nombre_cliente":James Barnes                            
+"genero":0
+"id_ciudad":29
+}
+{
+"id_cliente":0114199548651
+"nombre_cliente":Beverly Butler                          
+"genero":0
+"id_ciudad":21
+}
+{
+"id_cliente":1507194233339
+"nombre_cliente":Shirley Wright                          
+"genero":0
+"id_ciudad":25
+}
+{
+"id_cliente":0608198326877
+"nombre_cliente":Ralph Johnson                           
+"genero":0
+"id_ciudad":6
+}
+{
+"id_cliente":1623191819671
+"nombre_cliente":Anthony Bryant                          
+"genero":0
+"id_ciudad":19
+}
+{
+"id_cliente":1524195689136
+"nombre_cliente":Joe Daniels                             
+"genero":0
+"id_ciudad":15
+}
+{
+"id_cliente":0312198965918
+"nombre_cliente":Christine Weaver                        
+"genero":0
+"id_ciudad":3
+}
+{
+"id_cliente":0128191760216
+"nombre_cliente":Earl Gutierrez                          
+"genero":0
+"id_ciudad":18
+}
+{
+"id_cliente":1608197530405
+"nombre_cliente":Christina White                         
+"genero":0
+"id_ciudad":13
+}
+{
+"id_cliente":0625194658748
+"nombre_cliente":Amanda Thomas                           
+"genero":0
+"id_ciudad":2
+}
+{
+"id_cliente":1228195643959
+"nombre_cliente":Sean Adams                              
+"genero":0
+"id_ciudad":16
+}
+{
+"id_cliente":1428194313188
+"nombre_cliente":Janice Lane                             
+"genero":0
+"id_ciudad":23
+}
+{
+"id_cliente":0621192154727
+"nombre_cliente":Kimberly Bell                           
+"genero":0
+"id_ciudad":18
+}
+{
+"id_cliente":1518194745173
+"nombre_cliente":Howard Scott                            
+"genero":0
+"id_ciudad":30
+}
+{
+"id_cliente":0829197255842
+"nombre_cliente":Anthony Bryant                          
+"genero":0
+"id_ciudad":9
+}
+{
+"id_cliente":1707192631584
+"nombre_cliente":Dorothy Thomas                          
+"genero":0
+"id_ciudad":8
+}
+{
+"id_cliente":1419195393756
+"nombre_cliente":Donna Harrison                          
+"genero":0
+"id_ciudad":28
+}
+{
+"id_cliente":0719199516879
+"nombre_cliente":Phyllis Garza                           
+"genero":0
+"id_ciudad":3
+}
+{
+"id_cliente":0728194062941
+"nombre_cliente":Victor Mitchell                         
+"genero":0
+"id_ciudad":2
+}
+{
+"id_cliente":0225194775973
+"nombre_cliente":Helen Taylor                            
+"genero":0
+"id_ciudad":4
+}
+{
+"id_cliente":1117197177721
+"nombre_cliente":Judy Martinez                           
+"genero":0
+"id_ciudad":8
+}
+{
+"id_cliente":0613195415557
+"nombre_cliente":Jessica Hughes                          
+"genero":0
+"id_ciudad":20
+}
+{
+"id_cliente":0519198732845
+"nombre_cliente":Wanda Fields                            
+"genero":0
+"id_ciudad":30
+}
+{
+"id_cliente":0525199561820
+"nombre_cliente":Carolyn Ross                            
+"genero":0
+"id_ciudad":16
+}
+{
+"id_cliente":1818191941629
+"nombre_cliente":Arthur Russell                          
+"genero":0
+"id_ciudad":7
+}
+{
+"id_cliente":1423198378218
+"nombre_cliente":Anthony Mendoza                         
+"genero":0
+"id_ciudad":14
+}
+{
+"id_cliente":0722191319847
+"nombre_cliente":Julie Fernandez                         
+"genero":0
+"id_ciudad":18
+}
+{
+"id_cliente":0714194221264
+"nombre_cliente":Diana Wells                             
+"genero":0
+"id_ciudad":26
+}
+{
+"id_cliente":1704193160429
+"nombre_cliente":Frank Thompson                          
+"genero":0
+"id_ciudad":25
+}
+{
+"id_cliente":0920192699962
+"nombre_cliente":Joseph Barnes                           
+"genero":0
+"id_ciudad":15
+}
+{
+"id_cliente":1507191042260
+"nombre_cliente":Kimberly Arnold                         
+"genero":0
+"id_ciudad":1
+}
+{
+"id_cliente":1723197594433
+"nombre_cliente":Benjamin Palmer                         
+"genero":0
+"id_ciudad":1
+}
+{
+"id_cliente":1819195843417
+"nombre_cliente":Janice Pierce                           
+"genero":0
+"id_ciudad":18
+}
+{
+"id_cliente":0416193857112
+"nombre_cliente":Louise Woods                            
+"genero":0
+"id_ciudad":23
+}
+{
+"id_cliente":0521193842411
+"nombre_cliente":Theresa Wells                           
+"genero":0
+"id_ciudad":9
+}
+{
+"id_cliente":0409199529621
+"nombre_cliente":Carol Peters                            
+"genero":0
+"id_ciudad":6
+}
+{
+"id_cliente":1217197343329
+"nombre_cliente":Jean Russell                            
+"genero":0
+"id_ciudad":16
+}
+{
+"id_cliente":1016192857182
+"nombre_cliente":Harold Bradley                          
+"genero":0
+"id_ciudad":24
+}
+{
+"id_cliente":0120193574037
+"nombre_cliente":Sandra Robertson                        
+"genero":0
+"id_ciudad":19
+}
+{
+"id_cliente":0626191264541
+"nombre_cliente":Shirley Jacobs                          
+"genero":0
+"id_ciudad":29
+}
+{
+"id_cliente":0628192383265
+"nombre_cliente":Amy Morgan                              
+"genero":0
+"id_ciudad":9
+}
+{
+"id_cliente":0807196590488
+"nombre_cliente":Juan Willis                             
+"genero":0
+"id_ciudad":27
+}
+{
+"id_cliente":0118191444619
+"nombre_cliente":Chris Coleman                           
+"genero":0
+"id_ciudad":16
+}
+{
+"id_cliente":1311192822673
+"nombre_cliente":Kenneth Hunt                            
+"genero":0
+"id_ciudad":27
+}
+{
+"id_cliente":1001199785454
+"nombre_cliente":Paula Garza                             
+"genero":0
+"id_ciudad":25
+}
+{
+"id_cliente":0214195362596
+"nombre_cliente":John Stevens                            
+"genero":0
+"id_ciudad":22
+}
+{
+"id_cliente":1810196537084
+"nombre_cliente":Paul Martin                             
+"genero":0
+"id_ciudad":18
+}
+{
+"id_cliente":1620196977836
+"nombre_cliente":Ralph Johnston                          
+"genero":0
+"id_ciudad":8
+}
+{
+"id_cliente":1409194957604
+"nombre_cliente":Frances Johnson                         
+"genero":0
+"id_ciudad":9
+}
+{
+"id_cliente":1708199326452
+"nombre_cliente":Harold Russell                          
+"genero":0
+"id_ciudad":19
+}
+{
+"id_cliente":0220196465188
+"nombre_cliente":Patrick Stone                           
+"genero":0
+"id_ciudad":6
+}
+{
+"id_cliente":1210191253855
+"nombre_cliente":John Henderson                          
+"genero":0
+"id_ciudad":19
+}
+{
+"id_cliente":0322192882618
+"nombre_cliente":Helen Adams                             
+"genero":0
+"id_ciudad":2
+}
+{
+"id_cliente":0409199075436
+"nombre_cliente":Joe Bradley                             
+"genero":0
+"id_ciudad":10
+}
+{
+"id_cliente":1807196343872
+"nombre_cliente":Carlos Phillips                         
+"genero":0
+"id_ciudad":16
+}
+{
+"id_cliente":0713194045131
+"nombre_cliente":Aaron Carter                            
+"genero":0
+"id_ciudad":30
+}
+{
+"id_cliente":1006197899829
+"nombre_cliente":Annie Hernandez                         
+"genero":0
+"id_ciudad":19
+}
+{
+"id_cliente":0501193569284
+"nombre_cliente":Annie Little                            
+"genero":0
+"id_ciudad":9
+}
+{
+"id_cliente":0328197926964
+"nombre_cliente":Jane Watson                             
+"genero":0
+"id_ciudad":12
+}
+{
+"id_cliente":1525193013238
+"nombre_cliente":Patrick Torres                          
+"genero":0
+"id_ciudad":22
+}
+{
+"id_cliente":1202192934168
+"nombre_cliente":Melissa Chapman                         
+"genero":0
+"id_ciudad":13
+}
+{
+"id_cliente":1810191510134
+"nombre_cliente":Craig Austin                            
+"genero":0
+"id_ciudad":3
+}
+{
+"id_cliente":1411193220904
+"nombre_cliente":Jane Perry                              
+"genero":0
+"id_ciudad":18
+}
+{
+"id_cliente":0227198182213
+"nombre_cliente":Janet Robinson                          
+"genero":0
+"id_ciudad":6
+}
+{
+"id_cliente":1105195128690
+"nombre_cliente":Martha Fisher                           
+"genero":0
+"id_ciudad":29
+}
+{
+"id_cliente":1822197616008
+"nombre_cliente":Sharon Smith                            
+"genero":0
+"id_ciudad":2
+}
+{
+"id_cliente":1522195986519
+"nombre_cliente":Judy Kelley                             
+"genero":0
+"id_ciudad":17
+}
+{
+"id_cliente":0205194462156
+"nombre_cliente":Earl Flores                             
+"genero":0
+"id_ciudad":14
+}
+{
+"id_cliente":1417194251574
+"nombre_cliente":Jeffrey Simpson                         
+"genero":0
+"id_ciudad":13
+}
+{
+"id_cliente":1624193263564
+"nombre_cliente":Laura Wilson                            
+"genero":0
+"id_ciudad":11
+}
+{
+"id_cliente":0206198566993
+"nombre_cliente":Albert Walker                           
+"genero":0
+"id_ciudad":30
+}
+{
+"id_cliente":1513199267968
+"nombre_cliente":Richard Rodriguez                       
+"genero":0
+"id_ciudad":30
+}
+{
+"id_cliente":1110199281224
+"nombre_cliente":Henry Martinez                          
+"genero":0
+"id_ciudad":22
+}
+{
+"id_cliente":0202197528849
+"nombre_cliente":Sandra George                           
+"genero":0
+"id_ciudad":1
+}
+{
+"id_cliente":1020194643273
+"nombre_cliente":Joseph Evans                            
+"genero":0
+"id_ciudad":25
+}
+{
+"id_cliente":0919195976628
+"nombre_cliente":Thomas Morgan                           
+"genero":0
+"id_ciudad":22
+}
+{
+"id_cliente":1414196117100
+"nombre_cliente":Randy Fisher                            
+"genero":0
+"id_ciudad":21
+}
+{
+"id_cliente":1222191761177
+"nombre_cliente":Angela Greene                           
+"genero":0
+"id_ciudad":8
+}
+{
+"id_cliente":1701195889264
+"nombre_cliente":James Adams                             
+"genero":0
+"id_ciudad":23
+}
+{
+"id_cliente":0227193025320
+"nombre_cliente":Lawrence Nelson                         
+"genero":0
+"id_ciudad":16
+}
+{
+"id_cliente":1418192437594
+"nombre_cliente":Nancy Reed                              
+"genero":0
+"id_ciudad":4
+}
+{
+"id_cliente":0306192253313
+"nombre_cliente":Joe Hernandez                           
+"genero":0
+"id_ciudad":16
+}
+{
+"id_cliente":0109191814326
+"nombre_cliente":Frances Romero                          
+"genero":0
+"id_ciudad":13
+}
+{
+"id_cliente":0604199754365
+"nombre_cliente":Wanda Andrews                           
+"genero":0
+"id_ciudad":3
+}
+{
+"id_cliente":1313198588166
+"nombre_cliente":Keith Wells                             
+"genero":0
+"id_ciudad":16
+}
+{
+"id_cliente":0629192124477
+"nombre_cliente":Nicholas Simpson                        
+"genero":0
+"id_ciudad":18
+}
+{
+"id_cliente":1409192589538
+"nombre_cliente":Clarence Grant                          
+"genero":0
+"id_ciudad":2
+}
+{
+"id_cliente":0628199585116
+"nombre_cliente":Catherine Evans                         
+"genero":0
+"id_ciudad":11
+}
+{
+"id_cliente":1422191552334
+"nombre_cliente":Frank Torres                            
+"genero":0
+"id_ciudad":1
+}
+{
+"id_cliente":0810193068851
+"nombre_cliente":Brian Knight                            
+"genero":0
+"id_ciudad":24
+}
+{
+"id_cliente":0824194322033
+"nombre_cliente":Marilyn Mccoy                           
+"genero":0
+"id_ciudad":1
+}
+{
+"id_cliente":1023194292106
+"nombre_cliente":Kenneth Reed                            
+"genero":0
+"id_ciudad":27
+}
+{
+"id_cliente":0513195070536
+"nombre_cliente":Helen Wright                            
+"genero":0
+"id_ciudad":21
+}
+{
+"id_cliente":0811198788824
+"nombre_cliente":Laura Burns                             
+"genero":0
+"id_ciudad":25
+}
+{
+"id_cliente":1025193015815
+"nombre_cliente":Virginia Simmons                        
+"genero":0
+"id_ciudad":1
+}
+{
+"id_cliente":1708194222125
+"nombre_cliente":Paul Richards                           
+"genero":0
+"id_ciudad":17
+}
+{
+"id_cliente":1110196691237
+"nombre_cliente":Gary Palmer                             
+"genero":0
+"id_ciudad":2
+}
+{
+"id_cliente":1122195119866
+"nombre_cliente":Carol Ryan                              
+"genero":0
+"id_ciudad":16
+}
+{
+"id_cliente":0709191476824
+"nombre_cliente":Anthony Harvey                          
+"genero":0
+"id_ciudad":27
+}
+{
+"id_cliente":1418191833180
+"nombre_cliente":Jesse Andrews                           
+"genero":0
+"id_ciudad":18
+}
+{
+"id_cliente":0625192883330
+"nombre_cliente":Angela Hall                             
+"genero":0
+"id_ciudad":11
+}
+{
+"id_cliente":1104199032645
+"nombre_cliente":Ruby Bishop                             
+"genero":0
+"id_ciudad":4
+}
+{
+"id_cliente":0709192962966
+"nombre_cliente":Samuel Jacobs                           
+"genero":0
+"id_ciudad":23
+}
+{
+"id_cliente":1127193862314
+"nombre_cliente":Patricia Ruiz                           
+"genero":0
+"id_ciudad":2
+}
+{
+"id_cliente":1503197446296
+"nombre_cliente":Lori Hill                               
+"genero":0
+"id_ciudad":15
+}
+{
+"id_cliente":1816199562338
+"nombre_cliente":Doris Perkins                           
+"genero":0
+"id_ciudad":14
+}
+{
+"id_cliente":0514191396693
+"nombre_cliente":Carolyn Carter                          
+"genero":0
+"id_ciudad":16
+}
+{
+"id_cliente":0621191531713
+"nombre_cliente":Howard Russell                          
+"genero":0
+"id_ciudad":16
+}
+{
+"id_cliente":0920191132394
+"nombre_cliente":Mary Thompson                           
+"genero":0
+"id_ciudad":3
+}
+{
+"id_cliente":1528193982044
+"nombre_cliente":Albert Austin                           
+"genero":0
+"id_ciudad":26
+}
+{
+"id_cliente":0527192482677
+"nombre_cliente":Johnny Fernandez                        
+"genero":0
+"id_ciudad":5
+}
+{
+"id_cliente":1608194181440
+"nombre_cliente":James Gordon                            
+"genero":0
+"id_ciudad":23
+}
+{
+"id_cliente":0211192628639
+"nombre_cliente":Cheryl Wallace                          
+"genero":0
+"id_ciudad":9
+}
+{
+"id_cliente":0318191679089
+"nombre_cliente":Carlos Dean                             
+"genero":0
+"id_ciudad":14
+}
+{
+"id_cliente":1522196453581
+"nombre_cliente":Bobby Bailey                            
+"genero":0
+"id_ciudad":13
+}
+{
+"id_cliente":0929199421884
+"nombre_cliente":Nicole Wood                             
+"genero":0
+"id_ciudad":9
+}
+{
+"id_cliente":1416191554152
+"nombre_cliente":Henry Kelley                            
+"genero":0
+"id_ciudad":21
+}
+{
+"id_cliente":0302195378304
+"nombre_cliente":Donna Franklin                          
+"genero":0
+"id_ciudad":23
+}
+{
+"id_cliente":1811191579365
+"nombre_cliente":Cynthia Fowler                          
+"genero":0
+"id_ciudad":9
+}
+{
+"id_cliente":0110194619001
+"nombre_cliente":Walter Garcia                           
+"genero":0
+"id_ciudad":14
+}
+{
+"id_cliente":1503196590083
+"nombre_cliente":Jason Cunningham                        
+"genero":0
+"id_ciudad":18
+}
+{
+"id_cliente":1301197636584
+"nombre_cliente":Teresa Carr                             
+"genero":0
+"id_ciudad":14
+}
+{
+"id_cliente":1615198596715
+"nombre_cliente":Shawn Sanders                           
+"genero":0
+"id_ciudad":15
+}
+{
+"id_cliente":0701193095031
+"nombre_cliente":Jean Carpenter                          
+"genero":0
+"id_ciudad":9
+}
+{
+"id_cliente":1504199247446
+"nombre_cliente":Shawn Spencer                           
+"genero":0
+"id_ciudad":26
+}
+{
+"id_cliente":0106197362279
+"nombre_cliente":Donna Nguyen                            
+"genero":0
+"id_ciudad":17
+}
+{
+"id_cliente":0426194529339
+"nombre_cliente":Donna Wagner                            
+"genero":0
+"id_ciudad":6
+}
+{
+"id_cliente":0626196166872
+"nombre_cliente":Doris Rivera                            
+"genero":0
+"id_ciudad":19
+}
+{
+"id_cliente":0308197553101
+"nombre_cliente":Lisa Armstrong                          
+"genero":0
+"id_ciudad":2
+}
+{
+"id_cliente":0309198468424
+"nombre_cliente":Paul Jones                              
+"genero":0
+"id_ciudad":20
+}
+{
+"id_cliente":0716199349452
+"nombre_cliente":William Stewart                         
+"genero":0
+"id_ciudad":16
+}
+{
+"id_cliente":0605195273418
+"nombre_cliente":Larry Duncan                            
+"genero":0
+"id_ciudad":14
+}
+{
+"id_cliente":0922193073750
+"nombre_cliente":Jacqueline Coleman                      
+"genero":0
+"id_ciudad":19
+}
+{
+"id_cliente":0612195369492
+"nombre_cliente":Laura Garza                             
+"genero":0
+"id_ciudad":13
+}
+{
+"id_cliente":0612192097429
+"nombre_cliente":Jose Howell                             
+"genero":0
+"id_ciudad":21
+}
+{
+"id_cliente":1609195083320
+"nombre_cliente":William Ellis                           
+"genero":0
+"id_ciudad":13
+}
+{
+"id_cliente":1415196252114
+"nombre_cliente":Maria Perry                             
+"genero":0
+"id_ciudad":11
+}
+{
+"id_cliente":0108199763393
+"nombre_cliente":Kelly Graham                            
+"genero":0
+"id_ciudad":19
+}
+{
+"id_cliente":0525199224926
+"nombre_cliente":Melissa Nguyen                          
+"genero":0
+"id_ciudad":6
+}
+{
+"id_cliente":1225199483827
+"nombre_cliente":Kathleen Crawford                       
+"genero":0
+"id_ciudad":25
+}
+{
+"id_cliente":0104191198210
+"nombre_cliente":Karen Walker                            
+"genero":0
+"id_ciudad":26
+}
+{
+"id_cliente":0623192892395
+"nombre_cliente":Amanda Morales                          
+"genero":0
+"id_ciudad":17
+}
+{
+"id_cliente":0313197051371
+"nombre_cliente":Eric Smith                              
+"genero":0
+"id_ciudad":4
+}
+{
+"id_cliente":0629193423183
+"nombre_cliente":Paul Carr                               
+"genero":0
+"id_ciudad":10
+}
+{
+"id_cliente":1727197931704
+"nombre_cliente":Teresa Stewart                          
+"genero":0
+"id_ciudad":7
+}
+{
+"id_cliente":0406197148349
+"nombre_cliente":Kimberly Parker                         
+"genero":0
+"id_ciudad":26
+}
+{
+"id_cliente":0819192710249
+"nombre_cliente":Sarah Greene                            
+"genero":0
+"id_ciudad":12
+}
+{
+"id_cliente":0118193989362
+"nombre_cliente":Kathy Garza                             
+"genero":0
+"id_ciudad":29
+}
+{
+"id_cliente":1014191634627
+"nombre_cliente":Mildred Duncan                          
+"genero":0
+"id_ciudad":26
+}
+{
+"id_cliente":1222197725111
+"nombre_cliente":Anthony Patterson                       
+"genero":0
+"id_ciudad":17
+}
+{
+"id_cliente":1301193163672
+"nombre_cliente":Charles Oliver                          
+"genero":0
+"id_ciudad":17
+}
+{
+"id_cliente":1801193522984
+"nombre_cliente":Lori Torres                             
+"genero":0
+"id_ciudad":11
+}
+{
+"id_cliente":1006192449709
+"nombre_cliente":Albert Hicks                            
+"genero":0
+"id_ciudad":3
+}
+{
+"id_cliente":0805193898314
+"nombre_cliente":Martin Howard                           
+"genero":0
+"id_ciudad":18
+}
+{
+"id_cliente":0323195281309
+"nombre_cliente":Catherine Hart                          
+"genero":0
+"id_ciudad":23
+}
+{
+"id_cliente":1520193456442
+"nombre_cliente":Doris Johnson                           
+"genero":0
+"id_ciudad":12
+}
+{
+"id_cliente":0521194046862
+"nombre_cliente":Stephanie Palmer                        
+"genero":0
+"id_ciudad":5
+}
+{
+"id_cliente":1221197566041
+"nombre_cliente":Kathy Watson                            
+"genero":0
+"id_ciudad":14
+}
+{
+"id_cliente":0926193768320
+"nombre_cliente":Annie Morgan                            
+"genero":0
+"id_ciudad":21
+}
+{
+"id_cliente":0617195572375
+"nombre_cliente":Linda Morgan                            
+"genero":0
+"id_ciudad":30
+}
+{
+"id_cliente":0214198533523
+"nombre_cliente":Douglas Hicks                           
+"genero":0
+"id_ciudad":9
+}
+{
+"id_cliente":0916196776981
+"nombre_cliente":Phillip Kim                             
+"genero":0
+"id_ciudad":20
+}
+{
+"id_cliente":1329193810389
+"nombre_cliente":Tina Mcdonald                           
+"genero":0
+"id_ciudad":6
+}
+{
+"id_cliente":0223196421223
+"nombre_cliente":Margaret Oliver                         
+"genero":0
+"id_ciudad":25
+}
+{
+"id_cliente":0719198460758
+"nombre_cliente":Lois Sims                               
+"genero":0
+"id_ciudad":8
+}
+{
+"id_cliente":0321197727727
+"nombre_cliente":Virginia Webb                           
+"genero":0
+"id_ciudad":20
+}
+{
+"id_cliente":0401195910898
+"nombre_cliente":Craig Fox                               
+"genero":0
+"id_ciudad":5
+}
+{
+"id_cliente":0915199655143
+"nombre_cliente":Janice Robertson                        
+"genero":0
+"id_ciudad":4
+}
+{
+"id_cliente":0214193122081
+"nombre_cliente":Joyce Hunter                            
+"genero":0
+"id_ciudad":3
+}
+{
+"id_cliente":1221192050357
+"nombre_cliente":Charles Andrews                         
+"genero":0
+"id_ciudad":27
+}
+{
+"id_cliente":1121198132824
+"nombre_cliente":Ralph Stevens                           
+"genero":0
+"id_ciudad":22
+}
+{
+"id_cliente":1812199115023
+"nombre_cliente":Brenda Garcia                           
+"genero":0
+"id_ciudad":5
+}
+{
+"id_cliente":1301196848768
+"nombre_cliente":Kevin Sanders                           
+"genero":0
+"id_ciudad":6
+}
+{
+"id_cliente":1202195587272
+"nombre_cliente":Jeremy Fisher                           
+"genero":0
+"id_ciudad":23
+}
+{
+"id_cliente":0805192367877
+"nombre_cliente":Anne Dean                               
+"genero":0
+"id_ciudad":3
+}
+{
+"id_cliente":0527193062785
+"nombre_cliente":Carlos Baker                            
+"genero":0
+"id_ciudad":17
+}
+{
+"id_cliente":0520196641828
+"nombre_cliente":Lori Fuller                             
+"genero":0
+"id_ciudad":19
+}
+{
+"id_cliente":0309193432276
+"nombre_cliente":Cheryl Spencer                          
+"genero":0
+"id_ciudad":22
+}
+{
+"id_cliente":0915193264773
+"nombre_cliente":Nicole Woods                            
+"genero":0
+"id_ciudad":24
+}
+{
+"id_cliente":1828191720445
+"nombre_cliente":Gary Hanson                            
+"genero":M
+"id_ciudad":13
+}
+{
+"id_cliente":0820193699891
+"nombre_cliente":Lois White                             
+"genero":F
+"id_ciudad":9
+}
+{
+"id_cliente":1309196349248
+"nombre_cliente":Pamela Knight                          
+"genero":F
+"id_ciudad":9
+}
+{
+"id_cliente":1114195183343
+"nombre_cliente":Albert Banks                           
+"genero":M
+"id_ciudad":6
+}
+{
+"id_cliente":0308194763857
+"nombre_cliente":Larry Bishop                           
+"genero":M
+"id_ciudad":3
+}
+{
+"id_cliente":1724192395061
+"nombre_cliente":Gloria Anderson                        
+"genero":F
+"id_ciudad":9
+}
+{
+"id_cliente":0425195443764
+"nombre_cliente":Raymond Bryant                         
+"genero":M
+"id_ciudad":11
+}
+{
+"id_cliente":0406199431885
+"nombre_cliente":Samuel Bailey                          
+"genero":M
+"id_ciudad":21
+}
+{
+"id_cliente":0409198565761
+"nombre_cliente":Margaret Lynch                         
+"genero":F
+"id_ciudad":22
+}
+{
+"id_cliente":0703196312301
+"nombre_cliente":Daniel Lane                            
+"genero":M
+"id_ciudad":2
+}
+{
+"id_cliente":0721198454578
+"nombre_cliente":Philip Tucker                          
+"genero":M
+"id_ciudad":14
+}
+{
+"id_cliente":1717191757951
+"nombre_cliente":Bobby Moreno                           
+"genero":M
+"id_ciudad":6
+}
+{
+"id_cliente":1619199799288
+"nombre_cliente":Ruby Nichols                           
+"genero":F
+"id_ciudad":27
+}
+{
+"id_cliente":1729191219965
+"nombre_cliente":George Harper                          
+"genero":M
+"id_ciudad":3
+}
+{
+"id_cliente":1417192624057
+"nombre_cliente":Victor Henderson                       
+"genero":M
+"id_ciudad":18
+}
+{
+"id_cliente":0525195281062
+"nombre_cliente":Deborah Oliver                         
+"genero":F
+"id_ciudad":17
+}
+{
+"id_cliente":0526191399845
+"nombre_cliente":Teresa Oliver                          
+"genero":F
+"id_ciudad":13
+}
+{
+"id_cliente":1713198134245
+"nombre_cliente":Debra Brown                            
+"genero":F
+"id_ciudad":29
+}
+{
+"id_cliente":0923198839990
+"nombre_cliente":Harry Burton                           
+"genero":M
+"id_ciudad":27
+}
+{
+"id_cliente":0301192075789
+"nombre_cliente":Jessica Sanders                        
+"genero":F
+"id_ciudad":17
+}
+{
+"id_cliente":1305198880070
+"nombre_cliente":Elizabeth Bowman                       
+"genero":F
+"id_ciudad":14
+}
+{
+"id_cliente":0101199633299
+"nombre_cliente":Susan Cole                             
+"genero":F
+"id_ciudad":22
+}
+{
+"id_cliente":1328197095911
+"nombre_cliente":Kimberly Gilbert                       
+"genero":F
+"id_ciudad":9
+}
+{
+"id_cliente":1216191033231
+"nombre_cliente":Brian Ellis                            
+"genero":M
+"id_ciudad":24
+}
+{
+"id_cliente":0925191880696
+"nombre_cliente":Margaret Mills                         
+"genero":F
+"id_ciudad":30
+}
+{
+"id_cliente":1814199061251
+"nombre_cliente":Daniel Crawford                        
+"genero":M
+"id_ciudad":16
+}
+{
+"id_cliente":0309191391379
+"nombre_cliente":Stephanie Moore                        
+"genero":F
+"id_ciudad":5
+}
+{
+"id_cliente":1406193184427
+"nombre_cliente":Ernest Martinez                        
+"genero":M
+"id_ciudad":28
+}
+{
+"id_cliente":1822197088220
+"nombre_cliente":Catherine Bell                         
+"genero":F
+"id_ciudad":2
+}
+{
+"id_cliente":1011198363791
+"nombre_cliente":Ryan Dixon                             
+"genero":M
+"id_ciudad":7
+}
+{
+"id_cliente":1418197251447
+"nombre_cliente":Timothy Olson                          
+"genero":M
+"id_ciudad":19
+}
+{
+"id_cliente":0201191782161
+"nombre_cliente":Marilyn Cox                            
+"genero":F
+"id_ciudad":6
+}
+{
+"id_cliente":1110193693471
+"nombre_cliente":Jesse Arnold                           
+"genero":M
+"id_ciudad":28
+}
+{
+"id_cliente":0815196625006
+"nombre_cliente":Justin Day                             
+"genero":M
+"id_ciudad":29
+}
+{
+"id_cliente":0927193949922
+"nombre_cliente":Joan Jordan                            
+"genero":F
+"id_ciudad":3
+}
+{
+"id_cliente":1301198891617
+"nombre_cliente":Kenneth Fuller                         
+"genero":M
+"id_ciudad":21
+}
+{
+"id_cliente":1010197844430
+"nombre_cliente":Margaret Burton                        
+"genero":F
+"id_ciudad":10
+}
+{
+"id_cliente":0722193494523
+"nombre_cliente":Timothy Mcdonald                       
+"genero":M
+"id_ciudad":17
+}
+{
+"id_cliente":1519195126292
+"nombre_cliente":Matthew Larson                         
+"genero":M
+"id_ciudad":29
+}
+{
+"id_cliente":0714192967154
+"nombre_cliente":Ronald Mcdonald                        
+"genero":M
+"id_ciudad":22
+}
+{
+"id_cliente":1521194090791
+"nombre_cliente":Wanda Shaw                             
+"genero":F
+"id_ciudad":8
+}
+{
+"id_cliente":0302196678042
+"nombre_cliente":Clarence Stevens                       
+"genero":M
+"id_ciudad":30
+}
+{
+"id_cliente":0826198070908
+"nombre_cliente":Annie Stewart                          
+"genero":F
+"id_ciudad":26
+}
+{
+"id_cliente":1824193926136
+"nombre_cliente":Shirley Ortiz                          
+"genero":F
+"id_ciudad":26
+}
+{
+"id_cliente":0615192864399
+"nombre_cliente":Donna Knight                           
+"genero":F
+"id_ciudad":27
+}
+{
+"id_cliente":0406197423832
+"nombre_cliente":Kathleen Stone                         
+"genero":F
+"id_ciudad":14
+}
+{
+"id_cliente":0917192252076
+"nombre_cliente":Helen Wheeler                          
+"genero":F
+"id_ciudad":8
+}
+{
+"id_cliente":0201193148680
+"nombre_cliente":Mildred Gordon                         
+"genero":F
+"id_ciudad":29
+}
+{
+"id_cliente":0827199345070
+"nombre_cliente":Irene Lopez                            
+"genero":F
+"id_ciudad":7
+}
+{
+"id_cliente":1505192712081
+"nombre_cliente":Louise Dixon                           
+"genero":F
+"id_ciudad":11
+}
+{
+"id_cliente":1416193113765
+"nombre_cliente":Jack Hudson                            
+"genero":M
+"id_ciudad":13
+}
+{
+"id_cliente":0423192159945
+"nombre_cliente":Jeffrey Kennedy                        
+"genero":M
+"id_ciudad":23
+}
+{
+"id_cliente":0312199461088
+"nombre_cliente":Bobby Jones                            
+"genero":M
+"id_ciudad":18
+}
+{
+"id_cliente":1424194168400
+"nombre_cliente":Christina Torres                       
+"genero":F
+"id_ciudad":2
+}
+{
+"id_cliente":0502198387737
+"nombre_cliente":Paula Edwards                          
+"genero":F
+"id_ciudad":6
+}
+{
+"id_cliente":0907197471656
+"nombre_cliente":George Armstrong                       
+"genero":M
+"id_ciudad":29
+}
+{
+"id_cliente":1827193555653
+"nombre_cliente":Martin Black                           
+"genero":M
+"id_ciudad":19
+}
+{
+"id_cliente":1505194572275
+"nombre_cliente":Timothy Ramirez                        
+"genero":M
+"id_ciudad":17
+}
+{
+"id_cliente":0509196567128
+"nombre_cliente":Clarence Wright                        
+"genero":M
+"id_ciudad":15
+}
+{
+"id_cliente":0521192160307
+"nombre_cliente":Daniel Dunn                            
+"genero":M
+"id_ciudad":17
+}
+{
+"id_cliente":1302192196223
+"nombre_cliente":Anna Dixon                             
+"genero":F
+"id_ciudad":18
+}
+{
+"id_cliente":0706191242203
+"nombre_cliente":Albert Marshall                        
+"genero":M
+"id_ciudad":18
+}
+{
+"id_cliente":0416195919413
+"nombre_cliente":Billy Moreno                           
+"genero":M
+"id_ciudad":2
+}
+{
+"id_cliente":0607194778075
+"nombre_cliente":Alan Wheeler                           
+"genero":M
+"id_ciudad":12
+}
+{
+"id_cliente":0613193311147
+"nombre_cliente":Jason Andrews                          
+"genero":M
+"id_ciudad":18
+}
+{
+"id_cliente":1512194097121
+"nombre_cliente":Matthew Bell                           
+"genero":M
+"id_ciudad":29
+}
+{
+"id_cliente":0504198229241
+"nombre_cliente":Walter Gomez                           
+"genero":M
+"id_ciudad":23
+}
+{
+"id_cliente":0414198428481
+"nombre_cliente":Deborah Nguyen                         
+"genero":F
+"id_ciudad":27
+}
+{
+"id_cliente":1209193665951
+"nombre_cliente":Jesse Sims                             
+"genero":M
+"id_ciudad":3
+}
+{
+"id_cliente":0427194472531
+"nombre_cliente":Mildred Ruiz                           
+"genero":F
+"id_ciudad":16
+}
+{
+"id_cliente":0314197188722
+"nombre_cliente":James Reynolds                         
+"genero":M
+"id_ciudad":18
+}
+{
+"id_cliente":0214192565776
+"nombre_cliente":Jason Moore                            
+"genero":M
+"id_ciudad":17
+}
+{
+"id_cliente":1304194071468
+"nombre_cliente":Alice Hart                             
+"genero":F
+"id_ciudad":20
+}
+{
+"id_cliente":0307195359919
+"nombre_cliente":Beverly Turner                         
+"genero":F
+"id_ciudad":30
+}
+{
+"id_cliente":0917195486296
+"nombre_cliente":Jack Turner                            
+"genero":M
+"id_ciudad":25
+}
+{
+"id_cliente":1409195091547
+"nombre_cliente":Mildred Barnes                         
+"genero":F
+"id_ciudad":3
+}
+{
+"id_cliente":0811194095040
+"nombre_cliente":Matthew Williamson                     
+"genero":M
+"id_ciudad":8
+}
+{
+"id_cliente":0418192035075
+"nombre_cliente":Carlos Knight                          
+"genero":M
+"id_ciudad":19
+}
+{
+"id_cliente":0309199421382
+"nombre_cliente":Phillip Wright                         
+"genero":M
+"id_ciudad":19
+}
+{
+"id_cliente":1622191352087
+"nombre_cliente":Laura Stephens                         
+"genero":F
+"id_ciudad":3
+}
+{
+"id_cliente":1805192959250
+"nombre_cliente":Paul Snyder                            
+"genero":M
+"id_ciudad":4
+}
+{
+"id_cliente":1706198622483
+"nombre_cliente":James Washington                       
+"genero":M
+"id_ciudad":9
+}
+{
+"id_cliente":0625198421992
+"nombre_cliente":Carl Hudson                            
+"genero":M
+"id_ciudad":4
+}
+{
+"id_cliente":0508197672938
+"nombre_cliente":Irene Holmes                           
+"genero":F
+"id_ciudad":23
+}
+{
+"id_cliente":0421198424636
+"nombre_cliente":Judith Patterson                       
+"genero":F
+"id_ciudad":19
+}
+{
+"id_cliente":1402199249066
+"nombre_cliente":Steve Scott                            
+"genero":M
+"id_ciudad":11
+}
+{
+"id_cliente":1507197251238
+"nombre_cliente":Martin Olson                           
+"genero":M
+"id_ciudad":17
+}
+{
+"id_cliente":0916192052406
+"nombre_cliente":Samuel Alvarez                         
+"genero":M
+"id_ciudad":9
+}
+{
+"id_cliente":1614199143592
+"nombre_cliente":Jeffrey Hanson                         
+"genero":M
+"id_ciudad":21
+}
+{
+"id_cliente":0901197286233
+"nombre_cliente":Marilyn Carter                         
+"genero":F
+"id_ciudad":15
+}
+{
+"id_cliente":0210198883711
+"nombre_cliente":Billy Crawford                         
+"genero":M
+"id_ciudad":11
+}
+{
+"id_cliente":1024197768326
+"nombre_cliente":Clarence Snyder                        
+"genero":M
+"id_ciudad":13
+}
+{
+"id_cliente":0214194732232
+"nombre_cliente":Kenneth Grant                          
+"genero":M
+"id_ciudad":15
+}
+{
+"id_cliente":0419194476776
+"nombre_cliente":Joseph Fowler                          
+"genero":M
+"id_ciudad":20
+}
+{
+"id_cliente":1621192870291
+"nombre_cliente":Barbara Hart                           
+"genero":F
+"id_ciudad":23
+}
+{
+"id_cliente":0210195971805
+"nombre_cliente":Philip Sullivan                        
+"genero":M
+"id_ciudad":27
+}
+{
+"id_cliente":0116193012447
+"nombre_cliente":Jessica Porter                         
+"genero":F
+"id_ciudad":22
+}
+{
+"id_cliente":1321197050783
+"nombre_cliente":Sharon Watkins                         
+"genero":F
+"id_ciudad":17
+}
+{
+"id_cliente":0222191880115
+"nombre_cliente":Kathleen Edwards                       
+"genero":F
+"id_ciudad":12
+}
+{
+"id_cliente":1316196665713
+"nombre_cliente":Arthur Flores                          
+"genero":M
+"id_ciudad":12
+}
+{
+"id_cliente":1601197941142
+"nombre_cliente":James Fisher                           
+"genero":M
+"id_ciudad":6
+}
+{
+"id_cliente":1628197897192
+"nombre_cliente":Janice Wilson                          
+"genero":F
+"id_ciudad":4
+}
+{
+"id_cliente":1815191538341
+"nombre_cliente":Frank Wheeler                          
+"genero":M
+"id_ciudad":14
+}
+{
+"id_cliente":1706193341551
+"nombre_cliente":Joyce Mason                            
+"genero":F
+"id_ciudad":28
+}
+{
+"id_cliente":1419191178364
+"nombre_cliente":Nicholas Adams                         
+"genero":M
+"id_ciudad":26
+}
+{
+"id_cliente":0713196155795
+"nombre_cliente":Keith Kennedy                          
+"genero":M
+"id_ciudad":3
+}
+{
+"id_cliente":0827191143452
+"nombre_cliente":Gary Austin                            
+"genero":M
+"id_ciudad":26
+}
+{
+"id_cliente":1626195383917
+"nombre_cliente":Julie Gutierrez                        
+"genero":F
+"id_ciudad":11
+}
+{
+"id_cliente":0819195852928
+"nombre_cliente":Helen Myers                            
+"genero":F
+"id_ciudad":29
+}
+{
+"id_cliente":0619195122912
+"nombre_cliente":Christina Ortiz                        
+"genero":F
+"id_ciudad":14
+}
+{
+"id_cliente":0809195616087
+"nombre_cliente":Clarence Wilson                        
+"genero":M
+"id_ciudad":15
+}
+{
+"id_cliente":0621193130250
+"nombre_cliente":Henry Frazier                          
+"genero":M
+"id_ciudad":26
+}
+{
+"id_cliente":1018192599992
+"nombre_cliente":Bonnie Edwards                         
+"genero":F
+"id_ciudad":12
+}
+{
+"id_cliente":1101191457749
+"nombre_cliente":Cynthia Mills                          
+"genero":F
+"id_ciudad":15
+}
+{
+"id_cliente":0420195018878
+"nombre_cliente":Craig Simmons                          
+"genero":M
+"id_ciudad":6
+}
+{
+"id_cliente":0614194272992
+"nombre_cliente":Cynthia Ross                           
+"genero":F
+"id_ciudad":13
+}
+{
+"id_cliente":0216196980089
+"nombre_cliente":Katherine Howell                       
+"genero":F
+"id_ciudad":10
+}
+{
+"id_cliente":0427195296180
+"nombre_cliente":Diana Banks                            
+"genero":F
+"id_ciudad":29
+}
+{
+"id_cliente":1026193546113
+"nombre_cliente":Julia Lynch                            
+"genero":F
+"id_ciudad":1
+}
+{
+"id_cliente":0229199370918
+"nombre_cliente":Michelle Grant                         
+"genero":F
+"id_ciudad":20
+}
+{
+"id_cliente":1719192755626
+"nombre_cliente":Laura Simpson                          
+"genero":F
+"id_ciudad":8
+}
+{
+"id_cliente":0206196398204
+"nombre_cliente":Linda Welch                            
+"genero":F
+"id_ciudad":20
+}
+{
+"id_cliente":0611197990339
+"nombre_cliente":Cheryl Bailey                          
+"genero":F
+"id_ciudad":7
+}
+{
+"id_cliente":0415192817971
+"nombre_cliente":Karen Hudson                           
+"genero":F
+"id_ciudad":17
+}
+{
+"id_cliente":0909199264078
+"nombre_cliente":Marilyn Campbell                       
+"genero":F
+"id_ciudad":5
+}
+{
+"id_cliente":1013196142135
+"nombre_cliente":Michael Berry                          
+"genero":M
+"id_ciudad":13
+}
+{
+"id_cliente":1307192356750
+"nombre_cliente":Frances Jordan                         
+"genero":F
+"id_ciudad":12
+}
+{
+"id_cliente":1404198543079
+"nombre_cliente":Paula Gray                             
+"genero":F
+"id_ciudad":4
+}
+{
+"id_cliente":0221199414425
+"nombre_cliente":Anthony Medina                         
+"genero":M
+"id_ciudad":3
+}
+{
+"id_cliente":1610192674109
+"nombre_cliente":Cynthia Cruz                           
+"genero":F
+"id_ciudad":8
+}
+{
+"id_cliente":0607195573858
+"nombre_cliente":Mildred Mason                          
+"genero":F
+"id_ciudad":30
+}
+{
+"id_cliente":1316192995006
+"nombre_cliente":Craig Fox                              
+"genero":M
+"id_ciudad":30
+}
+{
+"id_cliente":0624195994047
+"nombre_cliente":Judy Shaw                              
+"genero":F
+"id_ciudad":2
+}
+{
+"id_cliente":0101191292125
+"nombre_cliente":Edward Alvarez                         
+"genero":M
+"id_ciudad":12
+}
+{
+"id_cliente":0224196356964
+"nombre_cliente":Gregory Carpenter                      
+"genero":M
+"id_ciudad":7
+}
+{
+"id_cliente":0804198055578
+"nombre_cliente":Carol Dixon                            
+"genero":F
+"id_ciudad":29
+}
+{
+"id_cliente":0714194033707
+"nombre_cliente":Terry Bailey                           
+"genero":M
+"id_ciudad":11
+}
+{
+"id_cliente":1203192799867
+"nombre_cliente":Joseph Lewis                           
+"genero":M
+"id_ciudad":30
+}
+{
+"id_cliente":0110195024257
+"nombre_cliente":Betty Richards                         
+"genero":F
+"id_ciudad":24
+}
+{
+"id_cliente":1819194487511
+"nombre_cliente":Thomas Johnston                        
+"genero":M
+"id_ciudad":19
+}
+{
+"id_cliente":1718197262797
+"nombre_cliente":Johnny Ferguson                        
+"genero":M
+"id_ciudad":25
+}
+{
+"id_cliente":1716193844914
+"nombre_cliente":Evelyn Rose                            
+"genero":F
+"id_ciudad":15
+}
+{
+"id_cliente":1202194994250
+"nombre_cliente":Tammy Gray                             
+"genero":F
+"id_ciudad":23
+}
+{
+"id_cliente":1720198084050
+"nombre_cliente":Russell Hayes                          
+"genero":M
+"id_ciudad":15
+}
+{
+"id_cliente":1515194248844
+"nombre_cliente":Amy Pierce                             
+"genero":F
+"id_ciudad":3
+}
+{
+"id_cliente":1415197161313
+"nombre_cliente":Kevin Johnson                          
+"genero":M
+"id_ciudad":17
+}
+{
+"id_cliente":0108195190877
+"nombre_cliente":James White                            
+"genero":M
+"id_ciudad":4
+}
+{
+"id_cliente":0426191735850
+"nombre_cliente":Brian Jones                            
+"genero":M
+"id_ciudad":27
+}
+{
+"id_cliente":1114194099847
+"nombre_cliente":Christina Burke                        
+"genero":F
+"id_ciudad":7
+}
+{
+"id_cliente":1310193282648
+"nombre_cliente":Wayne Wells                            
+"genero":M
+"id_ciudad":5
+}
+{
+"id_cliente":1608193486997
+"nombre_cliente":Johnny Brooks                          
+"genero":M
+"id_ciudad":29
+}
+{
+"id_cliente":0601193881527
+"nombre_cliente":Mark King                              
+"genero":M
+"id_ciudad":25
+}
+{
+"id_cliente":1821198351941
+"nombre_cliente":Gloria Mcdonald                        
+"genero":F
+"id_ciudad":18
+}
+{
+"id_cliente":0109194513674
+"nombre_cliente":Christopher Matthews                   
+"genero":M
+"id_ciudad":8
+}
+{
+"id_cliente":0919192853541
+"nombre_cliente":Earl Ferguson                          
+"genero":M
+"id_ciudad":14
+}
+{
+"id_cliente":1706194766594
+"nombre_cliente":Billy Torres                           
+"genero":M
+"id_ciudad":4
+}
+{
+"id_cliente":0329191222939
+"nombre_cliente":Ernest Hansen                          
+"genero":M
+"id_ciudad":25
+}
+{
+"id_cliente":0927198668154
+"nombre_cliente":Patrick Thomas                         
+"genero":M
+"id_ciudad":21
+}
+{
+"id_cliente":1616195119775
+"nombre_cliente":William Diaz                           
+"genero":M
+"id_ciudad":28
+}
+{
+"id_cliente":0808193312010
+"nombre_cliente":Nicole Coleman                         
+"genero":F
+"id_ciudad":26
+}
+{
+"id_cliente":1128193327177
+"nombre_cliente":Annie Rose                             
+"genero":F
+"id_ciudad":5
+}
+{
+"id_cliente":1507193846521
+"nombre_cliente":Charles Hall                           
+"genero":M
+"id_ciudad":19
+}
+{
+"id_cliente":0322194316868
+"nombre_cliente":Nicole Matthews                        
+"genero":F
+"id_ciudad":27
+}
+{
+"id_cliente":1421192058484
+"nombre_cliente":Adam Frazier                           
+"genero":M
+"id_ciudad":16
+}
+{
+"id_cliente":1613195578048
+"nombre_cliente":Gary Burton                            
+"genero":M
+"id_ciudad":22
+}
+{
+"id_cliente":1303195581307
+"nombre_cliente":Larry Morales                          
+"genero":M
+"id_ciudad":17
+}
+{
+"id_cliente":0723197833875
+"nombre_cliente":Jeffrey West                           
+"genero":M
+"id_ciudad":12
+}
+{
+"id_cliente":0310198529488
+"nombre_cliente":Norma Carroll                          
+"genero":F
+"id_ciudad":18
+}
+{
+"id_cliente":0924192350226
+"nombre_cliente":Jason Fernandez                        
+"genero":M
+"id_ciudad":25
+}
+{
+"id_cliente":1603192276223
+"nombre_cliente":Paul Price                             
+"genero":M
+"id_ciudad":19
+}
+{
+"id_cliente":0310193223133
+"nombre_cliente":Kelly Johnston                         
+"genero":F
+"id_ciudad":26
+}
+{
+"id_cliente":1027197918768
+"nombre_cliente":Gerald Dunn                            
+"genero":M
+"id_ciudad":2
+}
+{
+"id_cliente":1811198618320
+"nombre_cliente":Douglas Reyes                          
+"genero":M
+"id_ciudad":20
+}
+{
+"id_cliente":0515196684452
+"nombre_cliente":Eugene Hall                            
+"genero":M
+"id_ciudad":5
+}
