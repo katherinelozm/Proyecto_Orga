@@ -10,6 +10,125 @@
 
 using namespace std;
 
+struct IndiceClientes{
+	char llave[13];
+	int rrn; 
+	bool operator<( const IndiceClientes& indice ) const { 
+    	int compare = strcmp(llave, indice.llave);
+    	if (compare < 0){
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }
+    bool operator>( const IndiceClientes& indice ) const { 
+    	int compare = strcmp(llave, indice.llave);
+    	if (compare > 0){
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }
+};
+
+struct IndiceLineas{
+	int llave;
+	int rrn; 
+	bool operator<( const IndiceLineas& indice ) const { 
+    	return llave < indice.llave;
+    }
+};
+
+struct NodoClientes{
+	int parent;
+	int order;
+	int num;
+	vector<IndiceClientes> keys;
+	vector<int> hijos;
+	NodoClientes(){
+		parent = -1;
+	}
+	NodoClientes(int orden, int numero){
+		order = orden;
+		num = numero;
+		parent = -1;
+	}
+	NodoClientes(int orden, int numero, int padre){
+		order = orden;
+		num = numero;
+		parent = padre;
+	}
+	bool isFull(){
+		if (keys.size() == order-1){
+			return true;
+		} else {
+			return false;
+		}
+	}
+	bool isLeaf(){
+		if (hijos.size()==0){
+			return true;
+		} else {
+			return false;
+		}
+	}
+};
+
+struct BTreeClientes{
+	int order;
+	int nodecount;
+	bool hasRoot;
+	NodoClientes root;
+	vector<NodoClientes> nodos;
+	BTreeClientes(int orden) : order(orden), nodecount(0), hasRoot(false), root() {
+	}
+};
+
+struct NodoLineas{
+	int parent;
+	int order;
+	int num;
+	vector<IndiceLineas> keys;
+	vector<int> hijos;
+	NodoLineas(){
+		parent = -1;
+	}
+	NodoLineas(int orden, int numero){
+		order = orden;
+		num = numero;
+		parent = -1;
+	}
+	NodoLineas(int orden, int numero, int padre){
+		order = orden;
+		num = numero;
+		parent = padre;
+	}
+	bool isFull(){
+		if (keys.size() == order-1){
+			return true;
+		} else {
+			return false;
+		}
+	}
+	bool isLeaf(){
+		if (hijos.size()==0){
+			return true;
+		} else {
+			return false;
+		}
+	}
+};
+
+struct BTreeLineas{
+	int order;
+	int nodecount;
+	bool hasRoot;
+	NodoLineas root;
+	vector<NodoLineas> nodos;
+	BTreeLineas(int orden) : order(orden), nodecount(0), hasRoot(false), root() {
+	}
+};
+
 struct Ciudades{
 	int idCiudad;
 	char* nombreCiudad;
@@ -32,27 +151,6 @@ struct Llamadas{
 	long inicio;
 	long final;
 	int destino;
-};
-
-struct IndiceClientes{
-	char llave[13];
-	int rrn; 
-	bool operator<( const IndiceClientes& indice ) const { 
-		int compare = strcmp(llave, indice.llave);
-		if (compare < 0){
-			return true;
-		} else {
-			return false;
-		}
-	}
-};
-
-struct IndiceLineas{
-	int llave;
-	int rrn; 
-	bool operator<( const IndiceLineas& indice ) const { 
-		return llave < indice.llave;
-	}
 };
 
 istream& operator>>(istream& input1, Ciudades& ciudades){
@@ -94,6 +192,11 @@ ostream& operator<<(ostream& output4, const Llamadas& llamadas){
 	output4 << llamadas.numero << setw(15) << llamadas.inicio << setw(15) << llamadas.final << setw(10) << llamadas.destino;
 	return output4;  
 }
+
+BTreeClientes arbolClientes(5);
+BTreeLineas arbolLineas(5);
+vector<IndiceClientes> indicesClientes;
+vector<IndiceLineas> indicesLineas;
 
 void indexar(vector<Clientes>, vector<Lineas>);
 void leerTodos();
