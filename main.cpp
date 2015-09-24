@@ -211,6 +211,8 @@ void appendLinea(string);
 void modificarLinea(int, string); 
 void eliminarLinea(int);
 void datosLinea(int);
+void agregarBTreeClientes(IndiceClientes indice);
+void splitRootClientes(IndiceClientes indice);
 
 int main(int argc, char const *argv[]){
 	//leerTodos();
@@ -1025,3 +1027,52 @@ void eliminarLinea(int RRN){
 	}
 }
 
+void agregarBTreeClientes(IndiceClientes indice){
+	if (arbolClientes.hasRoot){
+		if (arbolClientes.nodos.size()==0){
+			if (arbolClientes.root.isFull()){
+				splitRootClientes(indice);
+			} else {
+				arbolClientes.root.keys.push_back(indice);
+				sort(arbolClientes.root.keys.begin(), arbolClientes.root.keys.end());
+			}
+		} else {
+			
+		}
+	} else {
+		NodoClientes root(arbolClientes.order, arbolClientes.nodecount);
+		arbolClientes.nodecount++;
+		arbolClientes.root = root;
+		arbolClientes.root.keys.push_back(indice);
+		arbolClientes.hasRoot = true;
+	}
+}
+
+void splitRootClientes(IndiceClientes indice){
+	NodoClientes parent(arbolClientes.order, arbolClientes.nodecount);
+	arbolClientes.nodecount++;
+	NodoClientes node1(arbolClientes.order, arbolClientes.nodecount, parent.num);
+	arbolClientes.nodecount++;
+	NodoClientes node2(arbolClientes.order, arbolClientes.nodecount, parent.num);
+	arbolClientes.nodecount++;
+	arbolClientes.root.keys.push_back(indice);
+	sort(arbolClientes.root.keys.begin(), arbolClientes.root.keys.end());
+	int pos;
+	if (arbolClientes.order%2 == 0){
+		pos = (arbolClientes.order/2)-1;
+	} else {
+		pos = (int)(arbolClientes.order/2);
+	}
+	for (int i = 0; i < pos; ++i){
+		node1.keys.push_back(arbolClientes.root.keys[i]);
+	}
+	for (int i = pos+1; i < arbolClientes.root.keys.size(); ++i){
+		node2.keys.push_back(arbolClientes.root.keys[i]);
+	}
+	parent.keys.push_back(arbolClientes.root.keys[pos]);
+	parent.hijos.push_back(node1.num);
+	parent.hijos.push_back(node2.num);
+	arbolClientes.root = parent;
+	arbolClientes.nodos.push_back(node1);
+	arbolClientes.nodos.push_back(node2);
+}
