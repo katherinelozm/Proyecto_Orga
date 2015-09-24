@@ -7,8 +7,168 @@
 #include <stdlib.h>
 #include <iomanip>
 #include <algorithm>
+#include <cmath>
 
 using namespace std;
+
+struct IndiceClientes{
+	char llave[13];
+	int rrn; 
+	bool operator<( const IndiceClientes& indice ) const { 
+    	int compare = strcmp(llave, indice.llave);
+    	if (compare < 0){
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }
+    bool operator>( const IndiceClientes& indice ) const { 
+    	int compare = strcmp(llave, indice.llave);
+    	if (compare > 0){
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }
+};
+
+struct IndiceLineas{
+	int llave;
+	int rrn; 
+	bool operator<( const IndiceLineas& indice ) const { 
+    	return llave < indice.llave;
+    }
+};
+
+struct NodoClientes{
+	int parent;
+	int order;
+	int num;
+	vector<IndiceClientes> keys;
+	vector<int> hijos;
+	NodoClientes(){
+		parent = -1;
+	}
+	NodoClientes(int orden, int numero){
+		order = orden;
+		num = numero;
+		parent = -1;
+	}
+	NodoClientes(int orden, int numero, int padre){
+		order = orden;
+		num = numero;
+		parent = padre;
+	}
+	bool isFull(){
+		if (keys.size() == order-1){
+			return true;
+		} else {
+			return false;
+		}
+	}
+	bool isLeaf(){
+		if (hijos.size()==0){
+			return true;
+		} else {
+			return false;
+		}
+	}
+	string toString(){
+		string s ="";
+		s+="Orden: ";
+		s+=to_string(order);
+		s+="\nNumero: ";
+		s+=to_string(num);
+		s+="\nKeys: |";
+		for (int i = 0; i < keys.size(); ++i){
+			s+=keys[i].llave;
+			s+="-";
+			s+=to_string(keys[i].rrn);
+			s+="|";
+		}
+		s+="\nHijos: |";
+		for (int i = 0; i < hijos.size(); ++i){
+			s+=to_string(hijos[i]);
+			s+="|";
+		}
+		return s;
+	}
+};
+
+struct BTreeClientes{
+	int order;
+	int nodecount;
+	bool hasRoot;
+	NodoClientes root;
+	vector<NodoClientes> nodos;
+	BTreeClientes() : order(3), nodecount(0), hasRoot(false), root() {
+	}
+};
+
+struct NodoLineas{
+	int parent;
+	int order;
+	int num;
+	vector<IndiceLineas> keys;
+	vector<int> hijos;
+	NodoLineas(){
+		parent = -1;
+	}
+	NodoLineas(int orden, int numero){
+		order = orden;
+		num = numero;
+		parent = -1;
+	}
+	NodoLineas(int orden, int numero, int padre){
+		order = orden;
+		num = numero;
+		parent = padre;
+	}
+	bool isFull(){
+		if (keys.size() == order-1){
+			return true;
+		} else {
+			return false;
+		}
+	}
+	bool isLeaf(){
+		if (hijos.size()==0){
+			return true;
+		} else {
+			return false;
+		}
+	}
+	string toString(){
+		string s ="";
+		s+="Orden: ";
+		s+=to_string(order);
+		s+="\nNumero: ";
+		s+=to_string(num);
+		s+="\nKeys: |";
+		for (int i = 0; i < keys.size(); ++i){
+			s+=keys[i].llave;
+			s+="-";
+			s+=to_string(keys[i].rrn);
+			s+="|";
+		}
+		s+="\nHijos: |";
+		for (int i = 0; i < hijos.size(); ++i){
+			s+=to_string(hijos[i]);
+			s+="|";
+		}
+		return s;
+	}
+};
+
+struct BTreeLineas{
+	int order;
+	int nodecount;
+	bool hasRoot;
+	NodoLineas root;
+	vector<NodoLineas> nodos;
+	BTreeLineas() : order(3), nodecount(0), hasRoot(false), root() {
+	}
+};
 
 struct Ciudades{
 	int idCiudad;
@@ -34,25 +194,10 @@ struct Llamadas{
 	int destino;
 };
 
-struct IndiceClientes{
-	char llave[13];
-	int rrn; 
-	bool operator<( const IndiceClientes& indice ) const { 
-		int compare = strcmp(llave, indice.llave);
-		if (compare < 0){
-			return true;
-		} else {
-			return false;
-		}
-	}
-};
-
-struct IndiceLineas{
-	int llave;
-	int rrn; 
-	bool operator<( const IndiceLineas& indice ) const { 
-		return llave < indice.llave;
-	}
+struct Factura {
+	char* id;
+	char* emisor;
+	float total;
 };
 
 istream& operator>>(istream& input1, Ciudades& ciudades){
@@ -95,51 +240,111 @@ ostream& operator<<(ostream& output4, const Llamadas& llamadas){
 	return output4;  
 }
 
+BTreeClientes arbolClientes;
+BTreeLineas arbolLineas;
+vector<IndiceClientes> indicesClientes;
+vector<IndiceLineas> indicesLineas;
+
 void indexar(vector<Clientes>, vector<Lineas>);
-void leerTodos();
+void reindexar();
 string datosCliente();
 void eliminarCliente(int);
 void agregarCliente();
 void appendCliente (string);
 void modificarCliente(int);
+int buscarCliente(char[]);
 void datosLinea(char[]);
 void agregarLinea(string);
 void appendLinea(string);
 void modificarLinea(int, string); 
 void eliminarLinea(int);
 void datosLinea(int);
+int buscarLinea(int);
+void buscarLinea(char*);
+void buscarLineas(char*);
+void buscarLlamadas (vector<string>, char*);
+void agregarBTreeClientes(IndiceClientes indice);
+void agregarBTreeLineas(IndiceLineas indice);
+void splitRootClientes(IndiceClientes indice);
+void splitNodeClientes(IndiceClientes indice, int nodenum, int promotenum, int parent);
+int findpos(vector<IndiceClientes> keys, IndiceClientes indice);
+bool leftright(vector<IndiceClientes> keys, IndiceClientes indice);
+int findNodeNum(vector<NodoClientes> vec, int n);
+void facturacion (vector<string>, vector<string>, char*);
+void exportFacturasJson(vector<Factura> vf);
+void exportarCiudadesJson();
+void exportarClientesJson();
+void exportarLineasJson();
+void exportarLlamadasJson();
 
 int main(int argc, char const *argv[]){
-	//leerTodos();
 	int op1, op2, op3, RRN;
+	char id [14];
+	bool flagId;
 
 	do {
-		cout << "1. Clientes \n2. Lineas\n3. Salir" << endl;
+		cout << "1. Clientes \n2. Lineas\n3. Exportar a Json\n4. Reindexar\n5. Salir" << endl;
 		cin >> op1;
 		if (op1 == 1) {
 			do {
-				cout << "Opciones Clientes\n1. Agregar\n2. Modificar\n3. Eliminar\n4. Salir" << endl;
+				cout << "Opciones Clientes\n1. Agregar\n2. Modificar\n3. Eliminar\n4. Buscar\n5. Transacciones\n6. Salir" << endl;
 				cin >> op2;
 				if (op2 == 1){
 					agregarCliente();
+					reindexar();
 				}else if (op2 == 2) {
 					cout << "Seleccione el registro a modificar: ";
 					cin >> RRN;
 					modificarCliente(RRN-1);
+					reindexar();
 				} else if (op2 == 3) {
 					cout << "Seleccione el registro a eliminar: ";
 					cin >> RRN;
 					eliminarCliente(RRN-1);
+					reindexar();
+				} else if (op2 == 4) {
+					getchar();
+					do {
+						flagId = true; 
+						cout << "Numero de Identidad: ";
+						cin.getline(id,14);
+
+						if ((unsigned)strlen(id) < 13) {
+							flagId = false;
+							cerr << "Valor no valido" << endl;
+						}
+					} while(!flagId);
+					int found = buscarCliente(id);
+					if (found != 0) {
+						cout << "RRN usuario: " << found << endl;
+					} else {
+						cout << "Usuario no encontrado." << endl;
+					}
+				} else if (op2 == 5) {
+					getchar();
+					do {
+						flagId = true; 
+						cout << "Numero de Identidad: ";
+						cin.getline(id,14);
+
+						if ((unsigned)strlen(id) < 13) {
+							flagId = false;
+							cerr << "Valor no valido" << endl;
+						}
+					} while(!flagId);
+					buscarLineas(id);
+
 				}
-			}while (op2 <= 3);
+			}while (op2 <= 5);
 
 
 		} else if (op1 == 2) {
 			do {
-				cout << "Opciones Lineas\n1. Agregar\n2. Modificar\n3. Eliminar\n4. Salir" << endl;
+				cout << "Opciones Lineas\n1. Agregar\n2. Modificar\n3. Eliminar\n4. Buscar\n5. Salir" << endl;
 				cin >> op3;
 				
 				if (op3 == 1){
+					getchar();
 					char id [14];
 					bool flagId;
 					do {
@@ -153,41 +358,65 @@ int main(int argc, char const *argv[]){
 						}
 					} while(!flagId);
 					datosLinea(id);
+					reindexar();
 				}else if (op3 == 2) {
 					cout << "Seleccione el registro a modificar: ";
 					cin >> RRN;
 					datosLinea(RRN-1);
+					reindexar();
 				} else if (op3 == 3) {
 					cout << "Seleccione el registro a eliminar: ";
 					cin >> RRN;
 					eliminarLinea(RRN-1);
-				}
-			}while (op3 <= 3);
+					reindexar();
+				} else if (op3 == 4) {
+					int numCliente;
+					cout << "Ingrese el numero del cliente: ";
+					cin >> numCliente;
+					int found = buscarLinea(numCliente);
+					if (found != 0) {
+						cout << "RRN usuario: " << found << endl;
+					} else {
+						cout << "Usuario no encontrado." << endl;
+					}
 
+
+				}
+			}while (op3 <= 4);
+
+		} else if (op1 == 3){
+			exportarCiudadesJson();
+			exportarClientesJson();
+			exportarLineasJson();
+			exportarLlamadasJson();
+			cout << "Archivos guardados" << endl;
+		} else if (op1 == 4){
+			reindexar();
+			cout << "Fin reindexado" << endl;
 		}
 
 
-	} while (op1 <= 2);
+	} while (op1 <= 4);
 	return 0;
 }
 
-void leerTodos(){
-	string lineaCiudades;
+void reindexar(){
+	//string lineaCiudades;
 	string lineaClientes;
 	string lineaLineas;
-	string lineaLlamadas;
+	//string lineaLlamadas;
 
-	vector<string>sv1;
+	//vector<string>sv1;
 	vector<string>sv2;
 	vector<string>sv3;
-	vector<string>sv4;
+	//vector<string>sv4;
 	
-	ifstream fileCiudades("Files/ciudades.txt", ifstream::in);
+	//ifstream fileCiudades("Files/ciudades.txt", ifstream::in);
 	ifstream fileClientes("Files/dataClientes.txt", ifstream::in);
 	ifstream fileLineas("Files/lineasClientes.txt", ifstream::in);
-	ifstream fileLlamadas("Files/llamadas.txt", ifstream::in);
+	//ifstream fileLlamadas("Files/llamadas.txt", ifstream::in);
 
-	int num = 1;
+	/*int num = 1;
 	if (fileCiudades.is_open()){
 		fileCiudades.seekg(40, fileCiudades.beg);
 		int length = 4;
@@ -212,9 +441,9 @@ void leerTodos(){
 			}
 		}
 		fileCiudades.close();
-	}
+	}*/
 
-	num = 1;
+	int num = 1;
 	bool alternado = false;
 	if (fileClientes.is_open()){
 		fileClientes.seekg(87, fileClientes.beg);
@@ -292,7 +521,7 @@ void leerTodos(){
 		fileLineas.close();
 	}
 
-	num = 1;
+	/*num = 1;
 	alternado = false;
 	if (fileLlamadas.is_open()){
 		fileLlamadas.seekg(54, fileLlamadas.beg);
@@ -343,24 +572,24 @@ void leerTodos(){
 			}
 		}
 		fileLlamadas.close();
-	}
+	}*/
 
-	char* st1; 
+	//char* st1; 
 	char* st2;
 	char* st3;
-	char* st4;
+	//char* st4;
 
-	vector<Ciudades> vectorCiudades;
+	//vector<Ciudades> vectorCiudades;
 	vector<Clientes> vectorClientes;
 	vector<Lineas> vectorLineas;
-	vector<Llamadas> vectorLlamadas;
+	//vector<Llamadas> vectorLlamadas;
 
-	Ciudades ciudades;
+	//Ciudades ciudades;
 	Clientes clientes;
 	Lineas lineas;
-	Llamadas llamadas;
+	//Llamadas llamadas;
 
-	for (int i = 0; i < sv1.size(); ++i) {
+	/*for (int i = 0; i < sv1.size(); ++i) {
 		st1 = new char[strlen(sv1[i].c_str())];
 		strcat(st1, sv1[i].c_str());
 		char* id = new char[2];
@@ -376,7 +605,7 @@ void leerTodos(){
 		ciudades.nombreCiudad = new char[17];
 		strncat(ciudades.nombreCiudad, nombre, 17);
 		vectorCiudades.push_back(ciudades);
-	}
+	}*/
 
 	for (int i = 0; i < sv2.size(); ++i) {
 		st2 = new char[strlen(sv2[i].c_str())];
@@ -434,7 +663,7 @@ void leerTodos(){
 		vectorLineas.push_back(lineas);
 	}
 
-	for (int i = 0; i < sv4.size(); ++i) {
+	/*for (int i = 0; i < sv4.size(); ++i) {
 		st4 = new char[strlen(sv4[i].c_str())];
 		strcat(st4, sv4[i].c_str());
 		char* numero = new char[8];
@@ -464,14 +693,14 @@ void leerTodos(){
 		}
 		llamadas.destino = atoi(destino);
 		vectorLlamadas.push_back(llamadas);
-	}
+	}*/
 
-	delete[] st1;
+	//delete[] st1;
 	delete[] st2;
 	delete[] st3;
-	delete[] st4;
+	//delete[] st4;
 
-	//indexar(vectorClientes ,vectorLineas);
+	indexar(vectorClientes ,vectorLineas);
 }
 
 void indexar(vector<Clientes> vectorClientes, vector<Lineas> vectorLineas){
@@ -660,13 +889,19 @@ string datosCliente(){
 }
 
 void eliminarCliente(int RRN){
+	char idCliente [14];
 	fstream is("Files/dataClientes.txt");
 	if(is.is_open()){
 		char availList[5] = "";
+		
 
 		is.read(availList, sizeof(availList)-1);
 		
 		int offset = 87 + RRN * 58;
+		is.seekg(offset);
+		is.seekp(offset);
+		is.read(idCliente, 13);
+		idCliente[13] = '\0';
 		is.seekg(offset);
 		is.seekp(offset);
 		is.write("*",1);
@@ -686,6 +921,7 @@ void eliminarCliente(int RRN){
 	}else {
 		cerr << "No se puede abrir el archivo." << endl ;
 	}
+	
 }
 
 void agregarCliente() {
@@ -694,7 +930,6 @@ void agregarCliente() {
 	
 	const char* buffer = new char[temp.size()];
 	buffer = temp.c_str();
-
 	fstream fileClientes ("Files/dataClientes.txt");
 	if (fileClientes.is_open()) {
 		char availList[5] = "";
@@ -719,7 +954,32 @@ void agregarCliente() {
 
 			fileClientes.seekp(offset);
 			fileClientes.write(buffer,temp.size());
+			fstream fileClientes ("Files/dataClientes.txt");
+		}
+	}
+	if (fileClientes.is_open()) {
+		char availList[5] = "";
+		fileClientes.read(availList, sizeof(availList)-1);
 
+		int RRN = stoi(availList);
+
+		if(RRN != -1) {
+			int offset = 87 + (RRN - 1) * 58;
+
+			fileClientes.seekg(offset);
+
+			char * tempAvailList = new char [58];
+
+			fileClientes.read (tempAvailList,58);
+
+   		//Splitting into tokens
+			char * pch;
+			pch = strtok (tempAvailList," ");
+			char * finalAvailList;
+			finalAvailList = strtok (pch, "*");
+
+			fileClientes.seekp(offset);
+			fileClientes.write(buffer,temp.size());
 			string strTemp;
 			strcat (finalAvailList," ");
 			strTemp = finalAvailList;
@@ -767,6 +1027,33 @@ void modificarCliente(int RRN){
 	}else{
 		cerr << "Could not open file" << endl ;
 	}
+}
+
+int buscarCliente(char* idCliente) {
+	fstream is("Files/dataClientes.txt");
+	int RRN = 0, offset;
+	char idClienteTemp [14];
+	if(is.is_open()) {
+		while(!is.eof()) {
+			offset = 87 + RRN * 58;
+			is.seekg(offset);
+			is.seekp(offset);
+			is.read(idClienteTemp, 13);
+			idClienteTemp[13] = '\0';
+			
+			if((strcmp (idCliente, idClienteTemp) == 0)){
+				return RRN + 1;
+				is.close();
+				break;
+			}
+			RRN++;
+		}
+
+		is.close();
+	} else {
+		cerr << "No se puede abrir el archivo." << endl;
+	}
+	return 0;
 }
 
 void datosLinea(char* idCliente) {
@@ -922,3 +1209,825 @@ void eliminarLinea(int RRN){
 	}
 }
 
+int buscarLinea(int numCliente) {
+	fstream is("Files/lineasClientes.txt");
+	int RRN = 0, offset;
+	char numClienteTemp [9];
+	string s = to_string(numCliente);
+	char const *charNumCliente = s.c_str(); 
+	if(is.is_open()) {
+		while(!is.eof()) {
+			offset = 39 + RRN * 21;
+			is.seekg(offset);
+			//is.seekp(offset);
+			is.read(numClienteTemp, 8);
+			numClienteTemp[8] = '\0';
+			
+			if((strcmp (charNumCliente, numClienteTemp) == 0)){
+				return RRN + 1;
+				is.close();
+				break;
+			}
+			RRN++;
+		}
+
+		is.close();
+	} else {
+		cerr << "No se puede abrir el archivo." << endl;
+	}
+	return 0;
+}
+
+void buscarLinea(char* idCliente) {
+	fstream is("Files/lineasClientes.txt");
+	int RRN = 0, offset;
+	char idClienteTemp [14];
+	
+	if(is.is_open()) {
+		while(!is.eof()) {
+			offset = 39 + (RRN * 21 + 8);
+			is.seekg(offset);
+			is.read(idClienteTemp, 13);
+			idClienteTemp[13] = '\0';
+			
+			if((strcmp (idCliente, idClienteTemp) == 0)){
+				eliminarLinea(RRN);		
+			}
+			RRN++;
+		}
+
+		is.close();
+
+	}else {
+		cerr << "No se puede abrir el archivo." << endl;
+	}
+
+}
+
+void buscarLineas(char* idCliente) {
+	fstream is("Files/lineasClientes.txt");
+	int RRN = 0, offset;
+	char idClienteTemp [14];
+	char numCliente[9];
+	vector<string> lineasClientes;
+	string numero;
+	
+	if(is.is_open()) {
+		while(!is.eof()) {
+			offset = 39 + (RRN * 21 + 8);
+			is.seekg(offset);
+			is.read(idClienteTemp, 13);
+			idClienteTemp[13] = '\0';
+			
+			if((strcmp (idCliente, idClienteTemp) == 0)){
+				is.seekp(offset - 8);
+				is.read(numCliente, 8);
+				numCliente[8] = '\0';	
+				numero.assign(numCliente, 8);
+				lineasClientes.push_back(numero);	
+			}
+			RRN++;
+		}
+
+		is.close();
+
+	}else {
+		cerr << "No se puede abrir el archivo." << endl;
+	}
+	
+	buscarLlamadas(lineasClientes, idCliente);
+
+}
+
+void buscarLlamadas (vector<string> lineasClientes, char* idCliente) {
+	
+	int  offset;
+	vector<string> llamadas;
+	char emisor [9];
+	char tempEmisor [9];
+	char* call;
+	string calls;
+	
+	
+	for (int i = 0; i < lineasClientes.size(); ++i)	{
+		strcpy(emisor, lineasClientes[i].c_str());
+		emisor[8] = '\0';
+		int RRN = 0;
+		fstream is("Files/llamadas.txt");
+		while(!is.eof()) {
+			offset = 54 + RRN * 43;
+			is.seekp(offset);
+			char* call = new char[44];
+			is.read(call, 44);
+			calls = "";
+			calls.assign(call, 44);
+			memcpy (tempEmisor, call, 8);
+			tempEmisor[8] = '\0';
+			
+
+			
+			if(strcmp (emisor, tempEmisor) == 0) {
+				llamadas.push_back(calls);
+			}
+			delete[] call;
+
+			RRN ++;
+		}
+		if (i == lineasClientes.size()-1) 
+			is.close();
+
+	}
+	
+	facturacion (lineasClientes, llamadas, idCliente);
+
+}
+
+void facturacion (vector<string> lineasClientes, vector<string> llamadas, char* idCliente) {
+	vector<double> costos;
+	int cont = 0;
+
+	do{
+		double acumLineas = 0;
+		char* emisor = new char[9];
+		memcpy (emisor, lineasClientes[cont].c_str(), 8);
+		emisor[8] = '\0';
+		
+		
+		for (int i = 0; i < llamadas.size(); ++i) {
+			char* tempEmisor = new char[9];
+			
+			memcpy (tempEmisor, llamadas[i].c_str(), 8);
+			tempEmisor[8] = '\0';
+
+			if (strcmp (emisor, tempEmisor) == 0) {
+				
+				string inicio = "", final = "", hora = "";
+
+				for (int j = 16; j <= 29; ++j){
+					inicio += llamadas[i].at(j);
+					if (j >= 24)
+						hora += llamadas[i].at(j);
+				}
+
+				for (int k = 30; k <= 43; ++k){
+					final += llamadas[i].at(k);
+				}
+
+
+				unsigned long beg = stol(inicio);
+				unsigned long end = stol(final);
+				unsigned long hrs = stol(hora);
+
+				unsigned int tiempoLlamada = 0;
+
+				tiempoLlamada =  (end - beg);
+
+				if (hrs <= 75959) {
+					acumLineas += (tiempoLlamada * 0.01);
+				} else if ((hrs >= 80000) && (hrs <= 155959)) {
+					acumLineas += (tiempoLlamada * 0.05);
+				} else if ((hrs >= 160000) && (hrs <= 235959)) {
+					acumLineas += (tiempoLlamada * 0.04);
+				}
+				
+			}
+
+			delete[] tempEmisor;
+
+		}
+		costos.push_back(acumLineas);
+		++cont;
+		delete[] emisor;
+	} while (cont < lineasClientes.size());
+
+
+	double subtotal = 0.0, isv;
+	float total;
+	bool flag = true;
+	cout << endl << "*******************************************" << endl;
+	cout << "FACTURA" << endl;
+	cout << "Cliente: " << idCliente << endl;
+	for (int g = 0; g < lineasClientes.size(); ++g) {
+
+		cout << "Linea No. " << g + 1 << ": " << lineasClientes[g] << endl;
+		
+		if(llamadas.size() == 0 ) {
+			cout << "No hay cargos para esta linea " << endl;
+			flag = false;
+		}else {
+			cout << "Total linea: Lps. " << costos[g] << endl;
+			subtotal += costos[g];
+		}
+
+	}
+	float ruSubtotal, ruISV, ruTotal;
+	Factura factura;
+	vector <Factura> vf;
+	if(flag) {
+		cout << "-------------------------------------------" << endl;
+		ruSubtotal = ceilf(subtotal * 100) / 100;
+		cout << "Subtotal: Lps. " << ruSubtotal << endl;
+		isv = subtotal * 0.15;
+		ruISV = ceilf(isv * 100) / 100;
+		cout << "ISV: Lps. " << ruISV << endl;
+		total = ruSubtotal + ruISV;
+		ruTotal = ceilf(total * 100) / 100; 
+		cout << "Total: Lps. " << ruTotal << endl;
+		cout << "*******************************************" << endl << endl;
+		for (int z = 0; z < lineasClientes.size(); ++z){
+			factura.id = new char[13];
+			strncat(factura.id, idCliente, 13);
+			factura.emisor = new char[8];
+			strncat(factura.emisor, lineasClientes[z].c_str(), 8);
+			factura.total = costos[z]; 
+			vf.push_back(factura);
+		}
+	}
+	exportFacturasJson(vf);
+}
+
+void agregarBTreeClientes(IndiceClientes indice){
+	if (arbolClientes.hasRoot){
+		if (arbolClientes.nodos.size()==0){
+			if (arbolClientes.root.isFull()){
+				splitRootClientes(indice);
+			} else {
+				arbolClientes.root.keys.push_back(indice);
+				sort(arbolClientes.root.keys.begin(), arbolClientes.root.keys.end());
+			}
+		} else {
+			int pos = findpos(arbolClientes.root.keys, indice);
+			bool izquierda = leftright(arbolClientes.root.keys, indice);
+			int child;
+			if (izquierda){
+				child = arbolClientes.root.hijos[pos];
+			} else {
+				child = arbolClientes.root.hijos[pos+1];
+			}
+			int nodenum = findNodeNum(arbolClientes.nodos, child);
+			while (!arbolClientes.nodos[nodenum].isLeaf()){
+				pos = findpos(arbolClientes.nodos[nodenum].keys, indice);
+				izquierda = leftright(arbolClientes.nodos[nodenum].keys, indice);
+				if (izquierda){
+					child = arbolClientes.nodos[nodenum].hijos[pos];
+				} else {
+					child = arbolClientes.nodos[nodenum].hijos[pos+1];
+				}
+				nodenum = findNodeNum(arbolClientes.nodos, child);
+			}
+			if (arbolClientes.nodos[nodenum].isFull()){
+				if (arbolClientes.nodos[nodenum].parent == arbolClientes.root.num){
+					if (arbolClientes.root.isFull()){
+						splitRootClientes(indice);
+					} else {
+						arbolClientes.root.keys.push_back(indice);
+						sort(arbolClientes.root.keys.begin(), arbolClientes.root.keys.end());
+					}
+				} else {
+					int promotenum = findNodeNum(arbolClientes.nodos, arbolClientes.nodos[nodenum].parent);
+					if (arbolClientes.nodos[promotenum].isFull()){
+						splitNodeClientes(indice, nodenum, promotenum, arbolClientes.nodos[promotenum].num);
+					} else {
+						arbolClientes.nodos[promotenum].keys.push_back(indice);
+						sort(arbolClientes.nodos[promotenum].keys.begin(), arbolClientes.nodos[promotenum].keys.end());
+					}
+				}
+			} else {
+				arbolClientes.nodos[nodenum].keys.push_back(indice);
+				sort(arbolClientes.nodos[nodenum].keys.begin(), arbolClientes.nodos[nodenum].keys.end());
+			}
+		}
+	} else {
+		NodoClientes root(arbolClientes.order, arbolClientes.nodecount);
+		arbolClientes.nodecount++;
+		arbolClientes.root = root;
+		arbolClientes.root.keys.push_back(indice);
+		arbolClientes.hasRoot = true;
+	}
+}
+
+void splitRootClientes(IndiceClientes indice){
+	NodoClientes parent(arbolClientes.order, arbolClientes.nodecount);
+	arbolClientes.nodecount++;
+	NodoClientes node1(arbolClientes.order, arbolClientes.nodecount, parent.num);
+	arbolClientes.nodecount++;
+	NodoClientes node2(arbolClientes.order, arbolClientes.nodecount, parent.num);
+	arbolClientes.nodecount++;
+	arbolClientes.root.keys.push_back(indice);
+	sort(arbolClientes.root.keys.begin(), arbolClientes.root.keys.end());
+	int pos;
+	if (arbolClientes.order%2 == 0){
+		pos = (arbolClientes.order/2)-1;
+	} else {
+		pos = (int)(arbolClientes.order/2);
+	}
+	for (int i = 0; i < pos; ++i){
+		node1.keys.push_back(arbolClientes.root.keys[i]);
+	}
+	for (int i = pos+1; i < arbolClientes.root.keys.size(); ++i){
+		node2.keys.push_back(arbolClientes.root.keys[i]);
+	}
+	parent.keys.push_back(arbolClientes.root.keys[pos]);
+	parent.hijos.push_back(node1.num);
+	parent.hijos.push_back(node2.num);
+	arbolClientes.root = parent;
+	arbolClientes.nodos.push_back(node1);
+	arbolClientes.nodos.push_back(node2);
+}
+
+void splitNodeClientes(IndiceClientes indice, int nodenum, int promotenum, int parent){
+	NodoClientes node1(arbolClientes.order, arbolClientes.nodecount, parent);
+	arbolClientes.nodecount++;
+	NodoClientes node2(arbolClientes.order, arbolClientes.nodecount, parent);
+	arbolClientes.nodecount++;
+	arbolClientes.nodos[nodenum].keys.push_back(indice);
+	sort(arbolClientes.nodos[nodenum].keys.begin(), arbolClientes.nodos[nodenum].keys.end());
+	int pos;
+	if (arbolClientes.order%2 == 0){
+		pos = (arbolClientes.order/2)-1;
+	} else {
+		pos = (int)(arbolClientes.order/2);
+	}
+	for (int i = 0; i < pos; ++i){
+		node1.keys.push_back(arbolClientes.nodos[nodenum].keys[i]);
+	}
+	for (int i = pos+1; i < arbolClientes.nodos[nodenum].keys.size(); ++i){
+		node2.keys.push_back(arbolClientes.nodos[nodenum].keys[i]);
+	}
+	IndiceClientes index = arbolClientes.nodos[nodenum].keys[pos];
+	arbolClientes.nodos.erase(arbolClientes.nodos.begin()+pos);
+	for (int i = 0; i < arbolClientes.nodos[promotenum].hijos.size(); ++i){
+		if (arbolClientes.nodos[promotenum].hijos[i]==arbolClientes.nodos[nodenum].num){
+			arbolClientes.nodos[promotenum].hijos.erase(arbolClientes.nodos[promotenum].hijos.begin()+i);
+		}
+	}
+	arbolClientes.nodos[promotenum].hijos.push_back(node1.num);
+	arbolClientes.nodos[promotenum].hijos.push_back(node2.num);
+	arbolClientes.nodos.push_back(node1);
+	arbolClientes.nodos.push_back(node2);
+	if (arbolClientes.nodos[promotenum].isFull()){
+		int num = findNodeNum(arbolClientes.nodos, arbolClientes.nodos[promotenum].parent);
+		splitNodeClientes(index, promotenum, num, arbolClientes.nodos[promotenum].parent);
+	}
+	arbolClientes.nodos[promotenum].keys.push_back(index);
+	sort(arbolClientes.nodos[promotenum].keys.begin(), arbolClientes.nodos[promotenum].keys.end());
+}
+
+int findpos(vector<IndiceClientes> keys, IndiceClientes indice){
+	int pos = -1;
+	bool izquierda;
+	for (int i = 0; i < keys.size(); ++i){
+		if (indice<keys[i]){
+			if (i==0){
+				pos = i;
+				izquierda = true;
+				break;
+			} else if (indice>keys[i-1]){
+				pos = i;
+				izquierda = true;
+				break;
+			}
+		}
+	}
+	if (pos==-1){
+		pos =  arbolClientes.root.keys.size()-1;
+		izquierda = false;
+	}
+	return pos;
+}
+bool leftright(vector<IndiceClientes> keys, IndiceClientes indice){
+	int pos = -1;
+	bool izquierda;
+	for (int i = 0; i < keys.size(); ++i){
+		if (indice<keys[i]){
+			pos = i;
+			izquierda = true;
+			break;
+		}
+	}
+	if (pos==-1){
+		pos =  arbolClientes.root.keys.size()-1;
+		izquierda = false;
+	}
+	return izquierda;
+}
+
+int findNodeNum(vector<NodoClientes> vec, int n){
+	int pos;
+	for (int i = 0; i < vec.size(); ++i){
+		if (vec[i].num==n){
+			return i;
+		}
+	}
+	return -1;
+}
+
+void exportFacturasJson(vector<Factura> vf){
+	ofstream output;
+	output.open("Files/FacturasJson.txt");
+	for (int i = 0; i < vf.size(); ++i){
+		string s = "";
+		s+="{";
+		s+="\n";
+		s+="\"id\":";
+		s+=vf[i].id;
+		s+="\n";
+		s+="\"emisor\":";
+		s+=vf[i].emisor;
+		s+="\n";
+		s+="\"total\":";
+		s+=to_string(vf[i].total);
+		s+="\n";
+		s+="}\n";
+		output << s;
+	}
+	output.close();
+}
+
+void exportarCiudadesJson(){
+	string lineaCiudades;
+	vector<string>sv;
+	ifstream fileCiudades("Files/ciudades.txt", ifstream::in);
+	vector<Ciudades> vectorCiudades;
+
+	int num = 1;
+	if (fileCiudades.is_open()){
+		fileCiudades.seekg(40, fileCiudades.beg);
+		int length = 4;
+		lineaCiudades = "";
+		while (fileCiudades.good()){
+			char* caracteres = new char[length];
+			fileCiudades.read(caracteres, length);
+			if (num%2 == 0){
+				lineaCiudades += caracteres;
+				sv.push_back(lineaCiudades);
+				delete[] caracteres;
+				lineaCiudades = "";
+				length = 4;
+			} else {
+				lineaCiudades += caracteres;
+				delete[] caracteres;
+				length = 17;
+			}
+			num++;
+			if (num == 61){
+				break;
+			}
+		}
+		fileCiudades.close();
+	}
+
+	char* st;
+	Ciudades ciudades;
+
+	for (int i = 0; i < sv.size(); ++i) {
+		st = new char[strlen(sv[i].c_str())];
+		strcat(st, sv[i].c_str());
+		char* id = new char[2];
+		for (int i = 0; i < 2; i++){
+			id[i] = st[i];
+		}
+		ciudades.idCiudad = atoi(id);
+		delete[] id;
+		char* nombre = new char[17];
+		for (int i = 2; i < 19; i++){
+			nombre[i-2] = st[i];
+		}
+		ciudades.nombreCiudad = new char[17];
+		strncat(ciudades.nombreCiudad, nombre, 17);
+		vectorCiudades.push_back(ciudades);
+	}
+	delete[] st;
+
+	ofstream output;
+	output.open("Files/CiudadesJson.txt");
+	for (int i = 0; i < vectorCiudades.size(); ++i){
+		string s = "";
+		s+="{";
+		s+="\n";
+		s+="\"id\":";
+		s+=to_string(vectorCiudades[i].idCiudad);
+		s+="\n";
+		s+="\"nombre_ciudad\":";
+		s+=vectorCiudades[i].nombreCiudad;
+		s+="\n";
+		s+="}\n";
+		output << s;
+	}
+	output.close();
+}
+
+void exportarClientesJson(){
+	string lineaClientes;
+	vector<string>sv;
+	ifstream fileClientes("Files/dataClientes.txt", ifstream::in);
+	vector<Clientes> vectorClientes;
+
+	int num = 1;
+	bool alternado = false;
+	if (fileClientes.is_open()){
+		fileClientes.seekg(87, fileClientes.beg);
+		int length = 13;
+		lineaClientes = "";
+		char* caracteres2;
+		while (fileClientes.good()){
+			caracteres2 = new char[length];
+			fileClientes.read(caracteres2, length);
+			if (num%2 == 0){
+				if (alternado){
+					for (int i = 0; i < 40; ++i){
+						lineaClientes += caracteres2[i];
+					}
+					delete[] caracteres2;
+					length = 1;
+					alternado = true;
+				} else {
+					lineaClientes += caracteres2;
+					sv.push_back(lineaClientes);
+					delete[] caracteres2;
+					lineaClientes = "";
+					length = 13;
+					alternado = false;
+				}
+			} else {
+				if (alternado){
+					lineaClientes += caracteres2;
+					delete[] caracteres2;
+					length = 4;
+					alternado = false;
+				} else {
+					lineaClientes += caracteres2;
+					delete[] caracteres2;
+					length = 40;
+					alternado = true;
+				}
+			}
+			num++;
+			if (num == 2001){
+				break;
+			}
+		}
+		fileClientes.close();
+	}
+
+	char* st;
+	Clientes clientes;
+
+	for (int i = 0; i < sv.size(); ++i) {
+		st = new char[strlen(sv[i].c_str())];
+		strcat(st, sv[i].c_str());
+		char* tempid = new char[13];
+		for (int i = 0; i < 13; i++){
+			tempid[i] = st[i];
+		}
+		char* id = new char[13];
+		strncat(id, tempid, 13);
+		char* nombre = new char[41];
+		int cont = 0;
+		for (int i = 13; i < 52; i++){
+			nombre[cont] = st[i];
+			cont++;
+		}
+		nombre[41] = '\0';
+		clientes.genero = st[54];
+		char tempidCiudad[4];
+		cont = 0;
+		for (int i = 55; i < 59; i++){
+			tempidCiudad[cont] = st[i];
+			cont++;
+		}
+		char* idCiudad = new char[4];
+		strncat(idCiudad, tempidCiudad, 4);
+		clientes.idCiudad = atoi(idCiudad);
+		clientes.idCliente = new char[13];
+		strncat(clientes.idCliente, id, 13);
+		clientes.nombreCliente = new char[40];
+		strncat(clientes.nombreCliente, nombre, 39);
+		strcat(clientes.nombreCliente, " ");
+		vectorClientes.push_back(clientes);
+	}
+	delete[] st;
+
+	ofstream output;
+	output.open("Files/ClientesJson.txt");
+	for (int i = 0; i < vectorClientes.size(); ++i){
+		string s = "";
+		s+="{";
+		s+="\n";
+		s+="\"id_cliente\":";
+		s+=vectorClientes[i].idCliente;
+		s+="\n";
+		s+="\"nombre_cliente\":";
+		s+=vectorClientes[i].nombreCliente;
+		s+="\n";
+		s+="\"genero\":";
+		s+=vectorClientes[i].genero;
+		s+="\n";
+		s+="\"id_ciudad\":";
+		s+=to_string(vectorClientes[i].idCiudad);
+		s+="\n";
+		s+="}\n";
+		output << s;
+	}
+	output.close();
+}
+
+void exportarLineasJson(){
+	string lineaLineas;
+	vector<string>sv;
+	ifstream fileLineas("Files/lineasClientes.txt", ifstream::in);
+	vector<Lineas> vectorLineas;
+
+	int num = 1;
+	bool alternado = false;
+	if (fileLineas.is_open()){
+		fileLineas.seekg(39, fileLineas.beg);
+		int length = 8;
+		lineaLineas = "";
+		while (fileLineas.good()){
+			char* caracteres3 = new char[length];
+			fileLineas.read(caracteres3, length);
+			if (num%2 == 0){
+				lineaLineas += caracteres3;
+				sv.push_back(lineaLineas);
+				delete[] caracteres3;
+				lineaLineas = "";
+				length = 8;
+			} else {
+				for (int i = 0; i < 8; ++i){
+					lineaLineas += caracteres3[i];
+				}
+				delete[] caracteres3;
+				length = 13;
+			}
+			num++;
+			if (num == 1501){
+				break;
+			}
+			
+		}
+		fileLineas.close();
+	}
+
+	char* st;
+	Lineas lineas;
+
+	for (int i = 0; i < sv.size(); ++i) {
+		st = new char[strlen(sv[i].c_str())];
+		strcat(st, sv[i].c_str());
+		char* numero = new char[8];
+		for (int i = 0; i < 8; i++){
+			numero[i] = st[i];
+		}
+		numero[8] = '\0';
+		lineas.numero = atoi(numero);
+		char* id = new char[13];
+		int cont = 0;
+		for (int i = 8; i < 21; i++){
+			id[cont] = st[i];
+			cont++;
+		}
+		lineas.id = new char[13];
+		strncat(lineas.id, id, 13);
+		delete[] numero;
+		delete[] id;
+		vectorLineas.push_back(lineas);
+	}
+	delete[] st;
+
+	ofstream output;
+	output.open("Files/LineasJson.txt");
+	for (int i = 0; i < vectorLineas.size(); ++i){
+		string s = "";
+		s+="{";
+		s+="\n";
+		s+="\"numero\":";
+		s+=to_string(vectorLineas[i].numero);
+		s+="\n";
+		s+="\"id_cliente\":";
+		s+=vectorLineas[i].id;
+		s+="\n";
+		s+="}\n";
+		output << s;
+	}
+	output.close();
+}
+
+void exportarLlamadasJson(){
+	string lineaLlamadas;
+	vector<string>sv;
+	ifstream fileLlamadas("Files/llamadas.txt", ifstream::in);
+	vector<Llamadas> vectorLlamadas;
+
+	int num = 1;
+	bool alternado = false;
+	if (fileLlamadas.is_open()){
+		fileLlamadas.seekg(54, fileLlamadas.beg);
+		int length = 8;
+		char* caracteres4;
+		lineaLlamadas = "";
+		while (fileLlamadas.good()){
+			caracteres4 = new char[length];
+			fileLlamadas.read(caracteres4, length);
+			if (num%2 == 0){
+				if (alternado){
+					for (int i = 0; i < 14; ++i){
+						lineaLlamadas += caracteres4[i];
+					}
+					delete[] caracteres4;
+					length = 14;
+					alternado = true;
+				} else {
+					for (int i = 0; i < 8; ++i){
+						lineaLlamadas += caracteres4[i];
+					}
+					sv.push_back(lineaLlamadas);
+					delete[] caracteres4;
+					lineaLlamadas = "";
+					length = 8;
+					alternado = false;
+				}
+			} else {
+				if (alternado){
+					for (int i = 0; i < 14; ++i){
+						lineaLlamadas += caracteres4[i];
+					}
+					delete[] caracteres4;
+					length = 8;
+					alternado = false;
+				} else {
+					for (int i = 0; i < 8; ++i){
+						lineaLlamadas += caracteres4[i];
+					}
+					delete[] caracteres4;
+					length = 14;
+					alternado = true;
+				}
+			}
+			num++;
+			if (num == 200001){
+				break;
+			}
+		}
+		fileLlamadas.close();
+	}
+
+	char* st;
+	Llamadas llamadas;
+
+	for (int i = 0; i < sv.size(); ++i) {
+		st = new char[strlen(sv[i].c_str())];
+		strcat(st, sv[i].c_str());
+		char* numero = new char[8];
+		for (int i = 0; i < 8; i++){
+			numero[i] = st[i];
+		}
+		llamadas.numero = atoi(numero);
+		char* inicio = new char[13];
+		int cont = 0;
+		for (int i = 8; i < 22; i++){
+			inicio[cont] = st[i];
+			cont++;
+		}
+		llamadas.inicio = atol(inicio);
+		char* fin = new char[13];
+		cont = 0;
+		for (int i =22; i < 36; i++){
+			fin[cont] = st[i];
+			cont++;
+		}
+		llamadas.final = atol(fin);
+		char* destino = new char[8];
+		cont = 0;
+		for (int i = 36; i < 44; i++){
+			destino[cont] = st[i];
+			cont++;
+		}
+		llamadas.destino = atoi(destino);
+		vectorLlamadas.push_back(llamadas);
+	}
+	delete[] st;
+
+	ofstream output;
+	output.open("Files/LlamadasJson.txt");
+	for (int i = 0; i < vectorLlamadas.size(); ++i){
+		string s = "";
+		s+="{";
+		s+="\n";
+		s+="\"numero\":";
+		s+=to_string(vectorLlamadas[i].numero);
+		s+="\n";
+		s+="\"fecha_inicio\":";
+		s+=to_string(vectorLlamadas[i].inicio);
+		s+="\n";
+		s+="\"fecha_fin\":";
+		s+=to_string(vectorLlamadas[i].final);
+		s+="\n";
+		s+="\"destino\":";
+		s+=to_string(vectorLlamadas[i].destino);
+		s+="\n";
+		s+="}\n";
+		output << s;
+	}
+	output.close();
+}
