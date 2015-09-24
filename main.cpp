@@ -72,6 +72,26 @@ struct NodoClientes{
 			return false;
 		}
 	}
+	string toString(){
+		string s ="";
+		s+="Orden: ";
+		s+=to_string(order);
+		s+="\nNumero: ";
+		s+=to_string(num);
+		s+="\nKeys: |";
+		for (int i = 0; i < keys.size(); ++i){
+			s+=keys[i].llave;
+			s+="-";
+			s+=to_string(keys[i].rrn);
+			s+="|";
+		}
+		s+="\nHijos: |";
+		for (int i = 0; i < hijos.size(); ++i){
+			s+=to_string(hijos[i]);
+			s+="|";
+		}
+		return s;
+	}
 };
 
 struct BTreeClientes{
@@ -80,7 +100,7 @@ struct BTreeClientes{
 	bool hasRoot;
 	NodoClientes root;
 	vector<NodoClientes> nodos;
-	BTreeClientes(int orden) : order(orden), nodecount(0), hasRoot(false), root() {
+	BTreeClientes() : order(3), nodecount(0), hasRoot(false), root() {
 	}
 };
 
@@ -117,6 +137,26 @@ struct NodoLineas{
 			return false;
 		}
 	}
+	string toString(){
+		string s ="";
+		s+="Orden: ";
+		s+=to_string(order);
+		s+="\nNumero: ";
+		s+=to_string(num);
+		s+="\nKeys: |";
+		for (int i = 0; i < keys.size(); ++i){
+			s+=keys[i].llave;
+			s+="-";
+			s+=to_string(keys[i].rrn);
+			s+="|";
+		}
+		s+="\nHijos: |";
+		for (int i = 0; i < hijos.size(); ++i){
+			s+=to_string(hijos[i]);
+			s+="|";
+		}
+		return s;
+	}
 };
 
 struct BTreeLineas{
@@ -125,7 +165,7 @@ struct BTreeLineas{
 	bool hasRoot;
 	NodoLineas root;
 	vector<NodoLineas> nodos;
-	BTreeLineas(int orden) : order(orden), nodecount(0), hasRoot(false), root() {
+	BTreeLineas() : order(3), nodecount(0), hasRoot(false), root() {
 	}
 };
 
@@ -193,8 +233,8 @@ ostream& operator<<(ostream& output4, const Llamadas& llamadas){
 	return output4;  
 }
 
-BTreeClientes arbolClientes(5);
-BTreeLineas arbolLineas(5);
+BTreeClientes arbolClientes;
+BTreeLineas arbolLineas;
 vector<IndiceClientes> indicesClientes;
 vector<IndiceLineas> indicesLineas;
 
