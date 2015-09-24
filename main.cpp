@@ -193,6 +193,14 @@ struct Llamadas{
 	int destino;
 };
 
+struct Factura {
+	char* id;
+	char* emisor;
+	float subtotal;
+	float isv;
+	float total;
+};
+
 istream& operator>>(istream& input1, Ciudades& ciudades){
 	input1 >> ciudades.idCiudad >> ciudades.nombreCiudad;
 	return input1;
@@ -245,14 +253,21 @@ void eliminarCliente(int);
 void agregarCliente();
 void appendCliente (string);
 void modificarCliente(int);
+int buscarCliente(char[]);
 void datosLinea(char[]);
 void agregarLinea(string);
 void appendLinea(string);
 void modificarLinea(int, string); 
 void eliminarLinea(int);
 void datosLinea(int);
+int buscarLinea(int);
+void buscarLinea(char*);
+void buscarLineas(char*);
+void buscarLlamadas (vector<string>, char*);
 void agregarBTreeClientes(IndiceClientes indice);
 void splitRootClientes(IndiceClientes indice);
+void facturacion (vector<string>, vector<string>, char*);
+void exportFacturasJson(vector<Factura> vf)
 
 int main(int argc, char const *argv[]){
 	//leerTodos();
@@ -264,6 +279,7 @@ int main(int argc, char const *argv[]){
 		if (op1 == 1) {
 			do {
 				cout << "Opciones Clientes\n1. Agregar\n2. Modificar\n3. Eliminar\n4. Salir" << endl;
+				cout << "Opciones Clientes\n1. Agregar\n2. Modificar\n3. Eliminar\n4. Buscar\n5. Salir" << endl;
 				cin >> op2;
 				if (op2 == 1){
 					agregarCliente();
@@ -277,14 +293,38 @@ int main(int argc, char const *argv[]){
 					eliminarCliente(RRN-1);
 				}
 			}while (op2 <= 3);
+				} else if (op2 == 4) {
+					getchar();
+					char id [14];
+					bool flagId;
+					do {
+						flagId = true; 
+						cout << "Numero de Identidad: ";
+						cin.getline(id,14);
 
+						if ((unsigned)strlen(id) < 13) {
+							flagId = false;
+							cerr << "Valor no valido" << endl;
+						}
+					} while(!flagId);
+					int found = buscarCliente(id);
+					if (found != 0) {
+						cout << "RRN usuario: " << found << endl;
+					} else {
+						cout << "Usuario no encontrado." << endl;
+					}
 
+				}
+			}while (op2 <= 4);
 		} else if (op1 == 2) {
 			do {
 				cout << "Opciones Lineas\n1. Agregar\n2. Modificar\n3. Eliminar\n4. Salir" << endl;
 				cin >> op3;
-				
 				if (op3 == 1){
+				cout << "Opciones Lineas\n1. Agregar\n2. Modificar\n3. Eliminar\n4. Buscar\n5. Salir" << endl;
+				cin >> op3;
+				if (op3 == 1){
+					getchar();
 					char id [14];
 					bool flagId;
 					do {
@@ -308,7 +348,20 @@ int main(int argc, char const *argv[]){
 					eliminarLinea(RRN-1);
 				}
 			}while (op3 <= 3);
+				} else if (op3 == 4) {
+					int numCliente;
+					cout << "Ingrese el numero del cliente: ";
+					cin >> numCliente;
+					int found;
+					if (found != 0) {
+						cout << "RRN usuario: " << found << endl;
+					} else {
+						cout << "Usuario no encontrado." << endl;
+					}
 
+
+				}
+			}while (op3 <= 4);
 		}
 
 
@@ -805,13 +858,19 @@ string datosCliente(){
 }
 
 void eliminarCliente(int RRN){
+	char idCliente [14];
 	fstream is("Files/dataClientes.txt");
 	if(is.is_open()){
 		char availList[5] = "";
+		
 
 		is.read(availList, sizeof(availList)-1);
 		
 		int offset = 87 + RRN * 58;
+		is.seekg(offset);
+		is.seekp(offset);
+		is.read(idCliente, 13);
+		idCliente[13] = '\0';
 		is.seekg(offset);
 		is.seekp(offset);
 		is.write("*",1);
@@ -831,6 +890,7 @@ void eliminarCliente(int RRN){
 	}else {
 		cerr << "No se puede abrir el archivo." << endl ;
 	}
+	
 }
 
 void agregarCliente() {
@@ -839,7 +899,6 @@ void agregarCliente() {
 	
 	const char* buffer = new char[temp.size()];
 	buffer = temp.c_str();
-
 	fstream fileClientes ("Files/dataClientes.txt");
 	if (fileClientes.is_open()) {
 		char availList[5] = "";
@@ -864,7 +923,30 @@ void agregarCliente() {
 
 			fileClientes.seekp(offset);
 			fileClientes.write(buffer,temp.size());
+	fstream fileClientes ("Files/dataClientes.txt");
+	if (fileClientes.is_open()) {
+		char availList[5] = "";
+		fileClientes.read(availList, sizeof(availList)-1);
 
+		int RRN = stoi(availList);
+
+		if(RRN != -1) {
+			int offset = 87 + (RRN - 1) * 58;
+
+			fileClientes.seekg(offset);
+
+			char * tempAvailList = new char [58];
+
+			fileClientes.read (tempAvailList,58);
+
+   		//Splitting into tokens
+			char * pch;
+			pch = strtok (tempAvailList," ");
+			char * finalAvailList;
+			finalAvailList = strtok (pch, "*");
+
+			fileClientes.seekp(offset);
+			fileClientes.write(buffer,temp.size());
 			string strTemp;
 			strcat (finalAvailList," ");
 			strTemp = finalAvailList;
@@ -911,6 +993,32 @@ void modificarCliente(int RRN){
 		is.close();
 	}else{
 		cerr << "Could not open file" << endl ;
+	}
+}
+int buscarCliente(char* idCliente) {
+	fstream is("Files/dataClientes.txt");
+	int RRN = 0, offset;
+	char idClienteTemp [14];
+	if(is.is_open()) {
+		while(!is.eof()) {
+			offset = 87 + RRN * 58;
+			is.seekg(offset);
+			is.seekp(offset);
+			is.read(idClienteTemp, 13);
+			idClienteTemp[13] = '\0';
+			
+			if((strcmp (idCliente, idClienteTemp) == 0)){
+				return RRN + 1;
+				is.close();
+				break;
+			}
+			RRN++;
+		}
+
+		is.close();
+		return 0;
+	}else {
+		cerr << "No se puede abrir el archivo." << endl;
 	}
 }
 
@@ -1065,6 +1173,263 @@ void eliminarLinea(int RRN){
 	}else {
 		cerr << "No se puede abrir el archivo." << endl ;
 	}
+}
+
+int buscarLinea(int numCliente) {
+	fstream is("Files/lineasClientes.txt");
+	int RRN = 0, offset;
+	char numClienteTemp [9];
+	string s = to_string(numCliente);
+	char const *charNumCliente = s.c_str(); 
+	if(is.is_open()) {
+		while(!is.eof()) {
+			offset = 39 + RRN * 21;
+			is.seekg(offset);
+			//is.seekp(offset);
+			is.read(numClienteTemp, 8);
+			numClienteTemp[8] = '\0';
+			
+			if((strcmp (charNumCliente, numClienteTemp) == 0)){
+				return RRN + 1;
+				is.close();
+				break;
+			}
+			RRN++;
+		}
+
+		is.close();
+		return 0;
+	}else {
+		cerr << "No se puede abrir el archivo." << endl;
+	}
+
+}
+
+void buscarLinea(char* idCliente) {
+	fstream is("Files/lineasClientes.txt");
+	int RRN = 0, offset;
+	char idClienteTemp [14];
+	
+	if(is.is_open()) {
+		while(!is.eof()) {
+			offset = 39 + (RRN * 21 + 8);
+			is.seekg(offset);
+			is.read(idClienteTemp, 13);
+			idClienteTemp[13] = '\0';
+			
+			if((strcmp (idCliente, idClienteTemp) == 0)){
+				eliminarLinea(RRN);		
+			}
+			RRN++;
+		}
+
+		is.close();
+
+	}else {
+		cerr << "No se puede abrir el archivo." << endl;
+	}
+
+}
+
+void buscarLineas(char* idCliente) {
+	fstream is("Files/lineasClientes.txt");
+	int RRN = 0, offset;
+	char idClienteTemp [14];
+	char numCliente[9];
+	vector<string> lineasClientes;
+	string numero;
+	
+	if(is.is_open()) {
+		while(!is.eof()) {
+			offset = 39 + (RRN * 21 + 8);
+			is.seekg(offset);
+			is.read(idClienteTemp, 13);
+			idClienteTemp[13] = '\0';
+			
+			if((strcmp (idCliente, idClienteTemp) == 0)){
+				is.seekp(offset - 8);
+				is.read(numCliente, 8);
+				numCliente[8] = '\0';	
+				numero.assign(numCliente, 8);
+				lineasClientes.push_back(numero);	
+			}
+			RRN++;
+		}
+
+		is.close();
+
+	}else {
+		cerr << "No se puede abrir el archivo." << endl;
+	}
+	
+	buscarLlamadas(lineasClientes, idCliente);
+
+}
+
+void buscarLlamadas (vector<string> lineasClientes, char* idCliente) {
+	
+	int  offset;
+	vector<string> llamadas;
+	char emisor [9];
+	char tempEmisor [9];
+	char* call;
+	string calls;
+	
+	
+	for (int i = 0; i < lineasClientes.size(); ++i)	{
+		strcpy(emisor, lineasClientes[i].c_str());
+		emisor[8] = '\0';
+		int RRN = 0;
+		fstream is("Files/llamadas.txt");
+		while(!is.eof()) {
+			offset = 54 + RRN * 43;
+			is.seekp(offset);
+			char* call = new char[44];
+			is.read(call, 44);
+			calls = "";
+			calls.assign(call, 44);
+			memcpy (tempEmisor, call, 8);
+			tempEmisor[8] = '\0';
+			
+
+			
+			if(strcmp (emisor, tempEmisor) == 0) {
+				llamadas.push_back(calls);
+			}
+			delete[] call;
+
+			RRN ++;
+		}
+		if (i == lineasClientes.size()-1) 
+			is.close();
+
+	}
+	
+	facturacion (lineasClientes, llamadas, idCliente);
+
+}
+
+void facturacion (vector<string> lineasClientes, vector<string> llamadas, char* idCliente) {
+	vector<double> costos;
+	int cont = 0;
+
+	do{
+		double acumLineas = 0;
+		char* emisor = new char[9];
+		memcpy (emisor, lineasClientes[cont].c_str(), 8);
+		emisor[8] = '\0';
+		
+		
+		for (int i = 0; i < llamadas.size(); ++i) {
+			char* tempEmisor = new char[9];
+			
+			memcpy (tempEmisor, llamadas[i].c_str(), 8);
+			tempEmisor[8] = '\0';
+
+			if (strcmp (emisor, tempEmisor) == 0) {
+				
+				string inicio = "", final = "", hora = "";
+
+				for (int j = 16; j <= 29; ++j){
+					inicio += llamadas[i].at(j);
+					if (j >= 24)
+						hora += llamadas[i].at(j);
+				}
+
+				for (int k = 30; k <= 43; ++k){
+					final += llamadas[i].at(k);
+				}
+
+
+				unsigned long beg = stol(inicio);
+				unsigned long end = stol(final);
+				unsigned long hrs = stol(hora);
+
+				unsigned int tiempoLlamada = 0;
+
+				tiempoLlamada =  (end - beg);
+
+				if (hrs <= 75959) {
+					acumLineas += (tiempoLlamada * 0.01);
+				} else if ((hrs >= 80000) && (hrs <= 155959)) {
+					acumLineas += (tiempoLlamada * 0.05);
+				} else if ((hrs >= 160000) && (hrs <= 235959)) {
+					acumLineas += (tiempoLlamada * 0.04);
+				}
+				
+			}
+
+			delete[] tempEmisor;
+
+		}
+		costos.push_back(acumLineas);
+		++cont;
+		delete[] emisor;
+	} while (cont < lineasClientes.size());
+
+
+	double subtotal = 0.0, isv;
+	float total;
+	bool flag = true;
+	cout << "*******************************************" << endl;
+	cout << "FACTURA" << endl;
+	cout << "Cliente: " << idCliente << endl;
+	for (int g = 0; g < lineasClientes.size(); ++g) {
+
+		cout << "Linea No. " << g + 1 << ": " << lineasClientes[g] << endl;
+		
+		if(llamadas.size() == 0 ) {
+			cout << "No hay cargos para esta linea " << endl;
+			flag = false;
+		}else {
+			cout << "Total linea: Lps. " << costos[g] << endl;
+			subtotal += costos[g];
+		}
+
+	}
+	float ruSubtotal, ruISV, ruTotal;
+
+	if(flag) {
+		cout << "-------------------------------------------" << endl;
+		ruSubtotal = ceilf(subtotal * 100) / 100;
+		cout << "Subtotal: Lps. " << ruSubtotal << endl;
+		isv = subtotal * 0.15;
+		ruISV = ceilf(isv * 100) / 100;
+		cout << "ISV: Lps. " << ruISV << endl;
+		total = ruSubtotal + ruISV;
+		ruTotal = ceilf(total * 100) / 100; 
+		cout << "Total: Lps. " << ruTotal << endl;
+	}
+
+	cout << "*******************************************" << endl;
+	Factura factura;
+	vector <Factura> vf;
+	for (int z = 0; z < lineasClientes.size(); ++z){
+		factura.id = new char[13];
+		strncat(factura.id, idCliente, 13);
+		factura.emisor = new char[8];
+		strncat(factura.emisor, lineasClientes[z].c_str(), 8);
+		factura.subtotal = ruSubtotal;
+		factura.isv = ruISV;
+		factura.total = ruTotal; 
+		vf.push_back(factura);
+	}
+	
+	exportFacturasJson(vf);
+}
+
+exportFacturasJson(vector<Factura> vf){
+	ofstream output;
+	output.open("Files/FacturasJson.txt");
+	if (output.is_open()) {
+		for (int i = 0; i < vf.size(); ++i){
+			
+			output << index;
+		}
+	} else {
+		cerr << "No se pueden escribir los datos" << endl;
+	}
+	output.close();
 }
 
 void agregarBTreeClientes(IndiceClientes indice){
