@@ -654,1304 +654,1304 @@
 }
 {
 "id_cliente":0822192574236
-"nombre_cliente":Christine Baker                         
-"genero":0
+"nombre_cliente":Christine Baker                        
+"genero":F
 "id_ciudad":18
 }
 {
 "id_cliente":0222192896921
-"nombre_cliente":Lisa Adams                              
-"genero":0
+"nombre_cliente":Lisa Adams                             
+"genero":F
 "id_ciudad":3
 }
 {
 "id_cliente":0606192218508
-"nombre_cliente":Sarah Anderson                          
-"genero":0
+"nombre_cliente":Sarah Anderson                         
+"genero":F
 "id_ciudad":9
 }
 {
 "id_cliente":0322195523091
-"nombre_cliente":Catherine Butler                        
-"genero":0
+"nombre_cliente":Catherine Butler                       
+"genero":F
 "id_ciudad":19
 }
 {
 "id_cliente":0820194565659
-"nombre_cliente":Gloria Hayes                            
-"genero":0
+"nombre_cliente":Gloria Hayes                           
+"genero":F
 "id_ciudad":2
 }
 {
 "id_cliente":1315198053054
-"nombre_cliente":Samuel Barnes                           
-"genero":0
+"nombre_cliente":Samuel Barnes                          
+"genero":M
 "id_ciudad":13
 }
 {
 "id_cliente":0420196247029
-"nombre_cliente":Virginia Fuller                         
-"genero":0
+"nombre_cliente":Virginia Fuller                        
+"genero":F
 "id_ciudad":25
 }
 {
 "id_cliente":0822191556731
-"nombre_cliente":Albert Kelley                           
-"genero":0
+"nombre_cliente":Albert Kelley                          
+"genero":M
 "id_ciudad":24
 }
 {
 "id_cliente":0916199090665
-"nombre_cliente":Eric Peterson                           
-"genero":0
+"nombre_cliente":Eric Peterson                          
+"genero":M
 "id_ciudad":30
 }
 {
 "id_cliente":1113197833717
-"nombre_cliente":Julie Tucker                            
-"genero":0
+"nombre_cliente":Julie Tucker                           
+"genero":F
 "id_ciudad":11
 }
 {
 "id_cliente":0927191834567
-"nombre_cliente":Todd Rice                               
-"genero":0
+"nombre_cliente":Todd Rice                              
+"genero":M
 "id_ciudad":16
 }
 {
 "id_cliente":1802196493719
-"nombre_cliente":Kimberly Long                           
-"genero":0
+"nombre_cliente":Kimberly Long                          
+"genero":F
 "id_ciudad":19
 }
 {
 "id_cliente":0117191538267
-"nombre_cliente":Russell Sanders                         
-"genero":0
+"nombre_cliente":Russell Sanders                        
+"genero":M
 "id_ciudad":23
 }
 {
 "id_cliente":0906191040529
-"nombre_cliente":Arthur Evans                            
-"genero":0
+"nombre_cliente":Arthur Evans                           
+"genero":M
 "id_ciudad":28
 }
 {
 "id_cliente":1428196391577
-"nombre_cliente":Eric Nguyen                             
-"genero":0
+"nombre_cliente":Eric Nguyen                            
+"genero":M
 "id_ciudad":22
 }
 {
 "id_cliente":1323197370337
-"nombre_cliente":Julie Howard                            
-"genero":0
+"nombre_cliente":Julie Howard                           
+"genero":F
 "id_ciudad":8
 }
 {
 "id_cliente":0912195493293
-"nombre_cliente":Andrew Elliott                          
-"genero":0
+"nombre_cliente":Andrew Elliott                         
+"genero":M
 "id_ciudad":21
 }
 {
 "id_cliente":1115198984799
-"nombre_cliente":Teresa Ross                             
-"genero":0
+"nombre_cliente":Teresa Ross                            
+"genero":F
 "id_ciudad":23
 }
 {
 "id_cliente":0201194157525
-"nombre_cliente":Edward Reed                             
-"genero":0
+"nombre_cliente":Edward Reed                            
+"genero":M
 "id_ciudad":18
 }
 {
 "id_cliente":1005193777888
-"nombre_cliente":Kimberly Flores                         
-"genero":0
+"nombre_cliente":Kimberly Flores                        
+"genero":F
 "id_ciudad":14
 }
 {
 "id_cliente":1629192515824
-"nombre_cliente":Wayne Wilson                            
-"genero":0
+"nombre_cliente":Wayne Wilson                           
+"genero":M
 "id_ciudad":10
 }
 {
 "id_cliente":0311198360901
-"nombre_cliente":Pamela Burke                            
-"genero":0
+"nombre_cliente":Pamela Burke                           
+"genero":F
 "id_ciudad":21
 }
 {
 "id_cliente":1520197680600
-"nombre_cliente":Joe Stevens                             
-"genero":0
+"nombre_cliente":Joe Stevens                            
+"genero":M
 "id_ciudad":30
 }
 {
 "id_cliente":1009195550951
-"nombre_cliente":Theresa Wallace                         
-"genero":0
+"nombre_cliente":Theresa Wallace                        
+"genero":F
 "id_ciudad":23
 }
 {
 "id_cliente":1823197884227
-"nombre_cliente":Debra Welch                             
-"genero":0
+"nombre_cliente":Debra Welch                            
+"genero":F
 "id_ciudad":17
 }
 {
 "id_cliente":0118194252042
-"nombre_cliente":Angela Hayes                            
-"genero":0
+"nombre_cliente":Angela Hayes                           
+"genero":F
 "id_ciudad":29
 }
 {
 "id_cliente":1003192892018
-"nombre_cliente":Rose Rice                               
-"genero":0
+"nombre_cliente":Rose Rice                              
+"genero":F
 "id_ciudad":8
 }
 {
 "id_cliente":1528194263759
-"nombre_cliente":Sharon Kelley                           
-"genero":0
+"nombre_cliente":Sharon Kelley                          
+"genero":F
 "id_ciudad":24
 }
 {
 "id_cliente":1205191668989
-"nombre_cliente":Jimmy Chapman                           
-"genero":0
+"nombre_cliente":Jimmy Chapman                          
+"genero":M
 "id_ciudad":27
 }
 {
 "id_cliente":1323194889534
-"nombre_cliente":Louis Fuller                            
-"genero":0
+"nombre_cliente":Louis Fuller                           
+"genero":M
 "id_ciudad":14
 }
 {
 "id_cliente":1817193342588
-"nombre_cliente":Dennis Bennett                          
-"genero":0
+"nombre_cliente":Dennis Bennett                         
+"genero":M
 "id_ciudad":26
 }
 {
 "id_cliente":1515194717341
-"nombre_cliente":Sandra Peterson                         
-"genero":0
+"nombre_cliente":Sandra Peterson                        
+"genero":F
 "id_ciudad":12
 }
 {
 "id_cliente":0905198135181
-"nombre_cliente":Benjamin Gray                           
-"genero":0
+"nombre_cliente":Benjamin Gray                          
+"genero":M
 "id_ciudad":4
 }
 {
 "id_cliente":0117193927995
-"nombre_cliente":Janet Green                             
-"genero":0
+"nombre_cliente":Janet Green                            
+"genero":F
 "id_ciudad":29
 }
 {
 "id_cliente":1515196324281
-"nombre_cliente":Martin Morris                           
-"genero":0
+"nombre_cliente":Martin Morris                          
+"genero":M
 "id_ciudad":26
 }
 {
 "id_cliente":1712194965879
-"nombre_cliente":Alan Matthews                           
-"genero":0
+"nombre_cliente":Alan Matthews                          
+"genero":M
 "id_ciudad":27
 }
 {
 "id_cliente":0526194891077
-"nombre_cliente":Jimmy Nguyen                            
-"genero":0
+"nombre_cliente":Jimmy Nguyen                           
+"genero":M
 "id_ciudad":22
 }
 {
 "id_cliente":0901198553086
-"nombre_cliente":Henry Edwards                           
-"genero":0
+"nombre_cliente":Henry Edwards                          
+"genero":M
 "id_ciudad":15
 }
 {
 "id_cliente":1727195297241
-"nombre_cliente":James Barnes                            
-"genero":0
+"nombre_cliente":James Barnes                           
+"genero":M
 "id_ciudad":29
 }
 {
 "id_cliente":0114199548651
-"nombre_cliente":Beverly Butler                          
-"genero":0
+"nombre_cliente":Beverly Butler                         
+"genero":F
 "id_ciudad":21
 }
 {
 "id_cliente":1507194233339
-"nombre_cliente":Shirley Wright                          
-"genero":0
+"nombre_cliente":Shirley Wright                         
+"genero":F
 "id_ciudad":25
 }
 {
 "id_cliente":0608198326877
-"nombre_cliente":Ralph Johnson                           
-"genero":0
+"nombre_cliente":Ralph Johnson                          
+"genero":M
 "id_ciudad":6
 }
 {
 "id_cliente":1623191819671
-"nombre_cliente":Anthony Bryant                          
-"genero":0
+"nombre_cliente":Anthony Bryant                         
+"genero":M
 "id_ciudad":19
 }
 {
 "id_cliente":1524195689136
-"nombre_cliente":Joe Daniels                             
-"genero":0
+"nombre_cliente":Joe Daniels                            
+"genero":M
 "id_ciudad":15
 }
 {
 "id_cliente":0312198965918
-"nombre_cliente":Christine Weaver                        
-"genero":0
+"nombre_cliente":Christine Weaver                       
+"genero":F
 "id_ciudad":3
 }
 {
 "id_cliente":0128191760216
-"nombre_cliente":Earl Gutierrez                          
-"genero":0
+"nombre_cliente":Earl Gutierrez                         
+"genero":M
 "id_ciudad":18
 }
 {
 "id_cliente":1608197530405
-"nombre_cliente":Christina White                         
-"genero":0
+"nombre_cliente":Christina White                        
+"genero":F
 "id_ciudad":13
 }
 {
 "id_cliente":0625194658748
-"nombre_cliente":Amanda Thomas                           
-"genero":0
+"nombre_cliente":Amanda Thomas                          
+"genero":F
 "id_ciudad":2
 }
 {
 "id_cliente":1228195643959
-"nombre_cliente":Sean Adams                              
-"genero":0
+"nombre_cliente":Sean Adams                             
+"genero":M
 "id_ciudad":16
 }
 {
 "id_cliente":1428194313188
-"nombre_cliente":Janice Lane                             
-"genero":0
+"nombre_cliente":Janice Lane                            
+"genero":F
 "id_ciudad":23
 }
 {
 "id_cliente":0621192154727
-"nombre_cliente":Kimberly Bell                           
-"genero":0
+"nombre_cliente":Kimberly Bell                          
+"genero":F
 "id_ciudad":18
 }
 {
 "id_cliente":1518194745173
-"nombre_cliente":Howard Scott                            
-"genero":0
+"nombre_cliente":Howard Scott                           
+"genero":M
 "id_ciudad":30
 }
 {
 "id_cliente":0829197255842
-"nombre_cliente":Anthony Bryant                          
-"genero":0
+"nombre_cliente":Anthony Bryant                         
+"genero":M
 "id_ciudad":9
 }
 {
 "id_cliente":1707192631584
-"nombre_cliente":Dorothy Thomas                          
-"genero":0
+"nombre_cliente":Dorothy Thomas                         
+"genero":F
 "id_ciudad":8
 }
 {
 "id_cliente":1419195393756
-"nombre_cliente":Donna Harrison                          
-"genero":0
+"nombre_cliente":Donna Harrison                         
+"genero":F
 "id_ciudad":28
 }
 {
 "id_cliente":0719199516879
-"nombre_cliente":Phyllis Garza                           
-"genero":0
+"nombre_cliente":Phyllis Garza                          
+"genero":F
 "id_ciudad":3
 }
 {
 "id_cliente":0728194062941
-"nombre_cliente":Victor Mitchell                         
-"genero":0
+"nombre_cliente":Victor Mitchell                        
+"genero":M
 "id_ciudad":2
 }
 {
 "id_cliente":0225194775973
-"nombre_cliente":Helen Taylor                            
-"genero":0
+"nombre_cliente":Helen Taylor                           
+"genero":F
 "id_ciudad":4
 }
 {
 "id_cliente":1117197177721
-"nombre_cliente":Judy Martinez                           
-"genero":0
+"nombre_cliente":Judy Martinez                          
+"genero":F
 "id_ciudad":8
 }
 {
 "id_cliente":0613195415557
-"nombre_cliente":Jessica Hughes                          
-"genero":0
+"nombre_cliente":Jessica Hughes                         
+"genero":F
 "id_ciudad":20
 }
 {
 "id_cliente":0519198732845
-"nombre_cliente":Wanda Fields                            
-"genero":0
+"nombre_cliente":Wanda Fields                           
+"genero":F
 "id_ciudad":30
 }
 {
 "id_cliente":0525199561820
-"nombre_cliente":Carolyn Ross                            
-"genero":0
+"nombre_cliente":Carolyn Ross                           
+"genero":F
 "id_ciudad":16
 }
 {
 "id_cliente":1818191941629
-"nombre_cliente":Arthur Russell                          
-"genero":0
+"nombre_cliente":Arthur Russell                         
+"genero":M
 "id_ciudad":7
 }
 {
 "id_cliente":1423198378218
-"nombre_cliente":Anthony Mendoza                         
-"genero":0
+"nombre_cliente":Anthony Mendoza                        
+"genero":M
 "id_ciudad":14
 }
 {
 "id_cliente":0722191319847
-"nombre_cliente":Julie Fernandez                         
-"genero":0
+"nombre_cliente":Julie Fernandez                        
+"genero":F
 "id_ciudad":18
 }
 {
 "id_cliente":0714194221264
-"nombre_cliente":Diana Wells                             
-"genero":0
+"nombre_cliente":Diana Wells                            
+"genero":F
 "id_ciudad":26
 }
 {
 "id_cliente":1704193160429
-"nombre_cliente":Frank Thompson                          
-"genero":0
+"nombre_cliente":Frank Thompson                         
+"genero":M
 "id_ciudad":25
 }
 {
 "id_cliente":0920192699962
-"nombre_cliente":Joseph Barnes                           
-"genero":0
+"nombre_cliente":Joseph Barnes                          
+"genero":M
 "id_ciudad":15
 }
 {
 "id_cliente":1507191042260
-"nombre_cliente":Kimberly Arnold                         
-"genero":0
+"nombre_cliente":Kimberly Arnold                        
+"genero":F
 "id_ciudad":1
 }
 {
 "id_cliente":1723197594433
-"nombre_cliente":Benjamin Palmer                         
-"genero":0
+"nombre_cliente":Benjamin Palmer                        
+"genero":M
 "id_ciudad":1
 }
 {
 "id_cliente":1819195843417
-"nombre_cliente":Janice Pierce                           
-"genero":0
+"nombre_cliente":Janice Pierce                          
+"genero":F
 "id_ciudad":18
 }
 {
 "id_cliente":0416193857112
-"nombre_cliente":Louise Woods                            
-"genero":0
+"nombre_cliente":Louise Woods                           
+"genero":F
 "id_ciudad":23
 }
 {
 "id_cliente":0521193842411
-"nombre_cliente":Theresa Wells                           
-"genero":0
+"nombre_cliente":Theresa Wells                          
+"genero":F
 "id_ciudad":9
 }
 {
 "id_cliente":0409199529621
-"nombre_cliente":Carol Peters                            
-"genero":0
+"nombre_cliente":Carol Peters                           
+"genero":F
 "id_ciudad":6
 }
 {
 "id_cliente":1217197343329
-"nombre_cliente":Jean Russell                            
-"genero":0
+"nombre_cliente":Jean Russell                           
+"genero":F
 "id_ciudad":16
 }
 {
 "id_cliente":1016192857182
-"nombre_cliente":Harold Bradley                          
-"genero":0
+"nombre_cliente":Harold Bradley                         
+"genero":M
 "id_ciudad":24
 }
 {
 "id_cliente":0120193574037
-"nombre_cliente":Sandra Robertson                        
-"genero":0
+"nombre_cliente":Sandra Robertson                       
+"genero":F
 "id_ciudad":19
 }
 {
 "id_cliente":0626191264541
-"nombre_cliente":Shirley Jacobs                          
-"genero":0
+"nombre_cliente":Shirley Jacobs                         
+"genero":F
 "id_ciudad":29
 }
 {
 "id_cliente":0628192383265
-"nombre_cliente":Amy Morgan                              
-"genero":0
+"nombre_cliente":Amy Morgan                             
+"genero":F
 "id_ciudad":9
 }
 {
 "id_cliente":0807196590488
-"nombre_cliente":Juan Willis                             
-"genero":0
+"nombre_cliente":Juan Willis                            
+"genero":M
 "id_ciudad":27
 }
 {
 "id_cliente":0118191444619
-"nombre_cliente":Chris Coleman                           
-"genero":0
+"nombre_cliente":Chris Coleman                          
+"genero":M
 "id_ciudad":16
 }
 {
 "id_cliente":1311192822673
-"nombre_cliente":Kenneth Hunt                            
-"genero":0
+"nombre_cliente":Kenneth Hunt                           
+"genero":M
 "id_ciudad":27
 }
 {
 "id_cliente":1001199785454
-"nombre_cliente":Paula Garza                             
-"genero":0
+"nombre_cliente":Paula Garza                            
+"genero":F
 "id_ciudad":25
 }
 {
 "id_cliente":0214195362596
-"nombre_cliente":John Stevens                            
-"genero":0
+"nombre_cliente":John Stevens                           
+"genero":M
 "id_ciudad":22
 }
 {
 "id_cliente":1810196537084
-"nombre_cliente":Paul Martin                             
-"genero":0
+"nombre_cliente":Paul Martin                            
+"genero":M
 "id_ciudad":18
 }
 {
 "id_cliente":1620196977836
-"nombre_cliente":Ralph Johnston                          
-"genero":0
+"nombre_cliente":Ralph Johnston                         
+"genero":M
 "id_ciudad":8
 }
 {
 "id_cliente":1409194957604
-"nombre_cliente":Frances Johnson                         
-"genero":0
+"nombre_cliente":Frances Johnson                        
+"genero":F
 "id_ciudad":9
 }
 {
 "id_cliente":1708199326452
-"nombre_cliente":Harold Russell                          
-"genero":0
+"nombre_cliente":Harold Russell                         
+"genero":M
 "id_ciudad":19
 }
 {
 "id_cliente":0220196465188
-"nombre_cliente":Patrick Stone                           
-"genero":0
+"nombre_cliente":Patrick Stone                          
+"genero":M
 "id_ciudad":6
 }
 {
 "id_cliente":1210191253855
-"nombre_cliente":John Henderson                          
-"genero":0
+"nombre_cliente":John Henderson                         
+"genero":M
 "id_ciudad":19
 }
 {
 "id_cliente":0322192882618
-"nombre_cliente":Helen Adams                             
-"genero":0
+"nombre_cliente":Helen Adams                            
+"genero":F
 "id_ciudad":2
 }
 {
 "id_cliente":0409199075436
-"nombre_cliente":Joe Bradley                             
-"genero":0
+"nombre_cliente":Joe Bradley                            
+"genero":M
 "id_ciudad":10
 }
 {
 "id_cliente":1807196343872
-"nombre_cliente":Carlos Phillips                         
-"genero":0
+"nombre_cliente":Carlos Phillips                        
+"genero":M
 "id_ciudad":16
 }
 {
 "id_cliente":0713194045131
-"nombre_cliente":Aaron Carter                            
-"genero":0
+"nombre_cliente":Aaron Carter                           
+"genero":M
 "id_ciudad":30
 }
 {
 "id_cliente":1006197899829
-"nombre_cliente":Annie Hernandez                         
-"genero":0
+"nombre_cliente":Annie Hernandez                        
+"genero":F
 "id_ciudad":19
 }
 {
 "id_cliente":0501193569284
-"nombre_cliente":Annie Little                            
-"genero":0
+"nombre_cliente":Annie Little                           
+"genero":F
 "id_ciudad":9
 }
 {
 "id_cliente":0328197926964
-"nombre_cliente":Jane Watson                             
-"genero":0
+"nombre_cliente":Jane Watson                            
+"genero":F
 "id_ciudad":12
 }
 {
 "id_cliente":1525193013238
-"nombre_cliente":Patrick Torres                          
-"genero":0
+"nombre_cliente":Patrick Torres                         
+"genero":M
 "id_ciudad":22
 }
 {
 "id_cliente":1202192934168
-"nombre_cliente":Melissa Chapman                         
-"genero":0
+"nombre_cliente":Melissa Chapman                        
+"genero":F
 "id_ciudad":13
 }
 {
 "id_cliente":1810191510134
-"nombre_cliente":Craig Austin                            
-"genero":0
+"nombre_cliente":Craig Austin                           
+"genero":M
 "id_ciudad":3
 }
 {
 "id_cliente":1411193220904
-"nombre_cliente":Jane Perry                              
-"genero":0
+"nombre_cliente":Jane Perry                             
+"genero":F
 "id_ciudad":18
 }
 {
 "id_cliente":0227198182213
-"nombre_cliente":Janet Robinson                          
-"genero":0
+"nombre_cliente":Janet Robinson                         
+"genero":F
 "id_ciudad":6
 }
 {
 "id_cliente":1105195128690
-"nombre_cliente":Martha Fisher                           
-"genero":0
+"nombre_cliente":Martha Fisher                          
+"genero":F
 "id_ciudad":29
 }
 {
 "id_cliente":1822197616008
-"nombre_cliente":Sharon Smith                            
-"genero":0
+"nombre_cliente":Sharon Smith                           
+"genero":F
 "id_ciudad":2
 }
 {
 "id_cliente":1522195986519
-"nombre_cliente":Judy Kelley                             
-"genero":0
+"nombre_cliente":Judy Kelley                            
+"genero":F
 "id_ciudad":17
 }
 {
 "id_cliente":0205194462156
-"nombre_cliente":Earl Flores                             
-"genero":0
+"nombre_cliente":Earl Flores                            
+"genero":M
 "id_ciudad":14
 }
 {
 "id_cliente":1417194251574
-"nombre_cliente":Jeffrey Simpson                         
-"genero":0
+"nombre_cliente":Jeffrey Simpson                        
+"genero":M
 "id_ciudad":13
 }
 {
 "id_cliente":1624193263564
-"nombre_cliente":Laura Wilson                            
-"genero":0
+"nombre_cliente":Laura Wilson                           
+"genero":F
 "id_ciudad":11
 }
 {
 "id_cliente":0206198566993
-"nombre_cliente":Albert Walker                           
-"genero":0
+"nombre_cliente":Albert Walker                          
+"genero":M
 "id_ciudad":30
 }
 {
 "id_cliente":1513199267968
-"nombre_cliente":Richard Rodriguez                       
-"genero":0
+"nombre_cliente":Richard Rodriguez                      
+"genero":M
 "id_ciudad":30
 }
 {
 "id_cliente":1110199281224
-"nombre_cliente":Henry Martinez                          
-"genero":0
+"nombre_cliente":Henry Martinez                         
+"genero":M
 "id_ciudad":22
 }
 {
 "id_cliente":0202197528849
-"nombre_cliente":Sandra George                           
-"genero":0
+"nombre_cliente":Sandra George                          
+"genero":F
 "id_ciudad":1
 }
 {
 "id_cliente":1020194643273
-"nombre_cliente":Joseph Evans                            
-"genero":0
+"nombre_cliente":Joseph Evans                           
+"genero":M
 "id_ciudad":25
 }
 {
 "id_cliente":0919195976628
-"nombre_cliente":Thomas Morgan                           
-"genero":0
+"nombre_cliente":Thomas Morgan                          
+"genero":M
 "id_ciudad":22
 }
 {
 "id_cliente":1414196117100
-"nombre_cliente":Randy Fisher                            
-"genero":0
+"nombre_cliente":Randy Fisher                           
+"genero":M
 "id_ciudad":21
 }
 {
 "id_cliente":1222191761177
-"nombre_cliente":Angela Greene                           
-"genero":0
+"nombre_cliente":Angela Greene                          
+"genero":F
 "id_ciudad":8
 }
 {
 "id_cliente":1701195889264
-"nombre_cliente":James Adams                             
-"genero":0
+"nombre_cliente":James Adams                            
+"genero":M
 "id_ciudad":23
 }
 {
 "id_cliente":0227193025320
-"nombre_cliente":Lawrence Nelson                         
-"genero":0
+"nombre_cliente":Lawrence Nelson                        
+"genero":M
 "id_ciudad":16
 }
 {
 "id_cliente":1418192437594
-"nombre_cliente":Nancy Reed                              
-"genero":0
+"nombre_cliente":Nancy Reed                             
+"genero":F
 "id_ciudad":4
 }
 {
 "id_cliente":0306192253313
-"nombre_cliente":Joe Hernandez                           
-"genero":0
+"nombre_cliente":Joe Hernandez                          
+"genero":M
 "id_ciudad":16
 }
 {
 "id_cliente":0109191814326
-"nombre_cliente":Frances Romero                          
-"genero":0
+"nombre_cliente":Frances Romero                         
+"genero":F
 "id_ciudad":13
 }
 {
 "id_cliente":0604199754365
-"nombre_cliente":Wanda Andrews                           
-"genero":0
+"nombre_cliente":Wanda Andrews                          
+"genero":F
 "id_ciudad":3
 }
 {
 "id_cliente":1313198588166
-"nombre_cliente":Keith Wells                             
-"genero":0
+"nombre_cliente":Keith Wells                            
+"genero":M
 "id_ciudad":16
 }
 {
 "id_cliente":0629192124477
-"nombre_cliente":Nicholas Simpson                        
-"genero":0
+"nombre_cliente":Nicholas Simpson                       
+"genero":M
 "id_ciudad":18
 }
 {
 "id_cliente":1409192589538
-"nombre_cliente":Clarence Grant                          
-"genero":0
+"nombre_cliente":Clarence Grant                         
+"genero":M
 "id_ciudad":2
 }
 {
 "id_cliente":0628199585116
-"nombre_cliente":Catherine Evans                         
-"genero":0
+"nombre_cliente":Catherine Evans                        
+"genero":F
 "id_ciudad":11
 }
 {
 "id_cliente":1422191552334
-"nombre_cliente":Frank Torres                            
-"genero":0
+"nombre_cliente":Frank Torres                           
+"genero":M
 "id_ciudad":1
 }
 {
 "id_cliente":0810193068851
-"nombre_cliente":Brian Knight                            
-"genero":0
+"nombre_cliente":Brian Knight                           
+"genero":M
 "id_ciudad":24
 }
 {
 "id_cliente":0824194322033
-"nombre_cliente":Marilyn Mccoy                           
-"genero":0
+"nombre_cliente":Marilyn Mccoy                          
+"genero":F
 "id_ciudad":1
 }
 {
 "id_cliente":1023194292106
-"nombre_cliente":Kenneth Reed                            
-"genero":0
+"nombre_cliente":Kenneth Reed                           
+"genero":M
 "id_ciudad":27
 }
 {
 "id_cliente":0513195070536
-"nombre_cliente":Helen Wright                            
-"genero":0
+"nombre_cliente":Helen Wright                           
+"genero":F
 "id_ciudad":21
 }
 {
 "id_cliente":0811198788824
-"nombre_cliente":Laura Burns                             
-"genero":0
+"nombre_cliente":Laura Burns                            
+"genero":F
 "id_ciudad":25
 }
 {
 "id_cliente":1025193015815
-"nombre_cliente":Virginia Simmons                        
-"genero":0
+"nombre_cliente":Virginia Simmons                       
+"genero":F
 "id_ciudad":1
 }
 {
 "id_cliente":1708194222125
-"nombre_cliente":Paul Richards                           
-"genero":0
+"nombre_cliente":Paul Richards                          
+"genero":M
 "id_ciudad":17
 }
 {
 "id_cliente":1110196691237
-"nombre_cliente":Gary Palmer                             
-"genero":0
+"nombre_cliente":Gary Palmer                            
+"genero":M
 "id_ciudad":2
 }
 {
 "id_cliente":1122195119866
-"nombre_cliente":Carol Ryan                              
-"genero":0
+"nombre_cliente":Carol Ryan                             
+"genero":F
 "id_ciudad":16
 }
 {
 "id_cliente":0709191476824
-"nombre_cliente":Anthony Harvey                          
-"genero":0
+"nombre_cliente":Anthony Harvey                         
+"genero":M
 "id_ciudad":27
 }
 {
 "id_cliente":1418191833180
-"nombre_cliente":Jesse Andrews                           
-"genero":0
+"nombre_cliente":Jesse Andrews                          
+"genero":M
 "id_ciudad":18
 }
 {
 "id_cliente":0625192883330
-"nombre_cliente":Angela Hall                             
-"genero":0
+"nombre_cliente":Angela Hall                            
+"genero":F
 "id_ciudad":11
 }
 {
 "id_cliente":1104199032645
-"nombre_cliente":Ruby Bishop                             
-"genero":0
+"nombre_cliente":Ruby Bishop                            
+"genero":F
 "id_ciudad":4
 }
 {
 "id_cliente":0709192962966
-"nombre_cliente":Samuel Jacobs                           
-"genero":0
+"nombre_cliente":Samuel Jacobs                          
+"genero":M
 "id_ciudad":23
 }
 {
 "id_cliente":1127193862314
-"nombre_cliente":Patricia Ruiz                           
-"genero":0
+"nombre_cliente":Patricia Ruiz                          
+"genero":F
 "id_ciudad":2
 }
 {
 "id_cliente":1503197446296
-"nombre_cliente":Lori Hill                               
-"genero":0
+"nombre_cliente":Lori Hill                              
+"genero":F
 "id_ciudad":15
 }
 {
 "id_cliente":1816199562338
-"nombre_cliente":Doris Perkins                           
-"genero":0
+"nombre_cliente":Doris Perkins                          
+"genero":F
 "id_ciudad":14
 }
 {
 "id_cliente":0514191396693
-"nombre_cliente":Carolyn Carter                          
-"genero":0
+"nombre_cliente":Carolyn Carter                         
+"genero":F
 "id_ciudad":16
 }
 {
 "id_cliente":0621191531713
-"nombre_cliente":Howard Russell                          
-"genero":0
+"nombre_cliente":Howard Russell                         
+"genero":M
 "id_ciudad":16
 }
 {
 "id_cliente":0920191132394
-"nombre_cliente":Mary Thompson                           
-"genero":0
+"nombre_cliente":Mary Thompson                          
+"genero":F
 "id_ciudad":3
 }
 {
 "id_cliente":1528193982044
-"nombre_cliente":Albert Austin                           
-"genero":0
+"nombre_cliente":Albert Austin                          
+"genero":M
 "id_ciudad":26
 }
 {
 "id_cliente":0527192482677
-"nombre_cliente":Johnny Fernandez                        
-"genero":0
+"nombre_cliente":Johnny Fernandez                       
+"genero":M
 "id_ciudad":5
 }
 {
 "id_cliente":1608194181440
-"nombre_cliente":James Gordon                            
-"genero":0
+"nombre_cliente":James Gordon                           
+"genero":M
 "id_ciudad":23
 }
 {
 "id_cliente":0211192628639
-"nombre_cliente":Cheryl Wallace                          
-"genero":0
+"nombre_cliente":Cheryl Wallace                         
+"genero":F
 "id_ciudad":9
 }
 {
 "id_cliente":0318191679089
-"nombre_cliente":Carlos Dean                             
-"genero":0
+"nombre_cliente":Carlos Dean                            
+"genero":M
 "id_ciudad":14
 }
 {
 "id_cliente":1522196453581
-"nombre_cliente":Bobby Bailey                            
-"genero":0
+"nombre_cliente":Bobby Bailey                           
+"genero":M
 "id_ciudad":13
 }
 {
 "id_cliente":0929199421884
-"nombre_cliente":Nicole Wood                             
-"genero":0
+"nombre_cliente":Nicole Wood                            
+"genero":F
 "id_ciudad":9
 }
 {
 "id_cliente":1416191554152
-"nombre_cliente":Henry Kelley                            
-"genero":0
+"nombre_cliente":Henry Kelley                           
+"genero":M
 "id_ciudad":21
 }
 {
 "id_cliente":0302195378304
-"nombre_cliente":Donna Franklin                          
-"genero":0
+"nombre_cliente":Donna Franklin                         
+"genero":F
 "id_ciudad":23
 }
 {
 "id_cliente":1811191579365
-"nombre_cliente":Cynthia Fowler                          
-"genero":0
+"nombre_cliente":Cynthia Fowler                         
+"genero":F
 "id_ciudad":9
 }
 {
 "id_cliente":0110194619001
-"nombre_cliente":Walter Garcia                           
-"genero":0
+"nombre_cliente":Walter Garcia                          
+"genero":M
 "id_ciudad":14
 }
 {
 "id_cliente":1503196590083
-"nombre_cliente":Jason Cunningham                        
-"genero":0
+"nombre_cliente":Jason Cunningham                       
+"genero":M
 "id_ciudad":18
 }
 {
 "id_cliente":1301197636584
-"nombre_cliente":Teresa Carr                             
-"genero":0
+"nombre_cliente":Teresa Carr                            
+"genero":F
 "id_ciudad":14
 }
 {
 "id_cliente":1615198596715
-"nombre_cliente":Shawn Sanders                           
-"genero":0
+"nombre_cliente":Shawn Sanders                          
+"genero":M
 "id_ciudad":15
 }
 {
 "id_cliente":0701193095031
-"nombre_cliente":Jean Carpenter                          
-"genero":0
+"nombre_cliente":Jean Carpenter                         
+"genero":F
 "id_ciudad":9
 }
 {
 "id_cliente":1504199247446
-"nombre_cliente":Shawn Spencer                           
-"genero":0
+"nombre_cliente":Shawn Spencer                          
+"genero":M
 "id_ciudad":26
 }
 {
 "id_cliente":0106197362279
-"nombre_cliente":Donna Nguyen                            
-"genero":0
+"nombre_cliente":Donna Nguyen                           
+"genero":F
 "id_ciudad":17
 }
 {
 "id_cliente":0426194529339
-"nombre_cliente":Donna Wagner                            
-"genero":0
+"nombre_cliente":Donna Wagner                           
+"genero":F
 "id_ciudad":6
 }
 {
 "id_cliente":0626196166872
-"nombre_cliente":Doris Rivera                            
-"genero":0
+"nombre_cliente":Doris Rivera                           
+"genero":F
 "id_ciudad":19
 }
 {
 "id_cliente":0308197553101
-"nombre_cliente":Lisa Armstrong                          
-"genero":0
+"nombre_cliente":Lisa Armstrong                         
+"genero":F
 "id_ciudad":2
 }
 {
 "id_cliente":0309198468424
-"nombre_cliente":Paul Jones                              
-"genero":0
+"nombre_cliente":Paul Jones                             
+"genero":M
 "id_ciudad":20
 }
 {
 "id_cliente":0716199349452
-"nombre_cliente":William Stewart                         
-"genero":0
+"nombre_cliente":William Stewart                        
+"genero":M
 "id_ciudad":16
 }
 {
 "id_cliente":0605195273418
-"nombre_cliente":Larry Duncan                            
-"genero":0
+"nombre_cliente":Larry Duncan                           
+"genero":M
 "id_ciudad":14
 }
 {
 "id_cliente":0922193073750
-"nombre_cliente":Jacqueline Coleman                      
-"genero":0
+"nombre_cliente":Jacqueline Coleman                     
+"genero":F
 "id_ciudad":19
 }
 {
 "id_cliente":0612195369492
-"nombre_cliente":Laura Garza                             
-"genero":0
+"nombre_cliente":Laura Garza                            
+"genero":F
 "id_ciudad":13
 }
 {
 "id_cliente":0612192097429
-"nombre_cliente":Jose Howell                             
-"genero":0
+"nombre_cliente":Jose Howell                            
+"genero":M
 "id_ciudad":21
 }
 {
 "id_cliente":1609195083320
-"nombre_cliente":William Ellis                           
-"genero":0
+"nombre_cliente":William Ellis                          
+"genero":M
 "id_ciudad":13
 }
 {
 "id_cliente":1415196252114
-"nombre_cliente":Maria Perry                             
-"genero":0
+"nombre_cliente":Maria Perry                            
+"genero":F
 "id_ciudad":11
 }
 {
 "id_cliente":0108199763393
-"nombre_cliente":Kelly Graham                            
-"genero":0
+"nombre_cliente":Kelly Graham                           
+"genero":F
 "id_ciudad":19
 }
 {
 "id_cliente":0525199224926
-"nombre_cliente":Melissa Nguyen                          
-"genero":0
+"nombre_cliente":Melissa Nguyen                         
+"genero":F
 "id_ciudad":6
 }
 {
 "id_cliente":1225199483827
-"nombre_cliente":Kathleen Crawford                       
-"genero":0
+"nombre_cliente":Kathleen Crawford                      
+"genero":F
 "id_ciudad":25
 }
 {
 "id_cliente":0104191198210
-"nombre_cliente":Karen Walker                            
-"genero":0
+"nombre_cliente":Karen Walker                           
+"genero":F
 "id_ciudad":26
 }
 {
 "id_cliente":0623192892395
-"nombre_cliente":Amanda Morales                          
-"genero":0
+"nombre_cliente":Amanda Morales                         
+"genero":F
 "id_ciudad":17
 }
 {
 "id_cliente":0313197051371
-"nombre_cliente":Eric Smith                              
-"genero":0
+"nombre_cliente":Eric Smith                             
+"genero":M
 "id_ciudad":4
 }
 {
 "id_cliente":0629193423183
-"nombre_cliente":Paul Carr                               
-"genero":0
+"nombre_cliente":Paul Carr                              
+"genero":M
 "id_ciudad":10
 }
 {
 "id_cliente":1727197931704
-"nombre_cliente":Teresa Stewart                          
-"genero":0
+"nombre_cliente":Teresa Stewart                         
+"genero":F
 "id_ciudad":7
 }
 {
 "id_cliente":0406197148349
-"nombre_cliente":Kimberly Parker                         
-"genero":0
+"nombre_cliente":Kimberly Parker                        
+"genero":F
 "id_ciudad":26
 }
 {
 "id_cliente":0819192710249
-"nombre_cliente":Sarah Greene                            
-"genero":0
+"nombre_cliente":Sarah Greene                           
+"genero":F
 "id_ciudad":12
 }
 {
 "id_cliente":0118193989362
-"nombre_cliente":Kathy Garza                             
-"genero":0
+"nombre_cliente":Kathy Garza                            
+"genero":F
 "id_ciudad":29
 }
 {
 "id_cliente":1014191634627
-"nombre_cliente":Mildred Duncan                          
-"genero":0
+"nombre_cliente":Mildred Duncan                         
+"genero":F
 "id_ciudad":26
 }
 {
 "id_cliente":1222197725111
-"nombre_cliente":Anthony Patterson                       
-"genero":0
+"nombre_cliente":Anthony Patterson                      
+"genero":M
 "id_ciudad":17
 }
 {
 "id_cliente":1301193163672
-"nombre_cliente":Charles Oliver                          
-"genero":0
+"nombre_cliente":Charles Oliver                         
+"genero":M
 "id_ciudad":17
 }
 {
 "id_cliente":1801193522984
-"nombre_cliente":Lori Torres                             
-"genero":0
+"nombre_cliente":Lori Torres                            
+"genero":F
 "id_ciudad":11
 }
 {
 "id_cliente":1006192449709
-"nombre_cliente":Albert Hicks                            
-"genero":0
+"nombre_cliente":Albert Hicks                           
+"genero":M
 "id_ciudad":3
 }
 {
 "id_cliente":0805193898314
-"nombre_cliente":Martin Howard                           
-"genero":0
+"nombre_cliente":Martin Howard                          
+"genero":M
 "id_ciudad":18
 }
 {
 "id_cliente":0323195281309
-"nombre_cliente":Catherine Hart                          
-"genero":0
+"nombre_cliente":Catherine Hart                         
+"genero":F
 "id_ciudad":23
 }
 {
 "id_cliente":1520193456442
-"nombre_cliente":Doris Johnson                           
-"genero":0
+"nombre_cliente":Doris Johnson                          
+"genero":F
 "id_ciudad":12
 }
 {
 "id_cliente":0521194046862
-"nombre_cliente":Stephanie Palmer                        
-"genero":0
+"nombre_cliente":Stephanie Palmer                       
+"genero":F
 "id_ciudad":5
 }
 {
 "id_cliente":1221197566041
-"nombre_cliente":Kathy Watson                            
-"genero":0
+"nombre_cliente":Kathy Watson                           
+"genero":F
 "id_ciudad":14
 }
 {
 "id_cliente":0926193768320
-"nombre_cliente":Annie Morgan                            
-"genero":0
+"nombre_cliente":Annie Morgan                           
+"genero":F
 "id_ciudad":21
 }
 {
 "id_cliente":0617195572375
-"nombre_cliente":Linda Morgan                            
-"genero":0
+"nombre_cliente":Linda Morgan                           
+"genero":F
 "id_ciudad":30
 }
 {
 "id_cliente":0214198533523
-"nombre_cliente":Douglas Hicks                           
-"genero":0
+"nombre_cliente":Douglas Hicks                          
+"genero":M
 "id_ciudad":9
 }
 {
 "id_cliente":0916196776981
-"nombre_cliente":Phillip Kim                             
-"genero":0
+"nombre_cliente":Phillip Kim                            
+"genero":M
 "id_ciudad":20
 }
 {
 "id_cliente":1329193810389
-"nombre_cliente":Tina Mcdonald                           
-"genero":0
+"nombre_cliente":Tina Mcdonald                          
+"genero":F
 "id_ciudad":6
 }
 {
 "id_cliente":0223196421223
-"nombre_cliente":Margaret Oliver                         
-"genero":0
+"nombre_cliente":Margaret Oliver                        
+"genero":F
 "id_ciudad":25
 }
 {
 "id_cliente":0719198460758
-"nombre_cliente":Lois Sims                               
-"genero":0
+"nombre_cliente":Lois Sims                              
+"genero":F
 "id_ciudad":8
 }
 {
 "id_cliente":0321197727727
-"nombre_cliente":Virginia Webb                           
-"genero":0
+"nombre_cliente":Virginia Webb                          
+"genero":F
 "id_ciudad":20
 }
 {
 "id_cliente":0401195910898
-"nombre_cliente":Craig Fox                               
-"genero":0
+"nombre_cliente":Craig Fox                              
+"genero":M
 "id_ciudad":5
 }
 {
 "id_cliente":0915199655143
-"nombre_cliente":Janice Robertson                        
-"genero":0
+"nombre_cliente":Janice Robertson                       
+"genero":F
 "id_ciudad":4
 }
 {
 "id_cliente":0214193122081
-"nombre_cliente":Joyce Hunter                            
-"genero":0
+"nombre_cliente":Joyce Hunter                           
+"genero":F
 "id_ciudad":3
 }
 {
 "id_cliente":1221192050357
-"nombre_cliente":Charles Andrews                         
-"genero":0
+"nombre_cliente":Charles Andrews                        
+"genero":M
 "id_ciudad":27
 }
 {
 "id_cliente":1121198132824
-"nombre_cliente":Ralph Stevens                           
-"genero":0
+"nombre_cliente":Ralph Stevens                          
+"genero":M
 "id_ciudad":22
 }
 {
 "id_cliente":1812199115023
-"nombre_cliente":Brenda Garcia                           
-"genero":0
+"nombre_cliente":Brenda Garcia                          
+"genero":F
 "id_ciudad":5
 }
 {
 "id_cliente":1301196848768
-"nombre_cliente":Kevin Sanders                           
-"genero":0
+"nombre_cliente":Kevin Sanders                          
+"genero":M
 "id_ciudad":6
 }
 {
 "id_cliente":1202195587272
-"nombre_cliente":Jeremy Fisher                           
-"genero":0
+"nombre_cliente":Jeremy Fisher                          
+"genero":M
 "id_ciudad":23
 }
 {
 "id_cliente":0805192367877
-"nombre_cliente":Anne Dean                               
-"genero":0
+"nombre_cliente":Anne Dean                              
+"genero":F
 "id_ciudad":3
 }
 {
 "id_cliente":0527193062785
-"nombre_cliente":Carlos Baker                            
-"genero":0
+"nombre_cliente":Carlos Baker                           
+"genero":M
 "id_ciudad":17
 }
 {
 "id_cliente":0520196641828
-"nombre_cliente":Lori Fuller                             
-"genero":0
+"nombre_cliente":Lori Fuller                            
+"genero":F
 "id_ciudad":19
 }
 {
 "id_cliente":0309193432276
-"nombre_cliente":Cheryl Spencer                          
-"genero":0
+"nombre_cliente":Cheryl Spencer                         
+"genero":F
 "id_ciudad":22
 }
 {
 "id_cliente":0915193264773
-"nombre_cliente":Nicole Woods                            
-"genero":0
+"nombre_cliente":Nicole Woods                           
+"genero":F
 "id_ciudad":24
 }
 {
@@ -2046,92 +2046,92 @@
 }
 {
 "id_cliente":0525195281062
-"nombre_cliente":Deborah Oliver                         
-"genero":F
+"nombre_cliente":Deborah Oliver                          
+"genero":0
 "id_ciudad":17
 }
 {
 "id_cliente":0526191399845
-"nombre_cliente":Teresa Oliver                          
-"genero":F
+"nombre_cliente":Teresa Oliver                           
+"genero":0
 "id_ciudad":13
 }
 {
 "id_cliente":1713198134245
-"nombre_cliente":Debra Brown                            
-"genero":F
+"nombre_cliente":Debra Brown                             
+"genero":0
 "id_ciudad":29
 }
 {
 "id_cliente":0923198839990
-"nombre_cliente":Harry Burton                           
-"genero":M
+"nombre_cliente":Harry Burton                            
+"genero":0
 "id_ciudad":27
 }
 {
 "id_cliente":0301192075789
-"nombre_cliente":Jessica Sanders                        
-"genero":F
+"nombre_cliente":Jessica Sanders                         
+"genero":0
 "id_ciudad":17
 }
 {
 "id_cliente":1305198880070
-"nombre_cliente":Elizabeth Bowman                       
-"genero":F
+"nombre_cliente":Elizabeth Bowman                        
+"genero":0
 "id_ciudad":14
 }
 {
 "id_cliente":0101199633299
-"nombre_cliente":Susan Cole                             
-"genero":F
+"nombre_cliente":Susan Cole                              
+"genero":0
 "id_ciudad":22
 }
 {
 "id_cliente":1328197095911
-"nombre_cliente":Kimberly Gilbert                       
-"genero":F
+"nombre_cliente":Kimberly Gilbert                        
+"genero":0
 "id_ciudad":9
 }
 {
 "id_cliente":1216191033231
-"nombre_cliente":Brian Ellis                            
-"genero":M
+"nombre_cliente":Brian Ellis                             
+"genero":0
 "id_ciudad":24
 }
 {
 "id_cliente":0925191880696
-"nombre_cliente":Margaret Mills                         
-"genero":F
+"nombre_cliente":Margaret Mills                          
+"genero":0
 "id_ciudad":30
 }
 {
 "id_cliente":1814199061251
-"nombre_cliente":Daniel Crawford                        
-"genero":M
+"nombre_cliente":Daniel Crawford                         
+"genero":0
 "id_ciudad":16
 }
 {
 "id_cliente":0309191391379
-"nombre_cliente":Stephanie Moore                        
-"genero":F
+"nombre_cliente":Stephanie Moore                         
+"genero":0
 "id_ciudad":5
 }
 {
 "id_cliente":1406193184427
-"nombre_cliente":Ernest Martinez                        
-"genero":M
+"nombre_cliente":Ernest Martinez                         
+"genero":0
 "id_ciudad":28
 }
 {
 "id_cliente":1822197088220
-"nombre_cliente":Catherine Bell                         
-"genero":F
+"nombre_cliente":Catherine Bell                          
+"genero":0
 "id_ciudad":2
 }
 {
 "id_cliente":1011198363791
-"nombre_cliente":Ryan Dixon                             
-"genero":M
+"nombre_cliente":Ryan Dixon                              
+"genero":0
 "id_ciudad":7
 }
 {
@@ -2142,194 +2142,194 @@
 }
 {
 "id_cliente":0201191782161
-"nombre_cliente":Marilyn Cox                            
-"genero":F
+"nombre_cliente":Marilyn Cox                             
+"genero":0
 "id_ciudad":6
 }
 {
 "id_cliente":1110193693471
-"nombre_cliente":Jesse Arnold                           
-"genero":M
+"nombre_cliente":Jesse Arnold                            
+"genero":0
 "id_ciudad":28
 }
 {
 "id_cliente":0815196625006
-"nombre_cliente":Justin Day                             
-"genero":M
+"nombre_cliente":Justin Day                              
+"genero":0
 "id_ciudad":29
 }
 {
 "id_cliente":0927193949922
-"nombre_cliente":Joan Jordan                            
-"genero":F
+"nombre_cliente":Joan Jordan                             
+"genero":0
 "id_ciudad":3
 }
 {
 "id_cliente":1301198891617
-"nombre_cliente":Kenneth Fuller                         
-"genero":M
+"nombre_cliente":Kenneth Fuller                          
+"genero":0
 "id_ciudad":21
 }
 {
 "id_cliente":1010197844430
-"nombre_cliente":Margaret Burton                        
-"genero":F
+"nombre_cliente":Margaret Burton                         
+"genero":0
 "id_ciudad":10
 }
 {
 "id_cliente":0722193494523
-"nombre_cliente":Timothy Mcdonald                       
-"genero":M
+"nombre_cliente":Timothy Mcdonald                        
+"genero":0
 "id_ciudad":17
 }
 {
 "id_cliente":1519195126292
-"nombre_cliente":Matthew Larson                         
-"genero":M
+"nombre_cliente":Matthew Larson                          
+"genero":0
 "id_ciudad":29
 }
 {
 "id_cliente":0714192967154
-"nombre_cliente":Ronald Mcdonald                        
-"genero":M
+"nombre_cliente":Ronald Mcdonald                         
+"genero":0
 "id_ciudad":22
 }
 {
 "id_cliente":1521194090791
-"nombre_cliente":Wanda Shaw                             
-"genero":F
+"nombre_cliente":Wanda Shaw                              
+"genero":0
 "id_ciudad":8
 }
 {
 "id_cliente":0302196678042
-"nombre_cliente":Clarence Stevens                       
-"genero":M
+"nombre_cliente":Clarence Stevens                        
+"genero":0
 "id_ciudad":30
 }
 {
 "id_cliente":0826198070908
-"nombre_cliente":Annie Stewart                          
-"genero":F
+"nombre_cliente":Annie Stewart                           
+"genero":0
 "id_ciudad":26
 }
 {
 "id_cliente":1824193926136
-"nombre_cliente":Shirley Ortiz                          
-"genero":F
+"nombre_cliente":Shirley Ortiz                           
+"genero":0
 "id_ciudad":26
 }
 {
 "id_cliente":0615192864399
-"nombre_cliente":Donna Knight                           
-"genero":F
+"nombre_cliente":Donna Knight                            
+"genero":0
 "id_ciudad":27
 }
 {
 "id_cliente":0406197423832
-"nombre_cliente":Kathleen Stone                         
-"genero":F
+"nombre_cliente":Kathleen Stone                          
+"genero":0
 "id_ciudad":14
 }
 {
 "id_cliente":0917192252076
-"nombre_cliente":Helen Wheeler                          
-"genero":F
+"nombre_cliente":Helen Wheeler                           
+"genero":0
 "id_ciudad":8
 }
 {
 "id_cliente":0201193148680
-"nombre_cliente":Mildred Gordon                         
-"genero":F
+"nombre_cliente":Mildred Gordon                          
+"genero":0
 "id_ciudad":29
 }
 {
 "id_cliente":0827199345070
-"nombre_cliente":Irene Lopez                            
-"genero":F
+"nombre_cliente":Irene Lopez                             
+"genero":0
 "id_ciudad":7
 }
 {
 "id_cliente":1505192712081
-"nombre_cliente":Louise Dixon                           
-"genero":F
+"nombre_cliente":Louise Dixon                            
+"genero":0
 "id_ciudad":11
 }
 {
 "id_cliente":1416193113765
-"nombre_cliente":Jack Hudson                            
-"genero":M
+"nombre_cliente":Jack Hudson                             
+"genero":0
 "id_ciudad":13
 }
 {
 "id_cliente":0423192159945
-"nombre_cliente":Jeffrey Kennedy                        
-"genero":M
+"nombre_cliente":Jeffrey Kennedy                         
+"genero":0
 "id_ciudad":23
 }
 {
 "id_cliente":0312199461088
-"nombre_cliente":Bobby Jones                            
-"genero":M
+"nombre_cliente":Bobby Jones                             
+"genero":0
 "id_ciudad":18
 }
 {
 "id_cliente":1424194168400
-"nombre_cliente":Christina Torres                       
-"genero":F
+"nombre_cliente":Christina Torres                        
+"genero":0
 "id_ciudad":2
 }
 {
 "id_cliente":0502198387737
-"nombre_cliente":Paula Edwards                          
-"genero":F
+"nombre_cliente":Paula Edwards                           
+"genero":0
 "id_ciudad":6
 }
 {
 "id_cliente":0907197471656
-"nombre_cliente":George Armstrong                       
-"genero":M
+"nombre_cliente":George Armstrong                        
+"genero":0
 "id_ciudad":29
 }
 {
 "id_cliente":1827193555653
-"nombre_cliente":Martin Black                           
-"genero":M
+"nombre_cliente":Martin Black                            
+"genero":0
 "id_ciudad":19
 }
 {
 "id_cliente":1505194572275
-"nombre_cliente":Timothy Ramirez                        
-"genero":M
+"nombre_cliente":Timothy Ramirez                         
+"genero":0
 "id_ciudad":17
 }
 {
 "id_cliente":0509196567128
-"nombre_cliente":Clarence Wright                        
-"genero":M
+"nombre_cliente":Clarence Wright                         
+"genero":0
 "id_ciudad":15
 }
 {
 "id_cliente":0521192160307
-"nombre_cliente":Daniel Dunn                            
-"genero":M
+"nombre_cliente":Daniel Dunn                             
+"genero":0
 "id_ciudad":17
 }
 {
 "id_cliente":1302192196223
-"nombre_cliente":Anna Dixon                             
-"genero":F
+"nombre_cliente":Anna Dixon                              
+"genero":0
 "id_ciudad":18
 }
 {
 "id_cliente":0706191242203
-"nombre_cliente":Albert Marshall                        
-"genero":M
+"nombre_cliente":Albert Marshall                         
+"genero":0
 "id_ciudad":18
 }
 {
 "id_cliente":0416195919413
-"nombre_cliente":Billy Moreno                           
-"genero":M
+"nombre_cliente":Billy Moreno                            
+"genero":0
 "id_ciudad":2
 }
 {

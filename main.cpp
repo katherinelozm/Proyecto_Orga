@@ -283,7 +283,7 @@ int main(int argc, char const *argv[]){
 	bool flagId;
 
 	do {
-		cout << "1. Clientes \n2. Lineas\n3. Exportar a Json\n4. Reindexar\n5. Salir" << endl;
+		cout << "1. Clientes \n2. Lineas\n3. Exportar a Json\n4. Reindexar\n5. BTree\n6. Salir" << endl;
 		cin >> op1;
 		if (op1 == 1) {
 			do {
@@ -393,10 +393,20 @@ int main(int argc, char const *argv[]){
 		} else if (op1 == 4){
 			reindexar();
 			cout << "Fin reindexado" << endl;
+		} else if (op1 == 5){
+			IndiceClientes indice;
+			cout << "Id" << endl;
+			cin >> indice.llave;
+			cout << "RRN" << endl;
+			cin >> indice.rrn;
+			agregarBTreeClientes(indice);
+			cout << arbolClientes.root.toString() << endl;
+			for (int i = 0; i < arbolClientes.root.hijos.size(); ++i){
+				int pos = findNodeNum(arbolClientes.nodos, arbolClientes.root.hijos[i]);
+				cout << arbolClientes.nodos[pos].toString() << endl;
+			}
 		}
-
-
-	} while (op1 <= 4);
+	} while (op1 <= 5);
 	return 0;
 }
 
@@ -1383,11 +1393,11 @@ void facturacion (vector<string> lineasClientes, vector<string> llamadas, char* 
 				tiempoLlamada =  (end - beg);
 
 				if (hrs <= 75959) {
-					acumLineas += (tiempoLlamada * 0.01);
+					acumLineas += ((tiempoLlamada/60) * 0.01);
 				} else if ((hrs >= 80000) && (hrs <= 155959)) {
-					acumLineas += (tiempoLlamada * 0.05);
+					acumLineas += ((tiempoLlamada/60) * 0.05);
 				} else if ((hrs >= 160000) && (hrs <= 235959)) {
-					acumLineas += (tiempoLlamada * 0.04);
+					acumLineas += ((tiempoLlamada/60) * 0.04);
 				}
 				
 			}
@@ -1415,7 +1425,7 @@ void facturacion (vector<string> lineasClientes, vector<string> llamadas, char* 
 			cout << "No hay cargos para esta linea " << endl;
 			flag = false;
 		}else {
-			cout << "Total linea: Lps. " << costos[g] << endl;
+			cout << "Total linea: $ " << setprecision(2) << fixed << costos[g] << endl;
 			subtotal += costos[g];
 		}
 
@@ -1425,14 +1435,14 @@ void facturacion (vector<string> lineasClientes, vector<string> llamadas, char* 
 	vector <Factura> vf;
 	if(flag) {
 		cout << "-------------------------------------------" << endl;
-		ruSubtotal = ceilf(subtotal * 100) / 100;
-		cout << "Subtotal: Lps. " << ruSubtotal << endl;
+		ruSubtotal = (subtotal * 100) / 100;
+		cout << "Subtotal: $ " << ruSubtotal << endl;
 		isv = subtotal * 0.15;
-		ruISV = ceilf(isv * 100) / 100;
-		cout << "ISV: Lps. " << ruISV << endl;
+		ruISV = (isv * 100) / 100;
+		cout << "ISV: $ " << ruISV << endl;
 		total = ruSubtotal + ruISV;
-		ruTotal = ceilf(total * 100) / 100; 
-		cout << "Total: Lps. " << ruTotal << endl;
+		ruTotal = (total * 100) / 100; 
+		cout << "Total: $ " << ruTotal << endl;
 		cout << "*******************************************" << endl << endl;
 		for (int z = 0; z < lineasClientes.size(); ++z){
 			factura.id = new char[13];
@@ -1624,7 +1634,7 @@ int findNodeNum(vector<NodoClientes> vec, int n){
 
 void exportFacturasJson(vector<Factura> vf){
 	ofstream output;
-	output.open("Files/FacturasJson.txt");
+	output.open("Files/FacturasJson.txt", ios::app);
 	for (int i = 0; i < vf.size(); ++i){
 		string s = "";
 		s+="{";
