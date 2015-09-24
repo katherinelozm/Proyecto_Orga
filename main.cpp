@@ -7,6 +7,7 @@
 #include <stdlib.h>
 #include <iomanip>
 #include <algorithm>
+#include <cmath>
 
 using namespace std;
 
@@ -267,19 +268,20 @@ void buscarLlamadas (vector<string>, char*);
 void agregarBTreeClientes(IndiceClientes indice);
 void splitRootClientes(IndiceClientes indice);
 void facturacion (vector<string>, vector<string>, char*);
-void exportFacturasJson(vector<Factura> vf)
+void exportFacturasJson(vector<Factura> vf);
 
 int main(int argc, char const *argv[]){
 	//leerTodos();
 	int op1, op2, op3, RRN;
+	char id [14];
+	bool flagId;
 
 	do {
 		cout << "1. Clientes \n2. Lineas\n3. Salir" << endl;
 		cin >> op1;
 		if (op1 == 1) {
 			do {
-				cout << "Opciones Clientes\n1. Agregar\n2. Modificar\n3. Eliminar\n4. Salir" << endl;
-				cout << "Opciones Clientes\n1. Agregar\n2. Modificar\n3. Eliminar\n4. Buscar\n5. Salir" << endl;
+				cout << "Opciones Clientes\n1. Agregar\n2. Modificar\n3. Eliminar\n4. Buscar\n5. Transacciones\n6. Salir" << endl;
 				cin >> op2;
 				if (op2 == 1){
 					agregarCliente();
@@ -291,12 +293,8 @@ int main(int argc, char const *argv[]){
 					cout << "Seleccione el registro a eliminar: ";
 					cin >> RRN;
 					eliminarCliente(RRN-1);
-				}
-			}while (op2 <= 3);
 				} else if (op2 == 4) {
 					getchar();
-					char id [14];
-					bool flagId;
 					do {
 						flagId = true; 
 						cout << "Numero de Identidad: ";
@@ -313,16 +311,29 @@ int main(int argc, char const *argv[]){
 					} else {
 						cout << "Usuario no encontrado." << endl;
 					}
+				} else if (op2 == 5) {
+					getchar();
+					do {
+						flagId = true; 
+						cout << "Numero de Identidad: ";
+						cin.getline(id,14);
+
+						if ((unsigned)strlen(id) < 13) {
+							flagId = false;
+							cerr << "Valor no valido" << endl;
+						}
+					} while(!flagId);
+					buscarLineas(id);
 
 				}
-			}while (op2 <= 4);
+			}while (op2 <= 5);
+
+
 		} else if (op1 == 2) {
 			do {
-				cout << "Opciones Lineas\n1. Agregar\n2. Modificar\n3. Eliminar\n4. Salir" << endl;
-				cin >> op3;
-				if (op3 == 1){
 				cout << "Opciones Lineas\n1. Agregar\n2. Modificar\n3. Eliminar\n4. Buscar\n5. Salir" << endl;
 				cin >> op3;
+				
 				if (op3 == 1){
 					getchar();
 					char id [14];
@@ -346,13 +357,11 @@ int main(int argc, char const *argv[]){
 					cout << "Seleccione el registro a eliminar: ";
 					cin >> RRN;
 					eliminarLinea(RRN-1);
-				}
-			}while (op3 <= 3);
 				} else if (op3 == 4) {
 					int numCliente;
 					cout << "Ingrese el numero del cliente: ";
 					cin >> numCliente;
-					int found;
+					int found = buscarLinea(numCliente);
 					if (found != 0) {
 						cout << "RRN usuario: " << found << endl;
 					} else {
@@ -362,6 +371,7 @@ int main(int argc, char const *argv[]){
 
 				}
 			}while (op3 <= 4);
+
 		}
 
 
@@ -923,7 +933,9 @@ void agregarCliente() {
 
 			fileClientes.seekp(offset);
 			fileClientes.write(buffer,temp.size());
-	fstream fileClientes ("Files/dataClientes.txt");
+			fstream fileClientes ("Files/dataClientes.txt");
+		}
+	}
 	if (fileClientes.is_open()) {
 		char availList[5] = "";
 		fileClientes.read(availList, sizeof(availList)-1);
@@ -995,6 +1007,7 @@ void modificarCliente(int RRN){
 		cerr << "Could not open file" << endl ;
 	}
 }
+
 int buscarCliente(char* idCliente) {
 	fstream is("Files/dataClientes.txt");
 	int RRN = 0, offset;
@@ -1016,10 +1029,10 @@ int buscarCliente(char* idCliente) {
 		}
 
 		is.close();
-		return 0;
-	}else {
+	} else {
 		cerr << "No se puede abrir el archivo." << endl;
 	}
+	return 0;
 }
 
 void datosLinea(char* idCliente) {
@@ -1198,11 +1211,10 @@ int buscarLinea(int numCliente) {
 		}
 
 		is.close();
-		return 0;
-	}else {
+	} else {
 		cerr << "No se puede abrir el archivo." << endl;
 	}
-
+	return 0;
 }
 
 void buscarLinea(char* idCliente) {
@@ -1418,16 +1430,30 @@ void facturacion (vector<string> lineasClientes, vector<string> llamadas, char* 
 	exportFacturasJson(vf);
 }
 
-exportFacturasJson(vector<Factura> vf){
+void exportFacturasJson(vector<Factura> vf){
 	ofstream output;
 	output.open("Files/FacturasJson.txt");
-	if (output.is_open()) {
-		for (int i = 0; i < vf.size(); ++i){
-			
-			output << index;
-		}
-	} else {
-		cerr << "No se pueden escribir los datos" << endl;
+	for (int i = 0; i < vf.size(); ++i){
+		string s = "";
+		s+="{";
+		s+="\n";
+		s+="\"id\":";
+		s+=vf[i].id;
+		s+="\n";
+		s+="\"emisor\":";
+		s+=vf[i].emisor;
+		s+="\n";
+		s+="\"subtotal\":";
+		s+=to_string(vf[i].subtotal);
+		s+="\n";
+		s+="\"isv\":";
+		s+=to_string(vf[i].isv);
+		s+="\n";
+		s+="\"total\":";
+		s+=to_string(vf[i].total);
+		s+="\n";
+		s+="}\n";
+		output << s;
 	}
 	output.close();
 }
