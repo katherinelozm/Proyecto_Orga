@@ -266,7 +266,12 @@ void buscarLinea(char*);
 void buscarLineas(char*);
 void buscarLlamadas (vector<string>, char*);
 void agregarBTreeClientes(IndiceClientes indice);
+void agregarBTreeLineas(IndiceLineas indice);
 void splitRootClientes(IndiceClientes indice);
+void splitNodeClientes(IndiceClientes indice, int nodenum, int promotenum, int parent);
+int findpos(vector<IndiceClientes> keys, IndiceClientes indice);
+bool leftright(vector<IndiceClientes> keys, IndiceClientes indice);
+int findNodeNum(vector<NodoClientes> vec, int n);
 void facturacion (vector<string>, vector<string>, char*);
 void exportFacturasJson(vector<Factura> vf);
 
@@ -1468,7 +1473,46 @@ void agregarBTreeClientes(IndiceClientes indice){
 				sort(arbolClientes.root.keys.begin(), arbolClientes.root.keys.end());
 			}
 		} else {
-			
+			int pos = findpos(arbolClientes.root.keys, indice);
+			bool izquierda = leftright(arbolClientes.root.keys, indice);
+			int child;
+			if (izquierda){
+				child = arbolClientes.root.hijos[pos];
+			} else {
+				child = arbolClientes.root.hijos[pos+1];
+			}
+			int nodenum = findNodeNum(arbolClientes.nodos, child);
+			while (!arbolClientes.nodos[nodenum].isLeaf()){
+				pos = findpos(arbolClientes.nodos[nodenum].keys, indice);
+				izquierda = leftright(arbolClientes.nodos[nodenum].keys, indice);
+				if (izquierda){
+					child = arbolClientes.nodos[nodenum].hijos[pos];
+				} else {
+					child = arbolClientes.nodos[nodenum].hijos[pos+1];
+				}
+				nodenum = findNodeNum(arbolClientes.nodos, child);
+			}
+			if (arbolClientes.nodos[nodenum].isFull()){
+				if (arbolClientes.nodos[nodenum].parent == arbolClientes.root.num){
+					if (arbolClientes.root.isFull()){
+						splitRootClientes(indice);
+					} else {
+						arbolClientes.root.keys.push_back(indice);
+						sort(arbolClientes.root.keys.begin(), arbolClientes.root.keys.end());
+					}
+				} else {
+					int promotenum = findNodeNum(arbolClientes.nodos, arbolClientes.nodos[nodenum].parent);
+					if (arbolClientes.nodos[promotenum].isFull()){
+						splitNodeClientes(indice, nodenum, promotenum, arbolClientes.nodos[promotenum].num);
+					} else {
+						arbolClientes.nodos[promotenum].keys.push_back(indice);
+						sort(arbolClientes.nodos[promotenum].keys.begin(), arbolClientes.nodos[promotenum].keys.end());
+					}
+				}
+			} else {
+				arbolClientes.nodos[nodenum].keys.push_back(indice);
+				sort(arbolClientes.nodos[nodenum].keys.begin(), arbolClientes.nodos[nodenum].keys.end());
+			}
 		}
 	} else {
 		NodoClientes root(arbolClientes.order, arbolClientes.nodecount);
@@ -1506,4 +1550,91 @@ void splitRootClientes(IndiceClientes indice){
 	arbolClientes.root = parent;
 	arbolClientes.nodos.push_back(node1);
 	arbolClientes.nodos.push_back(node2);
+}
+
+void splitNodeClientes(IndiceClientes indice, int nodenum, int promotenum, int parent){
+	NodoClientes node1(arbolClientes.order, arbolClientes.nodecount, parent);
+	arbolClientes.nodecount++;
+	NodoClientes node2(arbolClientes.order, arbolClientes.nodecount, parent);
+	arbolClientes.nodecount++;
+	arbolClientes.nodos[nodenum].keys.push_back(indice);
+	sort(arbolClientes.nodos[nodenum].keys.begin(), arbolClientes.nodos[nodenum].keys.end());
+	int pos;
+	if (arbolClientes.order%2 == 0){
+		pos = (arbolClientes.order/2)-1;
+	} else {
+		pos = (int)(arbolClientes.order/2);
+	}
+	for (int i = 0; i < pos; ++i){
+		node1.keys.push_back(arbolClientes.nodos[nodenum].keys[i]);
+	}
+	for (int i = pos+1; i < arbolClientes.nodos[nodenum].keys.size(); ++i){
+		node2.keys.push_back(arbolClientes.nodos[nodenum].keys[i]);
+	}
+	IndiceClientes index = arbolClientes.nodos[nodenum].keys[pos];
+	arbolClientes.nodos.erase(arbolClientes.nodos.begin()+pos);
+	for (int i = 0; i < arbolClientes.nodos[promotenum].hijos.size(); ++i){
+		if (arbolClientes.nodos[promotenum].hijos[i]==arbolClientes.nodos[nodenum].num){
+			arbolClientes.nodos[promotenum].hijos.erase(arbolClientes.nodos[promotenum].hijos.begin()+i);
+		}
+	}
+	arbolClientes.nodos[promotenum].hijos.push_back(node1.num);
+	arbolClientes.nodos[promotenum].hijos.push_back(node2.num);
+	arbolClientes.nodos.push_back(node1);
+	arbolClientes.nodos.push_back(node2);
+	if (arbolClientes.nodos[promotenum].isFull()){
+		int num = findNodeNum(arbolClientes.nodos, arbolClientes.nodos[promotenum].parent);
+		splitNodeClientes(index, promotenum, num, arbolClientes.nodos[promotenum].parent);
+	}
+	arbolClientes.nodos[promotenum].keys.push_back(index);
+	sort(arbolClientes.nodos[promotenum].keys.begin(), arbolClientes.nodos[promotenum].keys.end());
+}
+
+int findpos(vector<IndiceClientes> keys, IndiceClientes indice){
+	int pos = -1;
+	bool izquierda;
+	for (int i = 0; i < keys.size(); ++i){
+		if (indice<keys[i]){
+			if (i==0){
+				pos = i;
+				izquierda = true;
+				break;
+			} else if (indice>keys[i-1]){
+				pos = i;
+				izquierda = true;
+				break;
+			}
+		}
+	}
+	if (pos==-1){
+		pos =  arbolClientes.root.keys.size()-1;
+		izquierda = false;
+	}
+	return pos;
+}
+bool leftright(vector<IndiceClientes> keys, IndiceClientes indice){
+	int pos = -1;
+	bool izquierda;
+	for (int i = 0; i < keys.size(); ++i){
+		if (indice<keys[i]){
+			pos = i;
+			izquierda = true;
+			break;
+		}
+	}
+	if (pos==-1){
+		pos =  arbolClientes.root.keys.size()-1;
+		izquierda = false;
+	}
+	return izquierda;
+}
+
+int findNodeNum(vector<NodoClientes> vec, int n){
+	int pos;
+	for (int i = 0; i < vec.size(); ++i){
+		if (vec[i].num==n){
+			return i;
+		}
+	}
+	return -1;
 }
